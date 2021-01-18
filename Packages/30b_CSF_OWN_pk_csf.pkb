@@ -1,10 +1,10 @@
 create or replace package body csf_own.pk_csf is
 
--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 -- Corpo do pacote de funções para o CSF
--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 
-----Função que retorna o id da tabela PARAM_ITEM_ENTR, conforme sua unique.
+----Fuque retorna o id da tabela PARAM_ITEM_ENTR, conforme sua unique.
 function fkg_paramitementr_id ( en_empresa_id     in number
                               , ev_cnpj_orig      in varchar2
                               , en_ncm_id_orig    in number
@@ -48,7 +48,7 @@ exception
 end;
 -------------------------------------------------------------
 
---| Função que retorna o id da tabela PARAM_OPER_FISCAL_ENTR, conforme sua unique.
+--| funçõo que retorna o id da tabela PARAM_OPER_FISCAL_ENTR, conforme sua unique.
 function fkg_paramoperfiscalentr_id ( en_empresa_id         in number
                                     , en_cfop_id_orig       in number
                                     , ev_cnpj_orig          in varchar2
@@ -89,7 +89,7 @@ end fkg_paramoperfiscalentr_id;
 ------------------------------------------------------------------------
 
 
--- Função formata o valor na mascara deseja pelo usuário
+-- funçõo formata o valor na mascara deseja pelo usuï¿½rio
 function fkg_formata_num ( en_num in number
                          , ev_mascara in varchar2
                          )
@@ -115,7 +115,7 @@ end fkg_formata_num;
 
 ----------------------------------------------------------------------------------------------------
 
---| Função retorno o valor do Parâmetro Global Formato Data do Sistema
+--| funçõo retorno o valor do Parï¿½metro Global Formato Data do Sistema
 function fkg_param_global_csf_form_data
          return param_global_csf.valor%type
 is
@@ -138,7 +138,7 @@ end fkg_param_global_csf_form_data;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retor do ID da Mult-Organização conforme código
+-- funçõo retor do ID da Mult-Organizaï¿½ï¿½o conforme cï¿½digo
 
 function fkg_multorg_id ( ev_multorg_cd in mult_org.cd%type )
          return mult_org.id%type
@@ -164,7 +164,7 @@ end fkg_multorg_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função verifica se o ID da Mult-Organização é valido
+-- funçõo verifica se o ID da Mult-Organizaï¿½ï¿½o ï¿½ valido
 
 function fkg_valida_multorg_id ( en_multorg_id in mult_org.id%type )
          return boolean
@@ -188,7 +188,7 @@ end fkg_valida_multorg_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna MULTORG_ID da Empresa
+-- funçõo retorna MULTORG_ID da Empresa
 
 function fkg_multorg_id_empresa ( en_empresa_id in empresa.id%type )
          return mult_org.id%type
@@ -214,7 +214,7 @@ end fkg_multorg_id_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da empresa Matriz
+-- funçõo retorna o ID da empresa Matriz
 
 function fkg_empresa_id_matriz ( en_empresa_id  in empresa.id%type )
          return empresa.id%type
@@ -240,7 +240,7 @@ end fkg_empresa_id_matriz;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da tabela Msg_WebServ
+-- funçõo retorna o ID da tabela Msg_WebServ
 
 function fkg_Msg_WebServ_id ( en_cd  in Msg_WebServ.cd%TYPE )
          return Msg_WebServ.id%TYPE
@@ -266,7 +266,7 @@ end fkg_Msg_WebServ_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o tipo de efeito da mensagem do webserv
+-- funçõo retorna o tipo de efeito da mensagem do webserv
 
 function fkg_Efeito_Msg_WebServ ( en_msgwebserv_id  in Msg_WebServ.id%TYPE
                                 , en_cd             in Msg_WebServ.cd%TYPE )
@@ -293,7 +293,7 @@ end fkg_Efeito_Msg_WebServ;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da tebale Mod_Fiscal
+-- funçõo retorna o ID da tebale Mod_Fiscal
 
 function fkg_Mod_Fiscal_id ( ev_cod_mod  in Mod_Fiscal.cod_mod%TYPE )
          return Mod_Fiscal.id%TYPE
@@ -319,7 +319,7 @@ end fkg_Mod_Fiscal_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da tabela Tipo_Servico
+-- funçõo retorna o ID da tabela Tipo_Servico
 
 function fkg_Tipo_Servico_id ( ev_cod_lst  in Tipo_Servico.cod_lst%TYPE )
          return Tipo_Servico.id%TYPE
@@ -370,7 +370,7 @@ end fkg_Tipo_Servico_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Classe_Enq_IPI
+--| funçõo retorna o ID da tabela Classe_Enq_IPI
 
 function fkg_Classe_Enq_IPI_id ( ev_cl_enq  in Classe_Enq_IPI.cl_enq%TYPE )
          return Classe_Enq_IPI.id%TYPE
@@ -396,7 +396,7 @@ end fkg_Classe_Enq_IPI_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o CL_ENQ da tabela Classe_Enq_IPI conforme ID
+--| funçõo retorna o CL_ENQ da tabela Classe_Enq_IPI conforme ID
 
 function fkg_Classe_Enq_IPI_cd ( en_classeenqipi_id  in Classe_Enq_IPI.id%TYPE )
          return classe_enq_ipi.cl_enq%type
@@ -422,7 +422,7 @@ end fkg_Classe_Enq_IPI_cd;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da tabela Selo_Contr_IPI
+-- funçõo retorna o ID da tabela Selo_Contr_IPI
 
 function fkg_Selo_Contr_IPI_id ( ev_cod_selo_ipi  in Selo_Contr_IPI.cod_selo_ipi%TYPE )
          return Selo_Contr_IPI.id%TYPE
@@ -448,7 +448,7 @@ end fkg_Selo_Contr_IPI_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o CD da tabela Selo_Contr_IPI conforme ID
+-- funçõo retorna o CD da tabela Selo_Contr_IPI conforme ID
 
 function fkg_Selo_Contr_IPI_cd ( en_selocontripi_id  in Selo_Contr_IPI.id%TYPE )
          return selo_contr_ipi.cod_selo_ipi%type
@@ -474,7 +474,7 @@ end fkg_Selo_Contr_IPI_cd;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da tabela Unidade
+-- funçõo retorna o ID da tabela Unidade
 
 function fkg_Unidade_id ( en_multorg_id  in mult_org.id%type
                         , ev_sigla_unid  in Unidade.sigla_unid%TYPE
@@ -503,7 +503,7 @@ end fkg_Unidade_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da tabela Tipo_Item
+-- funçõo retorna o ID da tabela Tipo_Item
 
 function fkg_Tipo_Item_id ( ev_cd  in Tipo_Item.cd%TYPE )
          return Tipo_Item.id%TYPE
@@ -532,7 +532,7 @@ end fkg_Tipo_Item_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Nat_Oper
+--| funçõo retorna o ID da tabela Nat_Oper
 
 function fkg_Nat_Oper_id ( en_multorg_id in mult_org.id%type
                          , ev_cod_nat    in Nat_Oper.cod_nat%TYPE )
@@ -560,7 +560,7 @@ end fkg_Nat_Oper_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Orig_Proc
+--| funçõo retorna o ID da tabela Orig_Proc
 
 function fkg_Orig_Proc_id ( en_cd  in Orig_Proc.cd%TYPE )
          return Orig_Proc.id%TYPE
@@ -586,7 +586,7 @@ end fkg_Orig_Proc_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o CD da tabela Orig_Proc conforme ID
+--| funçõo retorna o CD da tabela Orig_Proc conforme ID
 
 function fkg_Orig_Proc_cd ( en_origproc_id  in Orig_Proc.id%TYPE )
          return Orig_Proc.cd%TYPE
@@ -612,7 +612,7 @@ end fkg_Orig_Proc_cd;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Sit_Docto
+--| funçõo retorna o ID da tabela Sit_Docto
 
 function fkg_Sit_Docto_id ( ev_cd  in Sit_Docto.cd%TYPE )
          return Sit_Docto.id%TYPE
@@ -640,7 +640,7 @@ exception
 end fkg_Sit_Docto_id;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna o CD da tabela Sit_Docto
+--| funçõo retorna o CD da tabela Sit_Docto
 
 function fkg_Sit_Docto_cd ( en_sitdoc_id  in Sit_Docto.id%TYPE )
          return Sit_Docto.cd%TYPE
@@ -670,7 +670,7 @@ end fkg_Sit_Docto_cd;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Infor_Comp_Dcto_Fiscal
+--| funçõo retorna o ID da tabela Infor_Comp_Dcto_Fiscal
 
 function fkg_Infor_Comp_Dcto_Fiscal_id ( en_multorg_id in mult_org.id%type
                                        , en_cod_infor  in Infor_Comp_Dcto_Fiscal.cod_infor%TYPE )
@@ -698,7 +698,7 @@ end fkg_Infor_Comp_Dcto_Fiscal_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Tipo_Imposto
+--| funçõo retorna o ID da tabela Tipo_Imposto
 
 function fkg_Tipo_Imposto_id ( en_cd  in Tipo_Imposto.cd%TYPE )
          return Tipo_Imposto.id%TYPE
@@ -724,7 +724,7 @@ end fkg_Tipo_Imposto_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Cod_ST
+--| funçõo retorna o ID da tabela Cod_ST
 
 function fkg_Cod_ST_id ( ev_cod_st      in Cod_ST.cod_st%TYPE
                        , en_tipoimp_id  in Cod_ST.id%TYPE )
@@ -752,7 +752,7 @@ end fkg_Cod_ST_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Aj_Obrig_Rec
+--| funçõo retorna o ID da tabela Aj_Obrig_Rec
 
 function fkg_Aj_Obrig_Rec_id ( ev_cd          in Aj_Obrig_Rec.cd%TYPE
                              , en_tipoimp_id  in Aj_Obrig_Rec.id%TYPE )
@@ -780,7 +780,7 @@ end fkg_Aj_Obrig_Rec_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Genero
+--| funçõo retorna o ID da tabela Genero
 
 function fkg_Genero_id ( ev_cod_gen  in Genero.cod_gen%TYPE )
          return Genero.id%TYPE
@@ -806,7 +806,7 @@ end fkg_Genero_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da tabela Ncm
+-- funçõo retorna o ID da tabela Ncm
 
 function fkg_Ncm_id ( ev_cod_ncm  in Ncm.cod_ncm%TYPE )
          return Ncm.id%TYPE
@@ -832,7 +832,7 @@ end fkg_Ncm_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da tabela EX_TIPI
+-- funçõo retorna o ID da tabela EX_TIPI
 
 function fkg_ex_tipi_id ( ev_cod_ex_tipi  in EX_TIPI.cod_ex_tipi%TYPE
                         , en_ncm_id       in Ncm.id%TYPE )
@@ -860,7 +860,7 @@ end fkg_ex_tipi_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o Código da tabela EX_TIPI
+-- funçõo retorna o Cï¿½digo da tabela EX_TIPI
 
 function fkg_ex_tipi_cod ( en_extipi_id  in ex_tipi.id%type )
          return ex_tipi.cod_ex_tipi%type
@@ -886,7 +886,7 @@ end fkg_ex_tipi_cod;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Pais
+--| funçõo retorna o ID da tabela Pais
 
 function fkg_Pais_siscomex_id ( ev_cod_siscomex  in Pais.cod_siscomex%TYPE )
          return Pais.id%TYPE
@@ -912,7 +912,7 @@ end fkg_Pais_siscomex_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Pais conforme sigla do pais
+--| funçõo retorna o ID da tabela Pais conforme sigla do pais
 
 function fkg_Pais_sigla_id ( ev_sigla_pais  in Pais.sigla_pais%TYPE )
          return Pais.id%TYPE
@@ -938,7 +938,7 @@ end fkg_Pais_sigla_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Estado
+--| funçõo retorna o ID da tabela Estado
 
 function fkg_Estado_ibge_id ( ev_ibge_estado  in Estado.ibge_estado%TYPE )
          return Estado.id%TYPE
@@ -964,7 +964,7 @@ end fkg_Estado_ibge_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Cidade
+--| funçõo retorna o ID da tabela Cidade
 
 function fkg_Cidade_ibge_id ( ev_ibge_cidade  in Cidade.ibge_cidade%TYPE )
          return Cidade.id%TYPE
@@ -989,7 +989,7 @@ exception
 end fkg_Cidade_ibge_id;
 --
 -- ========================================================================================================= --
---| Função retorna o ID da tabela Pessoa, conforme MultOrg_ID e CPF/CNPJ
+--| funçõo retorna o ID da tabela Pessoa, conforme MultOrg_ID e CPF/CNPJ
 --
 function fkg_Pessoa_id_cpf_cnpj ( en_multorg_id  in mult_org.id%type
                                 , en_cpf_cnpj    in varchar2
@@ -999,7 +999,7 @@ function fkg_Pessoa_id_cpf_cnpj ( en_multorg_id  in mult_org.id%type
    --
 begin
    --
-   -- NÃO ALTERE A REGRA DESSAS ROTINAS SEM CONVERSAR COM EQUIPE
+   -- Nï¿½O ALTERE A REGRA DESSAS ROTINAS SEM CONVERSAR COM EQUIPE
    --
    if rtrim(ltrim(en_cpf_cnpj)) is not null then
       --
@@ -1048,7 +1048,7 @@ exception
 end fkg_Pessoa_id_cpf_cnpj;
 --
 -- ========================================================================================================= --
---| Função retorna o ID da tabela Empresa
+--| funçõo retorna o ID da tabela Empresa
 
 function fkg_Empresa_id ( en_multorg_id  in mult_org.id%type
                         , ev_cod_matriz  in Empresa.cod_matriz%TYPE
@@ -1079,7 +1079,7 @@ end fkg_Empresa_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna "true" se a NF existe e "false" se não existe
+--| funçõo retorna "true" se a NF existe e "false" se nï¿½o existe
 
 function fkg_existe_nf ( en_nota_fiscal  in Nota_Fiscal.id%TYPE )
          return boolean
@@ -1105,7 +1105,7 @@ end fkg_existe_nf;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna "true" se a UF for válida, e "false" se não for.
+--| funçõo retorna "true" se a UF for vï¿½lida, e "false" se nï¿½o for.
 function fkg_uf_valida ( ev_sigla_estado  in Estado.Sigla_Estado%TYPE )
          return boolean
 is
@@ -1149,7 +1149,7 @@ end fkg_uf_valida;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna "true" se o IBGE do UF for válide e "false" se não for
+--| funçõo retorna "true" se o IBGE do UF for vï¿½lide e "false" se nï¿½o for
 
 function fkg_ibge_uf_valida ( ev_ibge_estado  in Estado.ibge_estado%TYPE )
          return boolean
@@ -1186,7 +1186,7 @@ end fkg_ibge_uf_valida;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna "True" se o IBGE da cidade for válido e "false" se não for
+--| funçõo retorna "True" se o IBGE da cidade for vï¿½lido e "false" se nï¿½o for
 
 function fkg_ibge_cidade ( ev_ibge_cidade  in Cidade.ibge_cidade%TYPE )
          return boolean
@@ -1220,7 +1220,7 @@ end fkg_ibge_cidade;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna "true" se o código do pais for válido e "false" se não for
+--| funçõo retorna "true" se o cï¿½digo do pais for vï¿½lido e "false" se nï¿½o for
 
 function fkg_codpais_siscomex_valido ( en_cod_siscomex  in Pais.cod_siscomex%TYPE )
          return boolean
@@ -1254,7 +1254,7 @@ end fkg_codpais_siscomex_valido;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna a descrição do valor do domino
+-- funçõo retorna a descriï¿½ï¿½o do valor do domino
 
 function fkg_dominio ( ev_dominio   in Dominio.dominio%TYPE
                      , ev_vl        in Dominio.vl%TYPE )
@@ -1282,7 +1282,7 @@ end fkg_dominio;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna "true" se o ID da empresa for válido e "false" se não for
+-- funçõo retorna "true" se o ID da empresa for vï¿½lido e "false" se nï¿½o for
 
 function fkg_empresa_id_valido ( en_empresa_id  in Empresa.id%TYPE )
          return boolean
@@ -1315,7 +1315,7 @@ end fkg_empresa_id_valido;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Pessoa
+--| funçõo retorna o ID da tabela Pessoa
 
 function fkg_Pessoa_id_valido ( en_pessoa_id  in Pessoa.id%TYPE )
          return boolean
@@ -1349,7 +1349,7 @@ end fkg_Pessoa_id_valido;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna a pessoa pelo MultOrg_ID e cod_part
+-- funçõo retorna a pessoa pelo MultOrg_ID e cod_part
 
 function fkg_pessoa_id_cod_part ( en_multorg_id  in mult_org.id%type
                                 , ev_cod_part    in Pessoa.cod_part%TYPE
@@ -1382,7 +1382,7 @@ end fkg_pessoa_id_cod_part;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da NAT_OPER pelo cod_nat
+--| funçõo retorna o ID da NAT_OPER pelo cod_nat
 
 function fkg_natoper_id_cod_nat ( en_multorg_id in mult_org.id%type
                                 , ev_cod_nat    in Nat_Oper.cod_nat%TYPE )
@@ -1414,7 +1414,7 @@ end fkg_natoper_id_cod_nat;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o nome da empresa
+--| funçõo retorna o nome da empresa
 
 function fkg_nome_empresa ( en_empresa_id  in Empresa.id%TYPE
                           )
@@ -1448,7 +1448,7 @@ end fkg_nome_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna a data de emissão da nota fiscal
+--| funçõo retorna a data de emissï¿½o da nota fiscal
 
 function fkg_dt_emiss_nf ( en_notafiscal_id in Nota_Fiscal.id%TYPE )
          return Nota_Fiscal.dt_emiss%TYPE
@@ -1478,7 +1478,7 @@ end fkg_dt_emiss_nf;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna "true" se o item_id é válido e "false" se não é
+--| funçõo retorna "true" se o item_id ï¿½ vï¿½lido e "false" se nï¿½o ï¿½
 
 function fkg_item_id_valido ( en_item_id  in Item.id%TYPE )
          return boolean
@@ -1512,7 +1512,7 @@ end fkg_item_id_valido;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o DM_ST_PROC (Situação do Processo) da Nota Fiscal
+-- funçõo retorna o DM_ST_PROC (Situaï¿½ï¿½o do Processo) da Nota Fiscal
 
 function fkg_st_proc_nf ( en_notafiscal_id  in Nota_Fiscal.id%TYPE )
          return Nota_Fiscal.dm_st_proc%TYPE
@@ -1542,7 +1542,7 @@ end fkg_st_proc_nf;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna a Chave da Nota Fiscal
+-- funçõo retorna a Chave da Nota Fiscal
 
 function fkg_chave_nf ( en_notafiscal_id   in      Nota_Fiscal.id%TYPE )
          return Nota_Fiscal.nro_chave_nfe%TYPE
@@ -1572,7 +1572,7 @@ end fkg_chave_nf;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna um número positivo aleatório na faixa de 1 a 999999999
+-- funçõo retorna um nï¿½mero positivo aleatï¿½rio na faixa de 1 a 999999999
 
 function fkg_numero_aleatorio ( en_num in number
                               , en_ini in number
@@ -1611,7 +1611,7 @@ end fkg_numero_aleatorio;
 
 -------------------------------------------------------------------------------------------------------
 
--- Cálculo do dígito verificador com modulo 11
+-- Cï¿½lculo do dï¿½gito verificador com modulo 11
 
 function fkg_mod_11 ( ev_codigo in varchar2 )
          return number
@@ -1670,7 +1670,7 @@ end fkg_mod_11;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o tipo de ambiente (Produção/Homologação) parametrizado para a empresa
+-- funçõo retorna o tipo de ambiente (Produï¿½ï¿½o/Homologaï¿½ï¿½o) parametrizado para a empresa
 
 function fkg_tp_amb_empresa ( en_empresa_id  in Empresa.id%TYPE )
          return Empresa.dm_tp_amb%TYPE
@@ -1700,7 +1700,7 @@ end fkg_tp_amb_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o Tipo de impressão (Retrato/Paisagem) parametrizado na empresa
+-- funçõo retorna o Tipo de impressï¿½o (Retrato/Paisagem) parametrizado na empresa
 
 function fkg_tp_impr_empresa ( en_empresa_id  in Empresa.id%TYPE )
          return Empresa.dm_tp_impr%TYPE
@@ -1730,7 +1730,7 @@ end fkg_tp_impr_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o Tipo de impressão (Retrato/Paisagem) parametrizado na empresa
+-- funçõo retorna o Tipo de impressï¿½o (Retrato/Paisagem) parametrizado na empresa
 
 function fkg_forma_emiss_empresa ( en_empresa_id  in Empresa.id%TYPE )
          return Empresa.dm_forma_emiss%TYPE
@@ -1760,7 +1760,7 @@ end fkg_forma_emiss_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da nota Fiscal a partir do número da chave de acesso
+-- funçõo retorna o ID da nota Fiscal a partir do nï¿½mero da chave de acesso
 
 function fkg_notafiscal_id_pela_chave ( en_nro_chave_nfe  in Nota_Fiscal.nro_chave_nfe%TYPE )
          return Nota_Fiscal.id%TYPE
@@ -1790,7 +1790,7 @@ end fkg_notafiscal_id_pela_chave;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID do Lote conforme o número do recibo de envio fornecido pelo SEFAZ
+-- funçõo retorna o ID do Lote conforme o nï¿½mero do recibo de envio fornecido pelo SEFAZ
 
 function fkg_Lote_id_pelo_nro_recibo ( en_nro_recibo in Lote.nro_recibo%TYPE )
          return Lote.id%TYPE
@@ -1816,7 +1816,7 @@ end fkg_Lote_id_pelo_nro_recibo;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID do Cfop
+-- funçõo retorna o ID do Cfop
 
 function fkg_cfop_id ( en_cd  in Cfop.cd%TYPE )
          return Cfop.id%TYPE
@@ -1842,7 +1842,7 @@ end fkg_cfop_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna a inscrição estadual da empresa
+-- funçõo retorna a inscriï¿½ï¿½o estadual da empresa
 
 function fkg_inscr_est_empresa ( en_empresa_id  in Empresa.id%TYPE )
          return Juridica.ie%TYPE
@@ -1874,7 +1874,7 @@ end fkg_inscr_est_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna "1" se a nota fiscal está inutilizada e "0" se não está
+--| funçõo retorna "1" se a nota fiscal estï¿½ inutilizada e "0" se nï¿½o estï¿½
 
 function fkg_nf_inutiliza ( en_empresa_id  in Empresa.id%TYPE
                           , ev_cod_mod     in Mod_Fiscal.cod_mod%TYPE
@@ -1894,7 +1894,7 @@ begin
     where inf.empresa_id = en_empresa_id
       and inf.serie      = en_serie
       and en_nro_nf between inf.nro_ini and inf.nro_fim
-      and inf.dm_situacao = 2 -- Concluído
+      and inf.dm_situacao = 2 -- Concluï¿½do
       and mf.id          = inf.modfiscal_id
       and mf.cod_mod     = ev_cod_mod;
 
@@ -1909,7 +1909,7 @@ end fkg_nf_inutiliza;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna se 1 se o Estado Obrigado o CODIF e 0 se não Obriga
+-- funçõo retorna se 1 se o Estado Obrigado o CODIF e 0 se nï¿½o Obriga
 
 function fkg_Estado_Obrig_Codif ( ev_sigla_estado  in Estado.sigla_estado%TYPE )
          return Estado.dm_obrig_codif%TYPE
@@ -1935,7 +1935,7 @@ end fkg_Estado_Obrig_Codif;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID do estado conforme a sigla de UF
+-- funçõo retorna o ID do estado conforme a sigla de UF
 
 function fkg_Estado_id ( ev_sigla_estado  in Estado.sigla_estado%TYPE )
          return Estado.id%TYPE
@@ -1963,10 +1963,10 @@ end fkg_Estado_id;
 FUNCTION fkg_converte ( ev_string            IN varchar2
                       , en_espacamento       IN number DEFAULT 0
                       , en_remove_spc_extra  IN number DEFAULT 1
-                      , en_ret_carac_espec   IN number DEFAULT 1 -- 1-padrão,  2-NF-e, 3-(º > < " Ø µ &), 4-Mantem & (E comercial)
+                      , en_ret_carac_espec   IN number DEFAULT 1 -- 1-padrï¿½o,  2-NF-e, 3-(ï¿½ > < " ï¿½ ï¿½ &), 4-Mantem & (E comercial)
                       , en_ret_tecla         in number default 1 -- retira comandos CHR
-                      , en_ret_underline     in number default 1 -- retira underline: 1 - sim, 0 - não
-                      , en_ret_chr10         in number default 1 -- retira comandos CHR10 se a string original não vier com o caractere "\n"
+                      , en_ret_underline     in number default 1 -- retira underline: 1 - sim, 0 - nï¿½o
+                      , en_ret_chr10         in number default 1 -- retira comandos CHR10 se a string original nï¿½o vier com o caractere "\n"
                       )
          RETURN VARCHAR2 IS
 
@@ -1975,7 +1975,7 @@ FUNCTION fkg_converte ( ev_string            IN varchar2
       vi             number;
       vb_carac_espec boolean;
 
-      -- Para implementação futura segue a lista de caracteres ascii válidos
+      -- Para implementaï¿½ï¿½o futura segue a lista de caracteres ascii vï¿½lidos
       --  0 a 9 = chr(48) a chr(57)
       --  A a Z = chr(65) a chr(90)
       --  a a z = chr(97) a chr(122)
@@ -1987,16 +1987,16 @@ BEGIN
     --
     -- Remove os caracteres especiais.
     /*IF nvl(en_ret_carac_espec, 0) = 1 THEN
-       --vv_valor2 := nvl(ltrim(rtrim(translate(ev_string, 'ÇçåÅâÂãÃáÁàÀäÄêÊéÉèÈëËîÎíÍìÌïÏôÔÕõóÓòÒöÖûÛúÚùÙüÜÿŸýÝñÑÐ\ˆ“&¤¶¦æÆø×ƒØ¿®±¾½¼«»ðßµþÞ¯÷œ¸·!¨*+=_{}[];|<>?ªº°§¹²³™š£¢¬´`~^¿¢€¥‰†‡„‹›¦ ¡•§·º…–—''’'
-       vv_valor2 := nvl(ltrim(rtrim(translate(ev_string, 'ÇçåÅâÂãÃáÁàÀäÄêÊéÉèÈëËîÎíÍìÌïÏôÔÕõóÓòÒöÖûÛúÚùÙüÜÿŸýÝñÑÐ\ˆ“&¤¶¦æÆø×ƒØ¿®±¾½¼«»ðßµþÞ¯÷œ¸·!¨*_{}[];|<>?ªº°§¹²³™š£¢¬´`~^¿¢€¥‰†‡„‹›¦ ¡•§·º…–—''’'
+       --vv_valor2 := nvl(ltrim(rtrim(translate(ev_string, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ƒØ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½Þ¯ï¿½ï¿½ï¿½ï¿½!ï¿½*+=_{}[];|<>?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`~^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½''ï¿½'
+       vv_valor2 := nvl(ltrim(rtrim(translate(ev_string, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ƒØ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½Þ¯ï¿½ï¿½ï¿½ï¿½!ï¿½*_{}[];|<>?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`~^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½''ï¿½'
                                                        , 'CcaAaAaAaAaAaAeEeEeEeEiIiIiIiIoOOooOoOoOuUuUuUuUyYyYnND '))), ' ');
     ELSE
        vv_valor2 := nvl(ev_string, ' ');
     END IF;*/
     --
     IF nvl(en_ret_carac_espec, 0) = 1 THEN
-       --vv_valor2 := nvl(ltrim(rtrim(translate(ev_string, 'ÇçåÅâÂãÃáÁàÀäÄêÊéÉèÈëËîÎíÍìÌïÏôÔÕõóÓòÒöÖûÛúÚùÙüÜÿŸýÝñÑÐ\ˆ“&¤¶¦æÆø×ƒØ¿®±¾½¼«»ðßµþÞ¯÷œ¸·!¨*+=_{}[];|<>?ªº°§¹²³™š£¢¬´`~^¿¢€¥‰†‡„‹›¦ ¡•§·º…–—''’'
-       --vv_valor2 := nvl(ltrim(rtrim(translate(ev_string, 'ÇçåÅâÂãÃáÁàÀäÄêÊéÉèÈëËîÎíÍìÌïÏôÔÕõóÓòÒöÖûÛúÚùÙüÜÿŸýÝñÑÐ\ˆ“&¤¶¦æÆø×ƒØ¿®±¾½¼«»ðßµþÞ¯÷œ¸·!¨*_{}[];|<>?ªº°§¹²³™š£¢¬´`~^¿¢€¥‰†‡„‹›¦ ¡•§·º…–—''’'
+       --vv_valor2 := nvl(ltrim(rtrim(translate(ev_string, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ƒØ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½Þ¯ï¿½ï¿½ï¿½ï¿½!ï¿½*+=_{}[];|<>?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`~^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½''ï¿½'
+       --vv_valor2 := nvl(ltrim(rtrim(translate(ev_string, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ƒØ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½Þ¯ï¿½ï¿½ï¿½ï¿½!ï¿½*_{}[];|<>?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`~^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½''ï¿½'
        vv_valor2 := nvl(ev_string, ' ');
        -- Converte o caractere especial \n "New line" por chr(10) "Enter"
        if instr(vv_valor2, '\n') > 0 then
@@ -2004,7 +2004,7 @@ BEGIN
           vv_valor2      := replace(vv_valor2, '\n', chr(10));
        end if;
        --
-       vv_valor2 := nvl(ltrim(rtrim(translate(vv_valor2, 'ÇçåÅâÂãÃáÁàÀäÄêÊéÉèÈëËîÎíÍìÌïÏôÔÕõóÓòÒöÖûÛúÚùÙüÜÿŸýÝñÑÐ\ˆ“&¤¶¦æÆø×ƒØ¿®±¾½¼«»ðßµþÞ¯÷œ¸·!¨*{}[];|<>?ªº°§¹²³™š£¢¬´`~^¿¢€¥‰†‡„‹›¦ ¡•§·º…–—''’'
+       vv_valor2 := nvl(ltrim(rtrim(translate(vv_valor2, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ƒØ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½Þ¯ï¿½ï¿½ï¿½ï¿½!ï¿½*{}[];|<>?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`~^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½''ï¿½'
                                                        , 'CcaAaAaAaAaAaAeEeEeEeEiIiIiIiIoOOooOoOoOuUuUuUuUyYyYnND '))), ' ');
        --
     ELSIF nvl(en_ret_carac_espec, 0) = 2 THEN -- NF-e
@@ -2015,11 +2015,11 @@ BEGIN
           vv_valor2      := replace(vv_valor2, '\n', chr(10));
        end if;
        --
-        vv_valor2 := nvl(ltrim(rtrim(translate(vv_valor2, 'º“&<>´`’„"''’' , ' '))), ' ');
+        vv_valor2 := nvl(ltrim(rtrim(translate(vv_valor2, 'ï¿½ï¿½&<>ï¿½`ï¿½ï¿½"''ï¿½' , ' '))), ' ');
        --
      ELSIF nvl(en_ret_carac_espec, 0) = 3 THEN -- 
-       --vv_valor2 := nvl(ltrim(rtrim(translate(ev_string, 'ÇçåÅâÂãÃáÁàÀäÄêÊéÉèÈëËîÎíÍìÌïÏôÔÕõóÓòÒöÖûÛúÚùÙüÜÿŸýÝñÑÐ\ˆ“&¤¶¦æÆø×ƒØ¿®±¾½¼«»ðßµþÞ¯÷œ¸·!¨*+=_{}[];|<>?ªº°§¹²³™š£¢¬´`~^¿¢€¥‰†‡„‹›¦ ¡•§·º…–—''’'
-       --vv_valor2 := nvl(ltrim(rtrim(translate(ev_string, 'ÇçåÅâÂãÃáÁàÀäÄêÊéÉèÈëËîÎíÍìÌïÏôÔÕõóÓòÒöÖûÛúÚùÙüÜÿŸýÝñÑÐ\ˆ“&¤¶¦æÆø×ƒØ¿®±¾½¼«»ðßµþÞ¯÷œ¸·!¨*_{}[];|<>?ªº°§¹²³™š£¢¬´`~^¿¢€¥‰†‡„‹›¦ ¡•§·º…–—''’'
+       --vv_valor2 := nvl(ltrim(rtrim(translate(ev_string, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ƒØ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½Þ¯ï¿½ï¿½ï¿½ï¿½!ï¿½*+=_{}[];|<>?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`~^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½''ï¿½'
+       --vv_valor2 := nvl(ltrim(rtrim(translate(ev_string, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ƒØ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½Þ¯ï¿½ï¿½ï¿½ï¿½!ï¿½*_{}[];|<>?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`~^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½''ï¿½'
        vv_valor2 := nvl(ev_string, ' ');
        -- Converte o caractere especial \n "New line" por chr(10) "Enter"
        if instr(vv_valor2, '\n') > 0 then
@@ -2027,7 +2027,7 @@ BEGIN
           vv_valor2      := replace(vv_valor2, '\n', chr(10));
        end if;
        --
-       vv_valor2 := nvl(ltrim(rtrim(translate(vv_valor2, 'ÇçåÅâÂãÃáÁàÀäÄêÊéÉèÈëËîÎíÍìÌïÏôÔÕõóÓòÒöÖûÛúÚùÙüÜÿŸýÝñÑÐ\ˆ“¤¶¦æÆ×ƒ¿®±¾½¼«»ðßþÞ¯÷œ¸·!¨*{}[];|?ª§¹²³™š£¢¬´`~^¿¢€¥‰†‡„‹›¦ ¡•§·…–—''’'
+       vv_valor2 := nvl(ltrim(rtrim(translate(vv_valor2, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ƒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¯ï¿½ï¿½ï¿½ï¿½!ï¿½*{}[];|?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`~^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½''ï¿½'
                                                        , 'CcaAaAaAaAaAaAeEeEeEeEiIiIiIiIoOOooOoOoOuUuUuUuUyYyYnND '))), ' ');
        --
     ELSIF nvl(en_ret_carac_espec, 0) = 4 THEN -- Mantem & (E comercial)
@@ -2038,7 +2038,7 @@ BEGIN
           vv_valor2      := replace(vv_valor2, '\n', chr(10));
        end if;
        --
-       vv_valor2 := nvl(ltrim(rtrim(translate(vv_valor2, 'ÇçåÅâÂãÃáÁàÀäÄêÊéÉèÈëËîÎíÍìÌïÏôÔÕõóÓòÒöÖûÛúÚùÙüÜÿŸýÝñÑÐ\ˆ“¤¶¦æÆø×ƒØ¿®±¾½¼«»ðßµþÞ¯÷œ¸·!¨*{}[];|<>?ªº°§¹²³™š£¢¬´`~^¿¢€¥‰†‡„‹›¦ ¡•§·º…–—''’'
+       vv_valor2 := nvl(ltrim(rtrim(translate(vv_valor2, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ƒØ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½Þ¯ï¿½ï¿½ï¿½ï¿½!ï¿½*{}[];|<>?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`~^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½''ï¿½'
                                                        , 'CcaAaAaAaAaAaAeEeEeEeEiIiIiIiIoOOooOoOoOuUuUuUuUyYyYnND '))), ' ');
        --
 	ELSE
@@ -2063,12 +2063,12 @@ BEGIN
        --
     end loop;
     --
-    -- Não permite que haja mais de um espaço entre as palavras
+    -- Nï¿½o permite que haja mais de um espaï¿½o entre as palavras
     IF nvl(en_remove_spc_extra, 0) = 1 THEN
        WHILE instr(vv_valor2, '  ') > 0 LOOP
           vv_valor2 := REPLACE(vv_valor2, '  ', ' ');
        END LOOP;
-       -- Retirar o chr(10) se a string original não vier com o caractere "\n"
+       -- Retirar o chr(10) se a string original nï¿½o vier com o caractere "\n"
        if vb_carac_espec = false and en_ret_chr10 = 1 then 
           vv_valor2 := REPLACE( vv_valor2, chr(10), '');
        end if; 
@@ -2133,15 +2133,15 @@ END fkg_converte;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna uma String com as informações de Duplicatas
+-- funçõo retorna uma String com as informaï¿½ï¿½es de Duplicatas
 
 function fkg_String_dupl ( en_notafiscal_id  in Nota_Fiscal.id%TYPE
                          , en_monta_nro_fat  in number default 0 )
          return varchar2
 is
    --
-   -- Em 26/07/2018 - Redmine #45214 - Incluído novo parâmetro de entrada EN_MONTA_NRO_FAT: 0-Não monta o Nro da Fatura, 1-Sim, monta o Nro da Fatura.
-   -- Rotinas que utilizam essa função: pb_gera_danfe_nfe e pk_emiss_nfse.
+   -- Em 26/07/2018 - Redmine #45214 - Incluï¿½do novo parï¿½metro de entrada EN_MONTA_NRO_FAT: 0-Nï¿½o monta o Nro da Fatura, 1-Sim, monta o Nro da Fatura.
+   -- Rotinas que utilizam essa funçõo: pb_gera_danfe_nfe e pk_emiss_nfse.
    --
    vv_string varchar2(4000) := null;
    vv_montou varchar2(1) := 'N';
@@ -2192,7 +2192,7 @@ Begin
       --
       for rec in c_dup loop
          --
-         if nvl(en_monta_nro_fat,0) = 0 then -- 0-Não monta o Nro da Fatura
+         if nvl(en_monta_nro_fat,0) = 0 then -- 0-Nï¿½o monta o Nro da Fatura
             --
             vv_string := vv_string ||
                          case when (vv_param_value = ('0')) or (vv_param_value = ('1') and rec.existe_descr_tit = 0) then 
@@ -2248,7 +2248,7 @@ end fkg_String_dupl;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da Nota Fiscal conforme Empresa, Número, modelo, serie e tipo (entrada/saída)
+-- funçõo retorna o ID da Nota Fiscal conforme Empresa, Nï¿½mero, modelo, serie e tipo (entrada/saï¿½da)
 
 function fkg_busca_notafiscal_id ( en_multorg_id       in mult_org.id%type
                                  , en_empresa_id       in empresa.id%type
@@ -2315,11 +2315,11 @@ begin
    if en_dm_ind_emit = 1 then
       --
       vn_fase := 6;
-      -- 06-Nota Fiscal/Conta de Energia Elétrica
-      -- 21-Nota Fiscal de Serviço de Comunicação
-      -- 22-Nota Fiscal de Serviço de Telecomunicação
-      -- 28-Nota Fiscal/Conta de Fornecimento de Gás Canalizado
-      -- 29-Nota Fiscal/Conta de Fornecimento de Água Canalizada
+      -- 06-Nota Fiscal/Conta de Energia Elï¿½trica
+      -- 21-Nota Fiscal de Serviï¿½o de Comunicaï¿½ï¿½o
+      -- 22-Nota Fiscal de Serviï¿½o de Telecomunicaï¿½ï¿½o
+      -- 28-Nota Fiscal/Conta de Fornecimento de Gï¿½s Canalizado
+      -- 29-Nota Fiscal/Conta de Fornecimento de ï¿½gua Canalizada
       --
       if ev_cod_mod in ('06', '21', '22', '28', '29', '66') then
          --
@@ -2528,7 +2528,7 @@ exception
    when no_data_found then
       return -1;
    when others then
-      raise_application_error(-20101, 'Erro na fkg_busca_notafiscal_id - vn_fase ('||vn_fase||'). Parâmetros: en_empresa_id: '||en_empresa_id||
+      raise_application_error(-20101, 'Erro na fkg_busca_notafiscal_id - vn_fase ('||vn_fase||'). Parï¿½metros: en_empresa_id: '||en_empresa_id||
                                       ', ev_cod_mod: '||ev_cod_mod||', ev_serie: '||ev_serie||', en_nro_nf: '||en_nro_nf||', en_dm_ind_oper: '||en_dm_ind_oper||
                                       ', en_dm_ind_emit: '||en_dm_ind_emit||', ev_cod_part: '||ev_cod_part||', en_dm_arm_nfe_terc: '||en_dm_arm_nfe_terc||
                                       ', ed_dt_emiss: '||ed_dt_emiss||'. Erro: '||sqlerrm);
@@ -2536,7 +2536,7 @@ end fkg_busca_notafiscal_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o campo EMPRESA_ID conforme o multorg_id e (CPF ou CNPJ)
+-- funçõo retorna o campo EMPRESA_ID conforme o multorg_id e (CPF ou CNPJ)
 
 function fkg_empresa_id_pelo_cpf_cnpj ( en_multorg_id  in mult_org.id%type
                                       , ev_cpf_cnpj    in varchar2
@@ -2586,7 +2586,7 @@ end fkg_empresa_id_pelo_cpf_cnpj;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o campo EMPRESA_ID conforme a multorg_id e Incrição Estadual
+-- funçõo retorna o campo EMPRESA_ID conforme a multorg_id e Incriï¿½ï¿½o Estadual
 
 function fkg_empresa_id_pelo_ie ( en_multorg_id  in mult_org.id%type
                                 , ev_ie          in juridica.ie%type
@@ -2617,7 +2617,7 @@ end fkg_empresa_id_pelo_ie;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da empresa, pelo CNPJ ou pelo Cód. Matriz e Filial
+-- funçõo retorna o ID da empresa, pelo CNPJ ou pelo Cï¿½d. Matriz e Filial
 
 function fkg_empresa_id2 ( en_multorg_id        in             mult_org.id%type
                          , ev_cod_matriz        in             Empresa.cod_matriz%TYPE  default null
@@ -2670,7 +2670,7 @@ end fkg_empresa_id2;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento responsável por retornar informações da Nota Fiscal
+-- Procedimento responsï¿½vel por retornar informaï¿½ï¿½es da Nota Fiscal
 
 procedure pkb_inform_nf ( en_notafiscal_id      in  Nota_Fiscal.id%TYPE
                         , sn_lote_id             out Nota_Fiscal.lote_id%TYPE
@@ -2769,7 +2769,7 @@ end pkb_inform_nf;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna a Sigla do Tipo de Imposto
+--| funçõo retorna a Sigla do Tipo de Imposto
 
 function fkg_Tipo_Imposto_Sigla ( en_cd  in Tipo_Imposto.cd%TYPE )
          return Tipo_Imposto.Sigla%TYPE
@@ -2795,7 +2795,7 @@ end fkg_Tipo_Imposto_Sigla;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o COD_PART pelo ID da pessoa
+--| funçõo retorna o COD_PART pelo ID da pessoa
 
 function fkg_pessoa_cod_part ( en_pessoa_id in pessoa.id%type )
          return pessoa.cod_part%type
@@ -2821,7 +2821,7 @@ end fkg_pessoa_cod_part;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da tabela Contador conforme en_multorg_id e COD_PART
+-- funçõo retorna o ID da tabela Contador conforme en_multorg_id e COD_PART
 
 function fkg_contador_id ( en_multorg_id  in mult_org.id%type
                          , ev_cod_part    in pessoa.cod_part%type
@@ -2852,7 +2852,7 @@ end fkg_contador_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Retorna o ID do usuário do Sistema conforme multorg_id e ID_ERP
+-- Retorna o ID do usuï¿½rio do Sistema conforme multorg_id e ID_ERP
 
 function fkg_neo_usuario_id_conf_erp ( en_multorg_id  in mult_org.id%type
                                      , ev_id_erp      in neo_usuario.id_erp%type
@@ -2903,7 +2903,7 @@ exception
       raise_application_error(-20101, 'Erro na fkg_neo_usuario_id_conf_erp:' || sqlerrm);
 end fkg_neo_usuario_id_conf_erp;
 -------------------------------------------------------------------------------------------------------
--- Retorna o ID da impressora vinculada a série (tabela EMPRESA_PARAM_SERIE)
+-- Retorna o ID da impressora vinculada a sï¿½rie (tabela EMPRESA_PARAM_SERIE)
 procedure pkb_impressora_id_serie ( en_empresa_id    in  Empresa.id%TYPE
                                  , en_modfiscal_id  in  Mod_Fiscal.Id%TYPE
                                  , ev_serie         in  Nota_Fiscal.serie%TYPE
@@ -2945,7 +2945,7 @@ begin
                   where e.id = en_empresa_id;
                 exception
                   when no_data_found then
-                    sn_qtd_impr :=1;--por padrao receberá 1
+                    sn_qtd_impr :=1;--por padrao receberï¿½ 1
                 end;
             end if;
           exception
@@ -2975,7 +2975,7 @@ exception
 end pkb_impressora_id_serie;
 -------------------------------------------------------------------------------------------------------
 
--- Retorna o ID da impressora vinculada ao usuário
+-- Retorna o ID da impressora vinculada ao usuï¿½rio
 
 function fkg_impressora_id_usuario ( en_usuario_id in neo_usuario.id%type )
          return impressora.id%type
@@ -3033,7 +3033,7 @@ end fkg_impressora_id_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna "true" se for uma NFe de emissão própria já autorizada, cancelada, denegada ou inutulizada, não pode ser re-integrada
+-- funçõo retorna "true" se for uma NFe de emissï¿½o prï¿½pria jï¿½ autorizada, cancelada, denegada ou inutulizada, nï¿½o pode ser re-integrada
 function fkg_nfe_nao_integrar ( en_notafiscal_id  in nota_fiscal.id%Type )
          return boolean
 is
@@ -3053,7 +3053,7 @@ end fkg_nfe_nao_integrar;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da tabela CSF_TIPO_LOG conforme o identificador TIPO_LOG
+-- funçõo retorna o ID da tabela CSF_TIPO_LOG conforme o identificador TIPO_LOG
 
 function fkg_csf_tipo_log_id ( en_tipo_log in csf_tipo_log.cd_compat%type )
          return csf_tipo_log.id%type
@@ -3083,7 +3083,7 @@ end fkg_csf_tipo_log_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna um valor criptografado em MD5
+-- funçõo retorna um valor criptografado em MD5
 function fkg_md5 ( ev_valor in varchar2 )
          return varchar2
 is
@@ -3103,7 +3103,7 @@ end fkg_md5;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o CNPJ ou CPF conforme a empresa
+--| funçõo retorna o CNPJ ou CPF conforme a empresa
 
 function fkg_cnpj_ou_cpf_empresa ( en_empresa_id in Empresa.Id%type )
          return varchar2
@@ -3160,7 +3160,7 @@ end fkg_cnpj_ou_cpf_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o CNAE conforme a empresa
+--| funçõo retorna o CNAE conforme a empresa
 
 function fkb_retorna_cnae ( en_empresa_id in empresa.id%type )
          return varchar2
@@ -3192,7 +3192,7 @@ end fkb_retorna_cnae;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID do usuário
+--| funçõo retorna o ID do usuï¿½rio
 function fkg_usuario_id ( ev_login       in neo_usuario.login%type )
          return neo_usuario.id%type
 is
@@ -3221,7 +3221,7 @@ end fkg_usuario_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna TRUE se a pessoa existe e FALSE se ela não existe, conforme o ID
+--| funçõo retorna TRUE se a pessoa existe e FALSE se ela nï¿½o existe, conforme o ID
 
 function fkg_existe_pessoa ( en_pessoa_id in pessoa.id%type )
          return boolean
@@ -3247,7 +3247,7 @@ end fkg_existe_pessoa;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna "true" se o código do pais for válido e "false" se não for, conforme ID
+--| funçõo retorna "true" se o cï¿½digo do pais for vï¿½lido e "false" se nï¿½o for, conforme ID
 
 function fkg_pais_id_valido ( en_pais_id  in Pais.id%TYPE )
          return boolean
@@ -3281,7 +3281,7 @@ end fkg_pais_id_valido;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da cidade conforme o código do IBGE
+--| funçõo retorna o ID da cidade conforme o cï¿½digo do IBGE
 
 function fkg_cidade_id_ibge ( ev_ibge_cidade in cidade.ibge_cidade%type )
          return cidade.id%type
@@ -3307,7 +3307,7 @@ end fkg_cidade_id_ibge;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o IBGE da cidade conforme o ID
+--| funçõo retorna o IBGE da cidade conforme o ID
 
 function fkg_ibge_cidade_id ( en_cidade_id  in Cidade.id%TYPE )
          return cidade.ibge_cidade%type
@@ -3333,7 +3333,7 @@ end fkg_ibge_cidade_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| retorna o códido do siscomex conforme o id do país
+--| retorna o cï¿½dido do siscomex conforme o id do paï¿½s
 
 function fkg_cod_siscomex_pais_id ( en_pais_id  in Pais.id%TYPE )
          return pais.cod_siscomex%type
@@ -3359,7 +3359,7 @@ end fkg_cod_siscomex_pais_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna TRUE se a unidade existe e FALSE se não existe, conforme o ID
+--| funçõo retorna TRUE se a unidade existe e FALSE se nï¿½o existe, conforme o ID
 
 function fkg_existe_unidade_id ( en_unidade_id in unidade.id%type )
          return boolean
@@ -3385,7 +3385,7 @@ end fkg_existe_unidade_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorno o CD do tipo de item conforme o ID
+-- funçõo retorno o CD do tipo de item conforme o ID
 
 function fkg_cd_tipo_item_id ( en_tipoitem_id in tipo_item.id%type )
          return tipo_item.cd%type
@@ -3411,7 +3411,7 @@ end fkg_cd_tipo_item_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função Retorna o Código da ANP do produto
+-- funçõo Retorna o Cï¿½digo da ANP do produto
 
 function fkg_cod_anp_valido ( ev_cod_anp in cod_anp.cd%type )
          return boolean
@@ -3437,7 +3437,7 @@ end fkg_cod_anp_valido;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da Coversão de Unidade conforme Item e Unidade
+-- funçõo retorna o ID da Coversï¿½o de Unidade conforme Item e Unidade
 
 function fkg_id_conv_unid ( en_item_id     in item.id%type
                           , ev_unidade_id  in unidade.id%type )
@@ -3465,7 +3465,7 @@ end fkg_id_conv_unid;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID do bem do ativo imobilizado conforme empresa e código do item
+-- funçõo retorna o ID do bem do ativo imobilizado conforme empresa e cï¿½digo do item
 
 function fkg_id_bem_ativo_imob ( en_empresa_id   in empresa.id%type
                                , ev_cod_ind_bem  in bem_ativo_imob.cod_ind_bem%type )
@@ -3493,7 +3493,7 @@ end fkg_id_bem_ativo_imob;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função returna TRUE se existe o bem ID ou FALSE se não existe, conforme o ID
+-- funçõo returna TRUE se existe o bem ID ou FALSE se nï¿½o existe, conforme o ID
 
 function fkg_existe_bem_ativo_imob ( en_bemativoimob_id in bem_ativo_imob.id%type )
          return boolean
@@ -3519,7 +3519,7 @@ end fkg_existe_bem_ativo_imob;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da Utilização do Bem conforme Bem, Conta Contábil e Centro de Custo
+-- funçõo retorna o ID da Utilizaï¿½ï¿½o do Bem conforme Bem, Conta Contï¿½bil e Centro de Custo
 
 function fkg_id_infor_util_bem ( en_bemativoimob_id in bem_ativo_imob.id%type
                                , ev_cod_ccus        in infor_util_bem.cod_ccus%type )
@@ -3547,7 +3547,7 @@ end fkg_id_infor_util_bem;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função verifica se existe o ID da Informação Complementar do Documento Fiscal
+-- funçõo verifica se existe o ID da Informaï¿½ï¿½o Complementar do Documento Fiscal
 
 function fkg_existe_Inf_Comp_Dcto_Fis ( en_infcompdctofis_id in infor_comp_dcto_fiscal.id%type )
          return boolean
@@ -3573,7 +3573,7 @@ end fkg_existe_Inf_Comp_Dcto_Fis;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função Retorna o ID da Observação do Lançamento Fiscal
+--| funçõo Retorna o ID da Observaï¿½ï¿½o do Lanï¿½amento Fiscal
 
 function fkg_id_obs_lancto_fiscal ( en_multorg_id in mult_org.id%type
                                   , ev_cod_obs    in obs_lancto_fiscal.cod_obs%type )
@@ -3601,7 +3601,7 @@ end fkg_id_obs_lancto_fiscal;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função verifica se existe da Observação do Lançamento Fiscal
+--| funçõo verifica se existe da Observaï¿½ï¿½o do Lanï¿½amento Fiscal
 
 function fkg_existe_obs_lancto_fiscal ( en_obslanctofiscal_id in obs_lancto_fiscal.id%type )
          return boolean
@@ -3627,7 +3627,7 @@ end fkg_existe_obs_lancto_fiscal;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID do inventário
+--| funçõo retorna o ID do inventï¿½rio
 
 function fkg_inventario_id ( en_empresa_id     in empresa.id%type
                            , en_item_id        in item.id%type
@@ -3663,7 +3663,7 @@ end fkg_inventario_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função verifica se existe o ID do inventário
+--| funçõo verifica se existe o ID do inventï¿½rio
 
 function fkg_existe_inventario ( en_inventario_id in inventario.id%type )
          return boolean
@@ -3693,7 +3693,7 @@ end fkg_existe_inventario;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da informação complementar do inventario
+--| funçõo retorna o ID da informaï¿½ï¿½o complementar do inventario
 
 function fkg_invent_cst_id ( en_inventario_id  in inventario.id%type
                            , en_codst_id       in cod_st.id%type
@@ -3721,7 +3721,7 @@ end fkg_invent_cst_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID do inventário para a table de informacao complementar
+--| funçõo retorna o ID do inventï¿½rio para a table de informacao complementar
 
 function fkg_inventario_info_compl_id ( en_empresa_id     in empresa.id%type
                                       , en_item_id        in item.id%type
@@ -3751,7 +3751,7 @@ end fkg_inventario_info_compl_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função verifica se existe o ID do inventário
+--| funçõo verifica se existe o ID do inventï¿½rio
 
 function fkg_existe_invent_cst ( en_invent_cst_id in invent_cst.id%type )
          return boolean
@@ -3935,7 +3935,7 @@ end pkb_upload; */
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da Unidade Organizacional conforme EMPRESA_ID e código UO
+-- funçõo retorna o ID da Unidade Organizacional conforme EMPRESA_ID e cï¿½digo UO
 
 function fkg_unig_org_id ( en_empresa_id    in  empresa.id%type
                          , ev_cod_unid_org  in  unid_org.cd%type )
@@ -3963,7 +3963,7 @@ end fkg_unig_org_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o codigo da Unidade Organizacional conforme o ID
+-- funçõo retorna o codigo da Unidade Organizacional conforme o ID
 
 function fkg_unig_org_cd ( en_unidorg_id    in  unid_org.id%type )
          return unid_org.cd%type
@@ -3993,7 +3993,7 @@ end fkg_unig_org_cd;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID do Sistema de Origem conforme a Sigla
+-- funçõo retorna o ID do Sistema de Origem conforme a Sigla
 
 function fkg_sist_orig_id ( en_multorg_id in  sist_orig.multorg_id%type
                           , ev_sigla      in  sist_orig.sigla%type )
@@ -4020,7 +4020,7 @@ exception
 end fkg_sist_orig_id;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna o Sigla do Sistema de Origem conforme o ID
+-- funçõo retorna o Sigla do Sistema de Origem conforme o ID
 
 function fkg_sist_orig_sigla ( en_sistorig_id  in  sist_orig.id%type )
          return sist_orig.sigla%type
@@ -4050,7 +4050,7 @@ end fkg_sist_orig_sigla;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o parâmetro de impressa automática 0-Não ou 1-Sim, conforme ID da empresa
+-- funçõo retorna o parï¿½metro de impressa automï¿½tica 0-Nï¿½o ou 1-Sim, conforme ID da empresa
 
 function fkg_empresa_impr_aut ( en_empresa_id  in  empresa.id%type )
          return empresa.dm_impr_aut%type
@@ -4076,7 +4076,7 @@ end fkg_empresa_impr_aut;
 
 -------------------------------------------------------------------------------------------------------
 
--- Retorna true se a IBGE_UF for o mesmo da empresa, e false se não for
+-- Retorna true se a IBGE_UF for o mesmo da empresa, e false se nï¿½o for
 
 function fkg_uf_ibge_igual_empresa ( en_empresa_id   in  empresa.id%type
                                    , ev_ibge_estado  in  estado.ibge_estado%type )
@@ -4122,7 +4122,7 @@ end fkg_uf_ibge_igual_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- verifica se o código do IBGE do estado corresponde a sigla do estado
+-- verifica se o cï¿½digo do IBGE do estado corresponde a sigla do estado
 
 function fkg_compara_ibge_com_sigla_uf ( ev_ibge_estado   in  estado.ibge_estado%type
                                        , ev_sigla_estado  in  estado.sigla_estado%type )
@@ -4154,7 +4154,7 @@ end fkg_compara_ibge_com_sigla_uf;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna a sigla do estado conforme o ID
+-- funçõo retorna a sigla do estado conforme o ID
 
 function fkg_Estado_id_sigla ( en_estado_id in estado.id%type )
          return estado.sigla_estado%type
@@ -4184,7 +4184,7 @@ end fkg_Estado_id_sigla;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna "true" se o valor é númerico ou "false" se não é
+-- funçõo retorna "true" se o valor ï¿½ nï¿½merico ou "false" se nï¿½o ï¿½
 
 function fkg_is_numerico ( ev_valor in varchar2 )
          return boolean
@@ -4206,7 +4206,7 @@ end fkg_is_numerico;
 -------------------------------------------------------------------------------------------------------
 
 
--- Função retorna "true" se for uma NFe de emissão própria já autorizada, cancelada, denegada ou inutulizada, não pode ser re-integrada
+-- funçõo retorna "true" se for uma NFe de emissï¿½o prï¿½pria jï¿½ autorizada, cancelada, denegada ou inutulizada, nï¿½o pode ser re-integrada
 function fkg_cte_nao_integrar ( en_conhectransp_id in             Conhec_Transp.id%TYPE )
          return boolean
 is
@@ -4220,7 +4220,7 @@ begin
      from conhec_transp   cf
         , mod_fiscal      mf
     where cf.id           = en_conhectransp_id
-      and cf.dm_ind_emit  = 0 -- Emissão Própria
+      and cf.dm_ind_emit  = 0 -- Emissï¿½o Prï¿½pria
       and ( cf.dm_st_proc in ( 4, 6, 7, 8 ) or (cf.dm_st_proc = 5 and cf.cod_msg = 204) )
       and mf.id           = cf.modfiscal_id
       and mf.cod_mod      in ('57', '67');
@@ -4237,7 +4237,7 @@ end fkg_cte_nao_integrar;
 --
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna a Sigla do Tipo de Imposto através do ID
+--| funçõo retorna a Sigla do Tipo de Imposto atravï¿½s do ID
 
 function fkg_Tipo_Imp_Sigla ( en_id  in Tipo_Imposto.id%TYPE )
          return Tipo_Imposto.Sigla%TYPE
@@ -4263,7 +4263,7 @@ end fkg_Tipo_Imp_Sigla;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o Código da tabela Cod_ST através do ID
+--| funçõo retorna o Cï¿½digo da tabela Cod_ST atravï¿½s do ID
 
 function fkg_Cod_ST_cod ( en_id_st      in Cod_ST.id%TYPE )
          return Cod_ST.cod_st%TYPE
@@ -4289,7 +4289,7 @@ end fkg_Cod_ST_cod;
 
 -------------------------------------------------------------------------------------------------------
 
--- função valida o formato da hora, passa o hora e o formato
+-- funçõo valida o formato da hora, passa o hora e o formato
 function fkg_vld_formato_hora ( ev_hora     in varchar2
                               , ev_formato  in varchar2 )
                               return varchar2
@@ -4319,7 +4319,7 @@ exception
 end fkg_vld_formato_hora;
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o DM_ST_PROC (Situação do Processo) do Conhecimento de Transporte
+-- funçõo retorna o DM_ST_PROC (Situaï¿½ï¿½o do Processo) do Conhecimento de Transporte
 
 function fkg_st_proc_ct ( en_conhectransp_id  in Conhec_Transp.id%TYPE )
          return Conhec_Transp.dm_st_proc%TYPE
@@ -4349,7 +4349,7 @@ end fkg_st_proc_ct;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna "1" se o conhecimento de transporte está inutilizado e "0" se não está
+--| funçõo retorna "1" se o conhecimento de transporte estï¿½ inutilizado e "0" se nï¿½o estï¿½
 
 function fkg_ct_inutiliza ( en_empresa_id  in Empresa.id%TYPE
                           , ev_cod_mod     in Mod_Fiscal.cod_mod%TYPE
@@ -4383,7 +4383,7 @@ end fkg_ct_inutiliza;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna a Chave do Conhecimento de Transporte
+-- funçõo retorna a Chave do Conhecimento de Transporte
 
 function fkg_chave_ct ( en_conhectransp_id   in      Conhec_Transp.id%TYPE )
          return Conhec_Transp.nro_chave_cte%TYPE
@@ -4413,7 +4413,7 @@ end fkg_chave_ct;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna "true" se a CT-e existe e "false" se não existe
+--| funçõo retorna "true" se a CT-e existe e "false" se nï¿½o existe
 
 function fkg_existe_cte ( en_conhec_transp  in Conhec_Transp.id%TYPE )
          return boolean
@@ -4439,7 +4439,7 @@ end fkg_existe_cte;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID do Conhec. de Transp. a partir do número da chave de acesso
+-- funçõo retorna o ID do Conhec. de Transp. a partir do nï¿½mero da chave de acesso
 
 function fkg_conhectransp_id_pela_chave ( en_nro_chave_cte  in Conhec_Transp.nro_chave_cte%TYPE )
          return Conhec_Transp.id%TYPE
@@ -4469,7 +4469,7 @@ end fkg_conhectransp_id_pela_chave;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Item, conforme ID Empresa, para Integração do Item por Open Interface
+--| funçõo retorna o ID da tabela Item, conforme ID Empresa, para Integraï¿½ï¿½o do Item por Open Interface
 
 function fkg_item_id ( en_empresa_id in empresa.id%type
                      , ev_cod_item   in item.cod_item%type )
@@ -4502,7 +4502,7 @@ end fkg_item_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Item, conforme ID Empresa
+--| funçõo retorna o ID da tabela Item, conforme ID Empresa
 
 function fkg_Item_id_conf_empr ( en_empresa_id  in  empresa.id%type
                                , ev_cod_item    in  Item.cod_item%TYPE )
@@ -4598,10 +4598,10 @@ exception
 end fkg_Item_id_conf_empr;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna o Tipo do CT-e conforme o Id do CT-e.
+--| funçõo retorna o Tipo do CT-e conforme o Id do CT-e.
 --| Onde: 0 - CT-e Normal;
 --|       1 - CT-e de Complemento de Valores;
---|       2 - CT-e de Anulação de Valores;
+--|       2 - CT-e de Anulaï¿½ï¿½o de Valores;
 --|       3 - CT-e Substituto
 
 function fkg_dm_tp_cte ( en_conhectransp_id   in   Conhec_Transp.Id%TYPE )
@@ -4628,7 +4628,7 @@ end fkg_dm_tp_cte;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna a data de emissão do conhecimento de transporte
+--| funçõo retorna a data de emissï¿½o do conhecimento de transporte
 
 function fkg_dt_emiss_ct ( en_conhectransp_id in Conhec_Transp.id%TYPE )
          return Conhec_Transp.dt_hr_emissao%TYPE
@@ -4658,7 +4658,7 @@ end fkg_dt_emiss_ct;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o valor de prestação do serviço através do ID do conhecimento de transporte
+--| funçõo retorna o valor de prestaï¿½ï¿½o do serviï¿½o atravï¿½s do ID do conhecimento de transporte
 
 function fkg_vl_valor_prest_ct ( en_conhectransp_id in Conhec_Transp.id%TYPE )
          return Conhec_Transp_Vlprest.vl_prest_serv%TYPE
@@ -4688,7 +4688,7 @@ end fkg_vl_valor_prest_ct;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o valor de ICMS através do ID do conhecimento de transporte
+--| funçõo retorna o valor de ICMS atravï¿½s do ID do conhecimento de transporte
 
 function fkg_vl_imp_trib_ct ( en_conhectransp_id in Conhec_Transp.id%TYPE )
          return Conhec_Transp_Imp.vl_imp_trib%TYPE
@@ -4721,7 +4721,7 @@ end fkg_vl_imp_trib_ct;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna true se o Ct-e a ser Anulado ou Substituido já foi anulado ou substtuido anteriormente.
+--| funçõo retorna true se o Ct-e a ser Anulado ou Substituido jï¿½ foi anulado ou substtuido anteriormente.
 
 function fkg_val_ref_anul ( en_conhectransp_id in Conhec_Transp.id%TYPE
                           , ev_nro_chave_cte_anul in conhec_transp_anul.nro_chave_cte_anul%TYPE )
@@ -4732,7 +4732,7 @@ is
 
 begin
    vn_qtde_anul := null;
-   -- Verifica se a chave de Anulação já foi anulada anteriormente.
+   -- Verifica se a chave de Anulaï¿½ï¿½o jï¿½ foi anulada anteriormente.
    if nvl(en_conhectransp_id,0) > 0 and nvl(vn_qtde_anul, 0) = 0 then
 
       select 1
@@ -4748,7 +4748,7 @@ begin
 
    end if;
 
-   -- Verifica se a chave de Anulação já foi substituida anteriormente.
+   -- Verifica se a chave de Anulaï¿½ï¿½o jï¿½ foi substituida anteriormente.
    if nvl(en_conhectransp_id,0) > 0 and nvl(vn_qtde_anul, 0) = 0 then
 
      select 1
@@ -4773,7 +4773,7 @@ end fkg_val_ref_anul;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna a Forma de emissão do CT-e a partir do ID.
+-- funçõo retorna a Forma de emissï¿½o do CT-e a partir do ID.
 
 function fkg_dmformaemiss_pelo_id ( en_conhectransp_id  in Conhec_Transp.id%TYPE )
          return Conhec_Transp.dm_forma_emiss%TYPE
@@ -4803,7 +4803,7 @@ end fkg_dmformaemiss_pelo_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna true se o Ct-e a ser Substituido já foi substtuido anteriormente.
+--| funçõo retorna true se o Ct-e a ser Substituido jï¿½ foi substtuido anteriormente.
 
 function fkg_val_ref_cte_sub ( en_conhectransp_id   in Conhec_Transp.id%TYPE
                              , ev_nro_chave_cte_sub in Conhec_Transp_Subst.nro_chave_cte_sub%TYPE )
@@ -4814,7 +4814,7 @@ is
 
 begin
    vn_qtde_sub := null;
-   -- Verifica se a chave de Substiuição já foi Substituido anteriormente.
+   -- Verifica se a chave de Substiuiï¿½ï¿½o jï¿½ foi Substituido anteriormente.
    if nvl(en_conhectransp_id,0) > 0 and nvl(vn_qtde_sub, 0) = 0 then
 
       select 1
@@ -4830,7 +4830,7 @@ begin
 
    end if;
 
-   -- Verifica se a chave de Substituição já foi anulada anteriormente.
+   -- Verifica se a chave de Substituiï¿½ï¿½o jï¿½ foi anulada anteriormente.
    if nvl(en_conhectransp_id,0) > 0 and nvl(vn_qtde_sub, 0) = 0 then
 
      select 1
@@ -4858,7 +4858,7 @@ end fkg_val_ref_cte_sub;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna CNPJ do Remente/Destinatário/Expedidor/recebedor/tomador através do Id do Conhecimento de Transporte
+--| funçõo retorna CNPJ do Remente/Destinatï¿½rio/Expedidor/recebedor/tomador atravï¿½s do Id do Conhecimento de Transporte
 --| E parametro vv_pessoa onde assumir: R - Remetente, D- Destinarario, E - Expedidor, RC - Recebedor, T - Tomador, EM - Emitente
 
 function fkg_cnpj_pelo_id ( en_conhectransp_id  in Conhec_Transp.id%TYPE
@@ -4929,7 +4929,7 @@ end fkg_cnpj_pelo_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna IE do Remente/Destinatário/Expedidor/recebedor/tomador através do Id do Conhecimento de Transporte
+--| funçõo retorna IE do Remente/Destinatï¿½rio/Expedidor/recebedor/tomador atravï¿½s do Id do Conhecimento de Transporte
 --| E parametro vv_pessoa onde assumir: R - Remetente, D- Destinarario, E - Expedidor, RC - Recebedor, T - Tomador, EM - Emitente
 
 function fkg_ie_pelo_id ( en_conhectransp_id  in Conhec_Transp.id%TYPE
@@ -5000,7 +5000,7 @@ end fkg_ie_pelo_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna UF de Início da Prestação do Ct-e através do Id do Conhecimento de Transporte
+--| funçõo retorna UF de Inï¿½cio da Prestaï¿½ï¿½o do Ct-e atravï¿½s do Id do Conhecimento de Transporte
 
 function fkg_siglaufini_pelo_id ( en_conhectransp_id  in Conhec_Transp.id%TYPE )
          return conhec_transp.sigla_uf_ini%TYPE
@@ -5030,7 +5030,7 @@ end fkg_siglaufini_pelo_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna UF de Final da Prestação do Ct-e através do Id do Conhecimento de Transporte
+--| funçõo retorna UF de Final da Prestaï¿½ï¿½o do Ct-e atravï¿½s do Id do Conhecimento de Transporte
 
 function fkg_siglauffim_pelo_id ( en_conhectransp_id  in Conhec_Transp.id%TYPE )
          return conhec_transp.sigla_uf_fim%TYPE
@@ -5060,8 +5060,8 @@ end fkg_siglauffim_pelo_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Se foi informado o Ct-e de Anulação no grupo "Tomador não é contribuinte de do ICMS", o Ct-e de anulação deve existir.
---| A função retorna True se existir e False se não existir
+--| Se foi informado o Ct-e de Anulaï¿½ï¿½o no grupo "Tomador nï¿½o ï¿½ contribuinte de do ICMS", o Ct-e de anulaï¿½ï¿½o deve existir.
+--| A funçõo retorna True se existir e False se nï¿½o existir
 
 function fkg_val_ref_cte_anul ( en_conhectransp_id   in Conhec_Transp.id%TYPE
                               , ev_nro_chave_cte_anul in Conhec_Transp_anul.nro_chave_cte_anul%TYPE )
@@ -5095,7 +5095,7 @@ end fkg_val_ref_cte_anul;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o Cód. IBGE do Estado conformer a sigla do Estado.
+--| funçõo retorna o Cï¿½d. IBGE do Estado conformer a sigla do Estado.
 
 function fkg_Estado_ibge_sigla ( ev_sigla_estado  in Estado.sigla_estado%TYPE )
          return Estado.ibge_estado%TYPE
@@ -5120,7 +5120,7 @@ exception
 end fkg_Estado_ibge_sigla;
 
 -------------------------------------------------------------------------------------------------------
---| Verifica se a empresa Utiliza Endereço de Faturamento do destinatário na emissão da NFe
+--| Verifica se a empresa Utiliza Endereï¿½o de Faturamento do destinatï¿½rio na emissï¿½o da NFe
 function fkg_empresa_util_end_fat_nfe ( en_empresa_id  in empresa.id%type )
          return empresa.dm_util_end_fat_nfe%type
 is
@@ -5149,7 +5149,7 @@ end fkg_empresa_util_end_fat_nfe;
 
 -------------------------------------------------------------------------------------------------------
 
---| Verifica se a empresa imprime o endereço de entrega na DANFE
+--| Verifica se a empresa imprime o endereï¿½o de entrega na DANFE
 function fkg_empresa_impr_end_entr_nfe ( en_empresa_id  in empresa.id%type )
          return empresa.dm_impr_end_entr_nfe%type
 is
@@ -5178,7 +5178,7 @@ end fkg_empresa_impr_end_entr_nfe;
 
 -------------------------------------------------------------------------------------------------------
 
---| Verifica se a empresa imprime o endereço de Retirada na DANFE
+--| Verifica se a empresa imprime o endereï¿½o de Retirada na DANFE
 function fkg_empresa_impr_end_retir_nfe ( en_empresa_id  in empresa.id%type )
          return empresa.dm_impr_end_entr_nfe%type
 is
@@ -5208,7 +5208,7 @@ end fkg_empresa_impr_end_retir_nfe;
 
 -------------------------------------------------------------------------------------------------------
 
---| Verifica se a empresa valida a unidade de médida
+--| Verifica se a empresa valida a unidade de mï¿½dida
 function fkg_empresa_valid_unid_med ( en_empresa_id  in empresa.id%type )
          return empresa.dm_valid_unid_med%type
 is
@@ -5237,7 +5237,7 @@ end fkg_empresa_valid_unid_med;
 
 -------------------------------------------------------------------------------------------------------
 
---| Procedimento que acetar conforme o máximo ID de cada tabela
+--| Procedimento que acetar conforme o mï¿½ximo ID de cada tabela
 
 procedure pkb_acerta_sequence
 is
@@ -5249,7 +5249,7 @@ is
    cursor c_seq_tab is
    select st.*
      from seq_tab st
-    where st.table_name <> 'NOTA_FISCAL' -- Caso seja necessário atualizar a sequence da tabela nota_fiscal, o processo deverá ser específico e com atenção aos clientes de ERP/SGI.
+    where st.table_name <> 'NOTA_FISCAL' -- Caso seja necessï¿½rio atualizar a sequence da tabela nota_fiscal, o processo deverï¿½ ser especï¿½fico e com atenï¿½ï¿½o aos clientes de ERP/SGI.
     order by st.id;
 
 begin
@@ -5285,8 +5285,8 @@ end pkb_acerta_sequence;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função verifica se o objeto esta sendo utilizado na integração
--- retorna 0 caso não esteja
+--| funçõo verifica se o objeto esta sendo utilizado na integraï¿½ï¿½o
+-- retorna 0 caso nï¿½o esteja
 -- retorna 1 caso esteja
 
 function fkg_existe_obj_util_integr ( ev_obj_name in obj_util_integr.obj_name%type )
@@ -5317,7 +5317,7 @@ end fkg_existe_obj_util_integr;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna 0 Se a empresa Não valida totais da Nota Fiscal
+--| funçõo retorna 0 Se a empresa Nï¿½o valida totais da Nota Fiscal
 --| ou 1 Se e empresa valida totais da Nota Fiscal
 function fkg_valid_total_nfe_empresa ( en_empresa_id in empresa.id%type )
          return empresa.dm_valid_total_nfe%type
@@ -5347,7 +5347,7 @@ end fkg_valid_total_nfe_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna a sitação da empresa: 0-Inativa ou 1-Ativa
+--| funçõo retorna a sitaï¿½ï¿½o da empresa: 0-Inativa ou 1-Ativa
 
 function fkg_empresa_id_situacao ( en_empresa_id  in empresa.id%type )
          return empresa.dm_situacao%type
@@ -5377,7 +5377,7 @@ end fkg_empresa_id_situacao;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna a sitação da empresa: 0-Inativa ou 1-Ativa
+--| funçõo retorna a sitaï¿½ï¿½o da empresa: 0-Inativa ou 1-Ativa
 
 function fkg_empresa_id_certificado_ok ( en_empresa_id  in empresa.id%type )
          return boolean
@@ -5443,7 +5443,7 @@ end fkg_empresa_id_certificado_ok;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o tipo de inclusão da pessoa
+--| funçõo retorna o tipo de inclusï¿½o da pessoa
 
 function fkg_pessoa_id_dm_tipo_incl ( en_pessoa_id  in pessoa.id%type )
          return pessoa.dm_tipo_incl%type
@@ -5473,7 +5473,7 @@ end fkg_pessoa_id_dm_tipo_incl;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna "true" se o Código do IBGE da cidade pertente ao estado
+-- funçõo retorna "true" se o Cï¿½digo do IBGE da cidade pertente ao estado
 -- e "false" se estiver incorreto
 function fkg_ibge_cidade_por_sigla_uf ( en_ibge_cidade   in  cidade.ibge_cidade%type
                                       , ev_sigla_estado  in  estado.sigla_estado%type )
@@ -5503,7 +5503,7 @@ end fkg_ibge_cidade_por_sigla_uf;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna a Versão válida do WSDL da NFE
+-- funçõo retorna a Versï¿½o vï¿½lida do WSDL da NFE
 function fkg_versaowsdl_nfe_estado ( en_estado_id in estado.id%type )
          return versao_wsdl.cd%type
 is
@@ -5539,12 +5539,12 @@ end fkg_versaowsdl_nfe_estado;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o Tipo Modal através do ID do Ct-e
---| Onde: 01-Rodoviário;
---| 02-Aéreo;
---| 03-Aquaviário;
---| 04-Ferroviário;
---| 05-Dutoviário
+--| funçõo retorna o Tipo Modal atravï¿½s do ID do Ct-e
+--| Onde: 01-Rodoviï¿½rio;
+--| 02-Aï¿½reo;
+--| 03-Aquaviï¿½rio;
+--| 04-Ferroviï¿½rio;
+--| 05-Dutoviï¿½rio
 function fkg_dm_modal ( en_conhectransp_id   in   Conhec_Transp.Id%TYPE )
          return Conhec_Transp.dm_modal%TYPE
 is
@@ -5568,7 +5568,7 @@ exception
 end fkg_dm_modal;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna True se existir informações referente a produtos perigosos.
+--| funçõo retorna True se existir informaï¿½ï¿½es referente a produtos perigosos.
 
 function fkg_valid_prod_peri ( en_conhectransp_id   in   Conhec_Transp.Id%TYPE )
          return boolean
@@ -5597,7 +5597,7 @@ exception
 end fkg_valid_prod_peri;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna a quantidade de registros de lacres aquaviários por CT-e Aquaviário
+--| funçõo retorna a quantidade de registros de lacres aquaviï¿½rios por CT-e Aquaviï¿½rio
 
 function fkg_valid_lacre_aquav ( en_conhectranspaquav_id   in   conhec_transp_aquav.id%TYPE )
          return number
@@ -5622,7 +5622,7 @@ exception
 end fkg_valid_lacre_aquav;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna a quantidade de registros de Ordens de Coleta associados ao CT-e Rodoviário
+--| funçõo retorna a quantidade de registros de Ordens de Coleta associados ao CT-e Rodoviï¿½rio
 
 function fkg_valid_ctrodo_occ ( en_conhectransprodo_id in ctrodo_occ.conhectransprodo_id%TYPE )
          return number
@@ -5647,7 +5647,7 @@ exception
 end fkg_valid_ctrodo_occ;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna a quantidade de registros de Dados dos Veículos ao CT-e Rodoviário
+--| funçõo retorna a quantidade de registros de Dados dos Veï¿½culos ao CT-e Rodoviï¿½rio
 
 function fkg_valid_ctrodo_veic ( en_conhectransprodo_id in ctrodo_occ.conhectransprodo_id%TYPE )
          return number
@@ -5672,7 +5672,7 @@ exception
 end fkg_valid_ctrodo_veic;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna a quantidade de registros de vale pedágio ao CT-e Rodoviário
+--| funçõo retorna a quantidade de registros de vale pedï¿½gio ao CT-e Rodoviï¿½rio
 
 function fkg_valid_ctrodo_valeped ( en_conhectransprodo_id in ctrodo_occ.conhectransprodo_id%TYPE )
          return number
@@ -5697,7 +5697,7 @@ exception
 end fkg_valid_ctrodo_valeped;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna True se existir informações sobre os veículos e False caso não houver.
+--| funçõo retorna True se existir informaï¿½ï¿½es sobre os veï¿½culos e False caso nï¿½o houver.
 
 function fkg_valid_ctrodo_veic_prop ( en_ctrodoveic_id in ctrodo_veic_prop.ctrodoveic_id%TYPE )
          return boolean
@@ -5726,7 +5726,7 @@ exception
 end fkg_valid_ctrodo_veic_prop;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna True se existir informações no Grupo Informações do(s) Motorista(s)
+--| funçõo retorna True se existir informaï¿½ï¿½es no Grupo Informaï¿½ï¿½es do(s) Motorista(s)
 
 function fkg_valid_ctrodo_moto ( en_conhectransprodo_id in ctrodo_moto.conhectransprodo_id%TYPE )
          return boolean
@@ -5755,8 +5755,8 @@ exception
 end fkg_valid_ctrodo_moto;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna o tipo de serviço do conhecimento de transporte
---| Onde: 0 - Normal; 1 - Subcontratação; 2 - Redespacho; 3 - Redespacho Intermediario
+--| funçõo retorna o tipo de serviï¿½o do conhecimento de transporte
+--| Onde: 0 - Normal; 1 - Subcontrataï¿½ï¿½o; 2 - Redespacho; 3 - Redespacho Intermediario
 
 function fkg_dm_tp_serv ( en_conhectransp_id in Conhec_Transp.id%TYPE )
          return Conhec_Transp.dm_tp_serv%TYPE
@@ -5786,7 +5786,7 @@ end fkg_dm_tp_serv;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da tabela registro_in86
+-- funçõo retorna o ID da tabela registro_in86
 
 function fkg_registroin86_id ( en_cd  in Registro_In86.cod%TYPE )
          return Registro_In86.id%TYPE
@@ -5811,7 +5811,7 @@ exception
 end fkg_registroin86_id;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna cod_mod_ref através do dm_tp_cte e ID do CTE
+-- funçõo retorna cod_mod_ref atravï¿½s do dm_tp_cte e ID do CTE
 
 function fkg_ct_ref_moddoc ( en_conhectransp_id  in Conhec_Transp.id%TYPE
                            , en_dm_tp_cte        in Conhec_Transp.dm_tp_cte%TYPE )
@@ -5869,7 +5869,7 @@ exception
 end fkg_ct_ref_moddoc;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna serie_ref através do dm_tp_cte e ID do CTE
+-- funçõo retorna serie_ref atravï¿½s do dm_tp_cte e ID do CTE
 
 function fkg_ct_ref_serie ( en_conhectransp_id  in Conhec_Transp.id%TYPE
                           , en_dm_tp_cte        in Conhec_Transp.dm_tp_cte%TYPE )
@@ -5928,7 +5928,7 @@ exception
 end fkg_ct_ref_serie;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna num_doc_ref, através do dm_tp_cte e ID do CTE
+-- funçõo retorna num_doc_ref, atravï¿½s do dm_tp_cte e ID do CTE
 
 function fkg_ct_ref_nro_nf ( en_conhectransp_id  in Conhec_Transp.id%TYPE
                            , en_dm_tp_cte        in Conhec_Transp.dm_tp_cte%TYPE )
@@ -5987,7 +5987,7 @@ exception
 end fkg_ct_ref_nro_nf;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna dt_doc_ref através do dm_tp_cte e ID do CTE
+-- funçõo retorna dt_doc_ref atravï¿½s do dm_tp_cte e ID do CTE
 
 function fkg_ct_ref_dtdoc ( en_conhectransp_id  in Conhec_Transp.id%TYPE
                         , en_dm_tp_cte        in Conhec_Transp.dm_tp_cte%TYPE)
@@ -6046,7 +6046,7 @@ exception
 end fkg_ct_ref_dtdoc;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna cod_part_ref através do dm_tp_cte e ID do CTE
+-- funçõo retorna cod_part_ref atravï¿½s do dm_tp_cte e ID do CTE
 
 function fkg_ct_ref_codpart ( en_conhectransp_id  in Conhec_Transp.id%TYPE
                             , en_dm_tp_cte        in Conhec_Transp.dm_tp_cte%TYPE )
@@ -6105,7 +6105,7 @@ end fkg_ct_ref_codpart;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento retornar dados do CTe referenciado, por meio de variáveis "out"
+-- Procedimento retornar dados do CTe referenciado, por meio de variï¿½veis "out"
 
 procedure pkb_dados_ct_ref ( en_conhectransp_id  in   Conhec_Transp.id%TYPE
                            , en_dm_tp_cte        in   Conhec_Transp.dm_tp_cte%TYPE
@@ -6165,7 +6165,7 @@ begin
             vv_cod_part       := null;
       end;
       --
-   elsif en_dm_tp_cte = 2 then    -- CT-e de Anulação de Valores
+   elsif en_dm_tp_cte = 2 then    -- CT-e de Anulaï¿½ï¿½o de Valores
       --
       begin
          --
@@ -6243,11 +6243,11 @@ exception
 end pkb_dados_ct_ref;
 
 -------------------------------------------------------------------------------------------------------
---| Função para formatar campos varchar2
---| Onde: ev_campo é o contéudo que será formatado
---|       en_qtdecasa é a quantidade de casas
+--| funçõo para formatar campos varchar2
+--| Onde: ev_campo ï¿½ o contï¿½udo que serï¿½ formatado
+--|       en_qtdecasa ï¿½ a quantidade de casas
 --|       ev_caracter o tipo de caracte
---|       ev_lado é o lado utilizar 'D'para direita e 'E' para esquerda
+--|       ev_lado ï¿½ o lado utilizar 'D'para direita e 'E' para esquerda
 
 function fkg_formatachar ( ev_campo    in varchar2
                          , ev_caracter in varchar2
@@ -6454,7 +6454,7 @@ exception
 end pkb_impostoct;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna DM_TIPO_PESSOA da tabela pessoa através do ID pessoa
+-- funçõo retorna DM_TIPO_PESSOA da tabela pessoa atravï¿½s do ID pessoa
 
 function fkg_pessoa_dmtipo_id ( en_pessoa_id  in Pessoa.id%TYPE )
          return Pessoa.dm_tipo_pessoa%TYPE
@@ -6483,7 +6483,7 @@ exception
 end fkg_pessoa_dmtipo_id;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna o IEST conforme o ID da pessoa
+--| funçõo retorna o IEST conforme o ID da pessoa
 
 function fkg_iest_pessoa_id ( en_pessoa_id in Pessoa.Id%type )
          return varchar2
@@ -6524,8 +6524,8 @@ exception
 end fkg_iest_pessoa_id;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna o cod_participante pelo id_empresa
---| Função retorna o código da empresa através do id empresa em que está relacionado.
+--| funçõo retorna o cod_participante pelo id_empresa
+--| funçõo retorna o cï¿½digo da empresa atravï¿½s do id empresa em que estï¿½ relacionado.
 
 function fkg_codpart_empresaid ( en_empresa_id in Empresa.Id%type )
          return varchar2
@@ -6557,7 +6557,7 @@ exception
 end fkg_codpart_empresaid;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna o Cod da tabela Mod_Fiscal através do id
+-- funçõo retorna o Cod da tabela Mod_Fiscal atravï¿½s do id
 
 function fkg_cod_mod_id ( en_modfiscal_id  in Mod_Fiscal.id%TYPE )
          return Mod_Fiscal.cod_mod%TYPE
@@ -6582,7 +6582,7 @@ exception
 end fkg_cod_mod_id;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna cod_nat pelo ID da NAT_oper
+--| funçõo retorna cod_nat pelo ID da NAT_oper
 
 function fkg_cod_nat_id ( en_natoper_id  in Nat_Oper.id%TYPE )
          return Nat_Oper.cod_nat%TYPE
@@ -6611,7 +6611,7 @@ exception
 end fkg_cod_nat_id;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna o cod_ncm através do ID NCM
+-- funçõo retorna o cod_ncm atravï¿½s do ID NCM
 
 function fkg_cod_ncm_id ( en_ncm_id  in Ncm.id%TYPE )
          return Ncm.cod_ncm%TYPE
@@ -6636,7 +6636,7 @@ exception
 end fkg_cod_ncm_id;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna o tpservico_id através relacionado a tabela item através do código do item
+-- funçõo retorna o tpservico_id atravï¿½s relacionado a tabela item atravï¿½s do cï¿½digo do item
 
 function fkg_Item_tpservico_conf_empr ( en_empresa_id  in  empresa.id%type
                                       , ev_cod_item    in  Item.cod_item%TYPE )
@@ -6692,7 +6692,7 @@ end fkg_Item_tpservico_conf_empr;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o Cod do Serviço através do ID da tabela Tipo_Servico
+-- funçõo retorna o Cod do Serviï¿½o atravï¿½s do ID da tabela Tipo_Servico
 
 function fkg_Tipo_Servico_cod ( en_tpservico_id  in Tipo_Servico.id%TYPE )
          return Tipo_Servico.cod_lst%TYPE
@@ -6717,7 +6717,7 @@ exception
 end fkg_Tipo_Servico_cod;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna a Desc do Serviço através do ID da tabela Tipo_Servico
+-- funçõo retorna a Desc do Serviï¿½o atravï¿½s do ID da tabela Tipo_Servico
 
 function fkg_Tipo_Servico_desc ( en_tpservico_id  in Tipo_Servico.id%TYPE )
          return Tipo_Servico.descr%TYPE
@@ -6742,7 +6742,7 @@ exception
 end fkg_Tipo_Servico_desc;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna a Data de Inclusão da tabela alter_pessoa através do Pessoa_id
+-- funçõo retorna a Data de Inclusï¿½o da tabela alter_pessoa atravï¿½s do Pessoa_id
 
 function fkg_dt_alt_pessoa_id ( en_pessoa_id  in Pessoa.id%TYPE
                               , ed_data       in date )
@@ -6773,7 +6773,7 @@ exception
 end fkg_dt_alt_pessoa_id;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna a Data de Inclusão da tabela alter_item através do item_id
+-- funçõo retorna a Data de Inclusï¿½o da tabela alter_item atravï¿½s do item_id
 
 function fkg_dt_alt_item_id ( en_item_id  in Item.id%TYPE
                             , ed_data     in date )
@@ -6804,7 +6804,7 @@ exception
 end fkg_dt_alt_item_id;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna o código da versão da In que será exportada. Através do ID  disponibilizado na abertura_in86
+-- funçõo retorna o cï¿½digo da versï¿½o da In que serï¿½ exportada. Atravï¿½s do ID  disponibilizado na abertura_in86
 
 function fkg_cod_in86_id ( en_versaoin86_id  in versao_in86.id%TYPE)
          return versao_in86.cd%TYPE
@@ -6833,7 +6833,7 @@ exception
 end fkg_cod_in86_id;
 
 -------------------------------------------------------------------------------------------------------
- --| Função retorna o CNPJ ou CPF conforme o ID da pessoa
+ --| funçõo retorna o CNPJ ou CPF conforme o ID da pessoa
 
 function fkg_cnpjcpf_pessoa_id ( en_pessoa_id in Pessoa.Id%type )
          return varchar2
@@ -6885,7 +6885,7 @@ exception
 end fkg_cnpjcpf_pessoa_id;
 
 -------------------------------------------------------------------------------------------------------
- --| Função retorna o sigla_estado que está relacionado ao pessoa_id
+ --| funçõo retorna o sigla_estado que estï¿½ relacionado ao pessoa_id
 
 function fkg_siglaestado_pessoaid ( en_pessoa_id in Pessoa.Id%type )
          return varchar2
@@ -6918,7 +6918,7 @@ exception
 end fkg_siglaestado_pessoaid;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna o Inscrição Estadual conforme o ID da pessoa
+--| funçõo retorna o Inscriï¿½ï¿½o Estadual conforme o ID da pessoa
 
 function fkg_ie_pessoa_id ( en_pessoa_id in Pessoa.Id%type )
          return varchar2
@@ -6960,7 +6960,7 @@ end fkg_ie_pessoa_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| função retornar o valor do campo DM_PERM_EXP ID do País.
+--| funçõo retornar o valor do campo DM_PERM_EXP ID do Paï¿½s.
 function fkg_perm_exp_pais_id  ( en_pais_id in pais.id%type )
          return pais.dm_perm_exp%type
 is
@@ -6989,8 +6989,8 @@ end fkg_perm_exp_pais_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna 0 Se a empresa Não valida totais entre as duplicatas, cobraçãs e total da Nota Fiscal
---| ou 1 Se e empresa valida totais entre as duplicatas, cobraçãs e total da Nota Fiscal
+--| funçõo retorna 0 Se a empresa Nï¿½o valida totais entre as duplicatas, cobraï¿½ï¿½s e total da Nota Fiscal
+--| ou 1 Se e empresa valida totais entre as duplicatas, cobraï¿½ï¿½s e total da Nota Fiscal
 function fkg_valid_cobr_nf_empresa ( en_empresa_id in empresa.id%type )
          return empresa.dm_valid_cobr_nf%type
 is
@@ -7018,7 +7018,7 @@ exception
 end fkg_valid_cobr_nf_empresa;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna o id da empresa através do ID da Nota Fiscal
+--| funçõo retorna o id da empresa atravï¿½s do ID da Nota Fiscal
 function fkg_busca_empresa_nf ( en_notafiscal_id in Nota_Fiscal.id%type )
          return Empresa.id%type
 is
@@ -7047,7 +7047,7 @@ end fkg_busca_empresa_nf;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o id_erp do usuário através do ID do usuário
+--| funçõo retorna o id_erp do usuï¿½rio atravï¿½s do ID do usuï¿½rio
 function fkg_id_erp_usuario_id ( en_usuario_id in neo_usuario.id%type )
          return neo_usuario.id_erp%type
 is
@@ -7076,7 +7076,7 @@ end fkg_id_erp_usuario_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o cd do Cfop
+-- funçõo retorna o cd do Cfop
 
 function fkg_cfop_cd ( en_cfop_id  in Cfop.id%TYPE )
          return Cfop.cd%TYPE
@@ -7102,7 +7102,7 @@ end fkg_cfop_cd;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da tabela Plano de Conta
+-- funçõo retorna o ID da tabela Plano de Conta
 /*
 function fkg_Plano_Conta_id ( ev_cod_cta    in Plano_Conta.cod_cta%TYPE
                             , en_empresa_id in Plano_Conta.empresa_id%TYPE)
@@ -7187,11 +7187,11 @@ begin
          when no_data_found then
             vn_planoconta_id := null;
          when others then
-            raise_application_error(-20101, 'Problemas ao recuperar identificador do plano de contas (dados iguais aos parâmetros), (cod='||ev_cod_cta||
+            raise_application_error(-20101, 'Problemas ao recuperar identificador do plano de contas (dados iguais aos parï¿½metros), (cod='||ev_cod_cta||
                                             ' empresa_id='||en_empresa_id||'). Erro = '||sqlerrm);
       end;
       --
-      if vn_planoconta_id is null then -- verificar o código da conta eliminando a máscara
+      if vn_planoconta_id is null then -- verificar o cï¿½digo da conta eliminando a mï¿½scara
          --
          begin
             select pc.id
@@ -7203,7 +7203,7 @@ begin
             when no_data_found then
                vn_planoconta_id := null;
             when others then
-               raise_application_error(-20101, 'Problemas ao recuperar identificador do plano de contas (conta sem máscara), (cod='||ev_cod_cta||
+               raise_application_error(-20101, 'Problemas ao recuperar identificador do plano de contas (conta sem mï¿½scara), (cod='||ev_cod_cta||
                                                ' empresa_id='||en_empresa_id||'). Erro = '||sqlerrm);
          end;
          --
@@ -7231,11 +7231,11 @@ begin
                   when no_data_found then
                      vn_planoconta_id := null;
                   when others then
-                     raise_application_error(-20101, 'Problemas ao recuperar identificador do plano de contas (dados iguais aos parâmetros), (cod='||
+                     raise_application_error(-20101, 'Problemas ao recuperar identificador do plano de contas (dados iguais aos parï¿½metros), (cod='||
                                                      ev_cod_cta||' matriz_empresa_id='||en_empresa_id||'). Erro = '||sqlerrm);
                end;
                --
-               if vn_planoconta_id is null then -- verificar o código da conta eliminando a máscara
+               if vn_planoconta_id is null then -- verificar o cï¿½digo da conta eliminando a mï¿½scara
                   --
                   begin
                      select pc.id
@@ -7247,7 +7247,7 @@ begin
                      when no_data_found then
                         vn_planoconta_id := null;
                      when others then
-                        raise_application_error(-20101, 'Problemas ao recuperar identificador do plano de contas (conta sem máscara), (cod='||ev_cod_cta||
+                        raise_application_error(-20101, 'Problemas ao recuperar identificador do plano de contas (conta sem mï¿½scara), (cod='||ev_cod_cta||
                                                         ' matriz_empresa_id='||en_empresa_id||'). Erro = '||sqlerrm);
                   end;
                   --
@@ -7271,7 +7271,7 @@ exception
 end fkg_plano_conta_id;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna o ID da tabela Centro de Custo
+-- funçõo retorna o ID da tabela Centro de Custo
 
 function fkg_Centro_Custo_id ( ev_cod_ccus    in Centro_Custo.cod_ccus%TYPE
                              , en_empresa_id  in Centro_Custo.empresa_id%TYPE )
@@ -7329,7 +7329,7 @@ end fkg_Centro_Custo_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função Retorna o Código da Observação do Lançamento Fiscal
+--| funçõo Retorna o Cï¿½digo da Observaï¿½ï¿½o do Lanï¿½amento Fiscal
 
 function fkg_cd_obs_lancto_fiscal ( en_obslanctofiscal_id in obs_lancto_fiscal.id%type )
          return obs_lancto_fiscal.cod_obs%type
@@ -7358,7 +7358,7 @@ exception
 end fkg_cd_obs_lancto_fiscal;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna o Sigla da tabela Unidade através do id.
+-- funçõo retorna o Sigla da tabela Unidade atravï¿½s do id.
 
 function fkg_Unidade_sigla ( en_unidade_id  in Unidade.id%TYPE )
          return Unidade.sigla_unid%TYPE
@@ -7387,7 +7387,7 @@ exception
 end fkg_Unidade_sigla;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna o Código da tabela Item
+--| funçõo retorna o Cï¿½digo da tabela Item
 
 function fkg_Item_cod ( en_item_id  in Item.id%TYPE )
          return Item.cod_item%TYPE
@@ -7417,7 +7417,7 @@ end fkg_Item_cod;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Infor_Comp_Dcto_Fiscal
+--| funçõo retorna o ID da tabela Infor_Comp_Dcto_Fiscal
 
 function fkg_Infor_Comp_Dcto_Fiscal_cod( en_inforcompdctofiscal_id  in Infor_Comp_Dcto_Fiscal.id%TYPE )
          return Infor_Comp_Dcto_Fiscal.cod_infor%TYPE
@@ -7447,7 +7447,7 @@ end fkg_Infor_Comp_Dcto_Fiscal_cod;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função verifica se a data é valida
+--| funçõo verifica se a data ï¿½ valida
 
 function fkg_data_valida ( ev_dt       in  varchar2
                          , ev_formato  in  varchar2 )
@@ -7472,7 +7472,7 @@ end fkg_data_valida;
 
 -------------------------------------------------------------------------------------------------------
 
---| Procedimento cria usuário
+--| Procedimento cria usuï¿½rio
 
 procedure pkb_insere_usuario ( en_multorg_id  in  mult_org.id%type
                              , ev_login       in  neo_usuario.login%type
@@ -7510,7 +7510,7 @@ begin
          --
          vn_fase := 3.1;
          --
-         return;  -- se achou o usuário então sai do procedimento
+         return;  -- se achou o usuï¿½rio entï¿½o sai do procedimento
          --
       else
          --
@@ -7523,7 +7523,7 @@ begin
       end if;
       --
       vn_fase := 4;
-      -- se não informou a senha, atribui o login como senha
+      -- se nï¿½o informou a senha, atribui o login como senha
       if trim(ev_senha) is null then
          --
          vn_fase := 4.1;
@@ -7555,7 +7555,7 @@ begin
                )
             VALUES
                ( vn_usuario_id
-               , trim(nvl(ev_nome, ev_login)) -- se não informou o nome atribui o login
+               , trim(nvl(ev_nome, ev_login)) -- se nï¿½o informou o nome atribui o login
                , trim(ev_login)
                , vv_senha
                , trim(ev_email)
@@ -7578,7 +7578,7 @@ end pkb_insere_usuario;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento bloqueia o usuário
+-- Procedimento bloqueia o usuï¿½rio
 
 procedure pkb_bloqueia_usuario ( ev_login    in  neo_usuario.login%type )
 is
@@ -7607,7 +7607,7 @@ end pkb_bloqueia_usuario;
 
 -------------------------------------------------------------------------------------------------------
 
--- Copia perfil de um usuário de origem para um usuário de destino
+-- Copia perfil de um usuï¿½rio de origem para um usuï¿½rio de destino
 
 procedure pkb_copia_perfil_usuario ( ev_login_origem   in  neo_usuario.login%type
                                    , ev_login_destino  in  neo_usuario.login%type
@@ -7642,7 +7642,7 @@ begin
          --
          vn_fase := 3;
          --
-         -- verifica se já existe
+         -- verifica se jï¿½ existe
          vn_qtde := 0;
          --
          begin
@@ -7675,7 +7675,7 @@ end pkb_copia_perfil_usuario;
 
 -------------------------------------------------------------------------------------------------------
 
---| Procedimento Copia Empresas de um usuário de origem para um usuário de destino
+--| Procedimento Copia Empresas de um usuï¿½rio de origem para um usuï¿½rio de destino
 
 procedure pkb_copia_empresa_usuario ( ev_login_origem   in  neo_usuario.login%type
                                     , ev_login_destino  in  neo_usuario.login%type
@@ -7706,7 +7706,7 @@ is
     order by ueuo.id;
    --
 begin
-   -- pega o ID do usuário de destino que já deve estar criado
+   -- pega o ID do usuï¿½rio de destino que jï¿½ deve estar criado
    vn_usuario_id_destino := pk_csf.fkg_usuario_id ( ev_login => ev_login_destino );
    --
    if nvl(vn_usuario_id_destino,0) > 0 then
@@ -7714,7 +7714,7 @@ begin
       for rec in c_emp loop
         exit when c_emp%notfound or (c_emp%notfound) is null;
         --
-        -- verifica se já existe a empresa para o usuário
+        -- verifica se jï¿½ existe a empresa para o usuï¿½rio
         vn_usuempr_id := 0;
         --
         begin
@@ -7751,11 +7751,11 @@ begin
            --
         end if;
         --
-        -- recupera as UO do usuário origem para o usuário destino
+        -- recupera as UO do usuï¿½rio origem para o usuï¿½rio destino
         for rec2 in c_uo(rec.EMPRESA_ID) loop
            exit when c_uo%notfound or (c_uo%notfound) is null;
            --
-           -- verifica se já existe UO para o usuário
+           -- verifica se jï¿½ existe UO para o usuï¿½rio
            vn_usuemprunidorg_id := 0;
            --
            begin
@@ -7807,7 +7807,7 @@ end pkb_copia_empresa_usuario;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retornar se existe o CPF/CNPJ para integração EDI
+--| funçõo retornar se existe o CPF/CNPJ para integraï¿½ï¿½o EDI
 
 function fkg_integr_edi ( en_multorg_id in param_integr_edi.multorg_id%type
                         , ev_cpf_cnpj   in param_integr_edi.cpf_cnpj%type
@@ -7832,7 +7832,7 @@ begin
       fetch c_param into vn_dummy;
       close c_param;
       --
-      -- se não econtrou tenta pela raiz do CNPJ
+      -- se nï¿½o econtrou tenta pela raiz do CNPJ
       if vn_dummy = 0 then
          --
          open c_param(substr(trim(ev_cpf_cnpj), 1, 8));
@@ -7863,7 +7863,7 @@ BEGIN
    --
    vi := 0;
    -- Remove os caracteres especiais.
-   vv_valor2 := nvl(ltrim(rtrim(translate(ev_string, 'ÇçåÅâÂãÃáÁàÀäÄêÊéÉèÈëËîÎíÍìÌïÏôÔÕõóÓòÒöÖûÛúÚùÙüÜÿŸýÝñÑÐ\ˆ“&¤¶¦æÆø×ƒØ¿®±¾½¼«»ðßµþÞ¯÷œ¸·"!#%¨*={}[]|<>:?ªº°§¹²³™š£¢¬´`~^¿¢€¥‰†‡„‹›¦ ¡•§·º…–—"''’'
+   vv_valor2 := nvl(ltrim(rtrim(translate(ev_string, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ƒØ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½Þ¯ï¿½ï¿½ï¿½ï¿½"!#%ï¿½*={}[]|<>:?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`~^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"''ï¿½'
                                                    , 'CcaAaAaAaAaAaAeEeEeEeEiIiIiIiIoOOooOoOoOuUuUuUuUyYyYnND'))), ' ');
    --
    vv_valor2 := REPLACE( vv_valor2, chr(9), '');  -- HT-Horizontal Tab
@@ -7879,7 +7879,7 @@ BEGIN
     vv_valor2 := REPLACE( vv_valor2, '\00BF', '');
     vv_valor2 := REPLACE( vv_valor2, '\00A9', '');
    --
-   -- Elimina os espaços entre as palavras
+   -- Elimina os espaï¿½os entre as palavras
    WHILE instr(vv_valor2, '  ') > 0
    LOOP
       vv_valor2 := REPLACE(vv_valor2, '  ', ' ');
@@ -7887,7 +7887,7 @@ BEGIN
    --
    vv_valor2 := REPLACE( vv_valor2, chr(10), ''); -- LF-Line Feed-Enter
    --
-   -- retira o CHR(10)/Enter/LF-Line Feed, do início do texto
+   -- retira o CHR(10)/Enter/LF-Line Feed, do inï¿½cio do texto
    while ascii(substr(vv_valor2,1,1)) = 10
    loop
       --
@@ -7903,7 +7903,7 @@ BEGIN
       --
    end loop;
    --
-   RETURN trim(vv_valor2); -- limpa os espaços do início e do fim da string
+   RETURN trim(vv_valor2); -- limpa os espaï¿½os do inï¿½cio e do fim da string
    --
 EXCEPTION
    WHEN OTHERS THEN
@@ -7915,7 +7915,7 @@ END fkg_limpa_acento;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna se o NCM obrigada a informação de medicamento para Nota Fiscal
+-- funçõo retorna se o NCM obrigada a informaï¿½ï¿½o de medicamento para Nota Fiscal
 
 function fkg_ncm_id_obrig_med_itemnf ( en_ncm_id  in ncm.id%type )
          return ncm.dm_obrig_med_itemnf%type
@@ -7941,7 +7941,7 @@ end fkg_ncm_id_obrig_med_itemnf;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o código da versão do sistema conforme id
+--| funçõo retorna o cï¿½digo da versï¿½o do sistema conforme id
 
 function fkg_versao_sistema_id ( en_versaosistema_id in versao_sistema.id%type )
          return versao_sistema.versao%type
@@ -7965,7 +7965,7 @@ end fkg_versao_sistema_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o código da última versão atual do sistema
+--| funçõo retorna o cï¿½digo da ï¿½ltima versï¿½o atual do sistema
 
 function fkg_ultima_versao_sistema
          return versao_sistema.versao%type
@@ -8001,7 +8001,7 @@ end fkg_ultima_versao_sistema;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o parâmetro de "Retorno da Informação de Hora de Autorização/Cancelamento da empresa"
+--| funçõo retorna o parï¿½metro de "Retorno da Informaï¿½ï¿½o de Hora de Autorizaï¿½ï¿½o/Cancelamento da empresa"
 
 function fkg_ret_hr_aut_empresa_id ( en_empresa_id in empresa.id%type )
          return empresa.dm_ret_hr_aut%type
@@ -8026,7 +8026,7 @@ exception
 end fkg_ret_hr_aut_empresa_id;
 --
 -- =================================================================================================== --
--- Função converte um BLOB em CLOB
+-- funçõo converte um BLOB em CLOB
 
 FUNCTION fkg_blob_to_clob (blob_in IN BLOB)
 RETURN CLOB
@@ -8054,7 +8054,7 @@ END fkg_blob_to_clob;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o dm_mod_frete da tabela nota_fiscal_transp através do notafiscal_id
+-- funçõo retorna o dm_mod_frete da tabela nota_fiscal_transp atravï¿½s do notafiscal_id
 
 function fkg_modfrete_nftransp ( en_notafiscal_id  in nota_fiscal.id%type )
          return nota_fiscal_transp.dm_mod_frete%type
@@ -8083,7 +8083,7 @@ exception
 end fkg_modfrete_nftransp;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna o codigo do imposto através do id
+--| funçõo retorna o codigo do imposto atravï¿½s do id
 
 function fkg_Tipo_Imposto_cd ( en_tipoimp_id  in Tipo_Imposto.id%TYPE )
          return Tipo_Imposto.cd%TYPE
@@ -8113,7 +8113,7 @@ end fkg_Tipo_Imposto_cd;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID do Conhecimento de Transporte conforme Empresa, Pessoa, Modelo, Indicador de emitente e operação, Número, Série e Sub série
+--| funçõo retorna o ID do Conhecimento de Transporte conforme Empresa, Pessoa, Modelo, Indicador de emitente e operaï¿½ï¿½o, Nï¿½mero, Sï¿½rie e Sub sï¿½rie
 
 function fkg_conhec_transp_id( en_empresa_id   in conhec_transp.empresa_id%type
                              , en_dm_ind_emit  in conhec_transp.dm_ind_emit%type
@@ -8169,7 +8169,7 @@ end fkg_conhec_transp_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID do Item da Nota Fiscal conforme Identificador da NF e Número do Item
+--| funçõo retorna o ID do Item da Nota Fiscal conforme Identificador da NF e Nï¿½mero do Item
 
 function fkg_item_nota_fiscal_id( en_notafiscal_id in item_nota_fiscal.notafiscal_id%type
                                 , en_nro_item      in item_nota_fiscal.nro_item%type )
@@ -8196,7 +8196,7 @@ end fkg_item_nota_fiscal_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID do relacionamento entre o rateio de frete e o item da nota fiscal
+--| funçõo retorna o ID do relacionamento entre o rateio de frete e o item da nota fiscal
 
 function fkg_frete_itemnf_id( en_conhectransp_id   in conhec_transp.id%type
                             , en_notafiscal_id     in nota_fiscal.id%type
@@ -8408,7 +8408,7 @@ end pkb_limpa_log;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorno o nome do usuário
+--| funçõo retorno o nome do usuï¿½rio
 
 function fkg_usuario_nome ( en_usuario_id in neo_usuario.id%type )
          return neo_usuario.nome%TYPE
@@ -8438,7 +8438,7 @@ end fkg_usuario_nome;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da nota Fiscal de terceiro de armazenamento fiscal a partir do número da chave de acesso
+-- funçõo retorna o ID da nota Fiscal de terceiro de armazenamento fiscal a partir do nï¿½mero da chave de acesso
 
 function fkg_nf_id_terceiro_pela_chave ( en_nro_chave_nfe  in Nota_Fiscal.nro_chave_nfe%TYPE )
          return Nota_Fiscal.id%TYPE
@@ -8469,7 +8469,7 @@ end fkg_nf_id_terceiro_pela_chave;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorno o ID da tabela NEO_PAPEL conforme "sigla da descrição"
+--| funçõo retorno o ID da tabela NEO_PAPEL conforme "sigla da descriï¿½ï¿½o"
 
 function fkg_papel_id_conf_nome ( ev_nome in neo_papel.nome%type )
          return neo_papel.id%type
@@ -8495,7 +8495,7 @@ end fkg_papel_id_conf_nome;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função verifica se existe o papel informado para o usuário
+--| funçõo verifica se existe o papel informado para o usuï¿½rio
 
 function fkg_existe_usuario_papel ( en_usuario_id  in neo_usuario.id%type
                                   , en_papel_id    in neo_papel.id%type
@@ -8525,7 +8525,7 @@ end fkg_existe_usuario_papel;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID do acesso de usuário/empresa
+--| funçõo retorna o ID do acesso de usuï¿½rio/empresa
 
 function fkg_usuario_empresa_id ( en_usuario_id  in neo_usuario.id%type
                                 , en_empresa_id  in empresa.id%type
@@ -8554,7 +8554,7 @@ end fkg_usuario_empresa_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorno o ID do acesso do usuário a Unidade Organizacional
+-- funçõo retorno o ID do acesso do usuï¿½rio a Unidade Organizacional
 
 function fkg_usuempr_unidorg_id ( en_usuempr_id  in usuario_empresa.id%type
                                 , en_unidorg_id  in unid_org.id%type
@@ -8583,7 +8583,7 @@ end fkg_usuempr_unidorg_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorno o código de nome da empresa conforme seu ID
+-- funçõo retorno o cï¿½digo de nome da empresa conforme seu ID
 
 function fkg_cod_nome_empresa_id ( en_empresa_id in empresa.id%type )
          return varchar2
@@ -8611,7 +8611,7 @@ end fkg_cod_nome_empresa_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o Código de Consumo do Item de Serviço Contínuo "COD_CONS_ITEM_CONT"
+-- funçõo retorna o Cï¿½digo de Consumo do Item de Serviï¿½o Contï¿½nuo "COD_CONS_ITEM_CONT"
 
 function fkg_codconsitemcont_id ( en_modfiscal_id  in  mod_fiscal.id%type
                                 , ev_cod_cons      in  cod_cons_item_cont.cod_cons%type
@@ -8640,7 +8640,7 @@ end fkg_codconsitemcont_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID do Código da Classe de Consumo do Item de Serviço Contínuo
+-- funçõo retorna o ID do Cï¿½digo da Classe de Consumo do Item de Serviï¿½o Contï¿½nuo
 
 function fkg_class_cons_item_cont_id ( ev_cod_class in class_cons_item_cont.cod_class%type )
          return class_cons_item_cont.id%type
@@ -8666,7 +8666,7 @@ end fkg_class_cons_item_cont_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retona o ID da empresa pelo ID da nota fiscal
+-- funçõo retona o ID da empresa pelo ID da nota fiscal
 
 function fkg_empresa_notafiscal ( en_notafiscal_id in nota_fiscal.id%type )
          return empresa.id%type
@@ -8692,7 +8692,7 @@ end fkg_empresa_notafiscal;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função verifica se cálcula ICMS-ST para a Nota Fiscal conforme Empresa
+-- funçõo verifica se cï¿½lcula ICMS-ST para a Nota Fiscal conforme Empresa
 
 function fkg_dm_nf_calc_icmsst_empresa ( en_empresa_id in empresa.id%type )
          return empresa.dm_nf_calc_icmsst%type
@@ -8718,7 +8718,7 @@ end fkg_dm_nf_calc_icmsst_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função verifica se a empresa ajusta o total da nota fiscal
+-- funçõo verifica se a empresa ajusta o total da nota fiscal
 
 function fkg_ajustatotalnf_empresa ( en_empresa_id in empresa.id%type )
          return empresa.dm_ajusta_total_nf%type
@@ -8744,7 +8744,7 @@ end fkg_ajustatotalnf_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função Retorna o Texto da Observação do Lançamento Fiscal
+--| funçõo Retorna o Texto da Observaï¿½ï¿½o do Lanï¿½amento Fiscal
 
 function fkg_txt_obs_lancto_fiscal ( en_obslanctofiscal_id in obs_lancto_fiscal.id%type )
          return obs_lancto_fiscal.txt%type
@@ -8774,7 +8774,7 @@ end fkg_txt_obs_lancto_fiscal;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função Retorna a Inscrição Estadual do Substituto conforme Empresa e Estado
+--| funçõo Retorna a Inscriï¿½ï¿½o Estadual do Substituto conforme Empresa e Estado
 
 function fkg_iest_empresa ( en_empresa_id  in empresa.id%type
                           , en_estado_id   in estado.id%type
@@ -8803,7 +8803,7 @@ end fkg_iest_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna "true" se o id é válido e "false" se não é
+--| funçõo retorna "true" se o id ï¿½ vï¿½lido e "false" se nï¿½o ï¿½
 
 function fkg_itemparamicmsst_id_valido ( en_id  in item_param_icmsst.id%TYPE )
          return boolean
@@ -8837,7 +8837,7 @@ end fkg_itemparamicmsst_id_valido;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função que verifica a existencia de resgistro na Item_param_icmsst
+--| funçõo que verifica a existencia de resgistro na Item_param_icmsst
 
 function fkg_item_param_icmsst_id ( en_item_id        in   item_param_icmsst.item_id%type
                                   , en_empresa_id     in   item_param_icmsst.empresa_id%type
@@ -8874,7 +8874,7 @@ end fkg_item_param_icmsst_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna CD através do tipo de parâmetro
+--| funçõo retorna CD atravï¿½s do tipo de parï¿½metro
 
 function fkg_cd_tipoparam ( en_tipoparam_id in tipo_param.id%type )
          return tipo_param.cd%type
@@ -8900,7 +8900,7 @@ end fkg_cd_tipoparam;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna ID do tipo de parâmetro
+--| funçõo retorna ID do tipo de parï¿½metro
 
 function fkg_tipoparam_id ( ev_cd in tipo_param.cd%type )
          return tipo_param.id%type
@@ -8926,7 +8926,7 @@ end fkg_tipoparam_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna a informação do "ID" do Valor do Tipo de Parametro salvo na pessoa
+--| funçõo retorna a informaï¿½ï¿½o do "ID" do Valor do Tipo de Parametro salvo na pessoa
 
 function fkg_pessoa_valortipoparam_id ( en_tipoparam_id in tipo_param.id%type
                                       , en_pessoa_id    in pessoa.id%type
@@ -8955,7 +8955,7 @@ end fkg_pessoa_valortipoparam_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o a informação do "CD" do Valor do Tipo de Parametro conforme o ID
+--| funçõo retorna o a informaï¿½ï¿½o do "CD" do Valor do Tipo de Parametro conforme o ID
 
 function fkg_valortipoparam_id ( en_valortipoparam_id valor_tipo_param.id%type )
          return valor_tipo_param.cd%type
@@ -8981,7 +8981,7 @@ end fkg_valortipoparam_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna a informação do "código" do Valor do Tipo de Parametro conforme pessoa
+--| funçõo retorna a informaï¿½ï¿½o do "cï¿½digo" do Valor do Tipo de Parametro conforme pessoa
 
 function fkg_pessoa_valortipoparam_cd ( ev_tipoparam_cd in tipo_param.cd%type
                                       , en_pessoa_id    in pessoa.id%type
@@ -8994,15 +8994,15 @@ is
    vn_valortipoparam_id valor_tipo_param.id%type := null;
    --
 begin
-   -- pega o ID do tipo de parâmetro
+   -- pega o ID do tipo de parï¿½metro
    vn_tipoparam_id := fkg_tipoparam_id ( ev_cd => ev_tipoparam_cd );
    --
-   -- pega o ID do valor do tipo de parâmetro salvo na pessoa
+   -- pega o ID do valor do tipo de parï¿½metro salvo na pessoa
    vn_valortipoparam_id := fkg_pessoa_valortipoparam_id ( en_tipoparam_id => vn_tipoparam_id
                                                         , en_pessoa_id    => en_pessoa_id
                                                         );
    --
-   -- Recupera o CD do Valor do parâmetro conforme o ID
+   -- Recupera o CD do Valor do parï¿½metro conforme o ID
    vv_valortipoparam_cd := fkg_valortipoparam_id ( en_valortipoparam_id => vn_valortipoparam_id );
    --
    return vv_valortipoparam_cd;
@@ -9016,7 +9016,7 @@ end fkg_pessoa_valortipoparam_cd;
 
 -------------------------------------------------------------------------------------------------------
 
--- Retorna o CD do código de tributação do município, conforme o ID
+-- Retorna o CD do cï¿½digo de tributaï¿½ï¿½o do municï¿½pio, conforme o ID
 function fkg_codtribmunicipio_cd ( en_codtribmunicipio_id in cod_trib_municipio.id%type )
          return cod_trib_municipio.cod_trib_municipio%type
 is
@@ -9041,7 +9041,7 @@ end fkg_codtribmunicipio_cd;
 
 -------------------------------------------------------------------------------------------------------
 
--- Retorna o ID do código de tributação do município, conforme o CD e Cidade
+-- Retorna o ID do cï¿½digo de tributaï¿½ï¿½o do municï¿½pio, conforme o CD e Cidade
 function fkg_codtribmunicipio_id ( ev_codtribmunicipio_cd  in cod_trib_municipio.cod_trib_municipio%type
                                  , en_cidade_id            in cod_trib_municipio.cidade_id%type
                                  )
@@ -9069,7 +9069,7 @@ end fkg_codtribmunicipio_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorma a descrição da cidade conforme o IBGE dela
+--| funçõo retorma a descriï¿½ï¿½o da cidade conforme o IBGE dela
 
 function fkg_descr_cidade_conf_ibge ( ev_ibge_cidade  in cidade.ibge_cidade%type )
          return cidade.descr%type
@@ -9095,7 +9095,7 @@ end fkg_descr_cidade_conf_ibge;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID do Tipo de Código de arquivo
+-- funçõo retorna o ID do Tipo de Cï¿½digo de arquivo
 
 function fkg_tipocodarq_id ( ev_cd in tipo_cod_arq.cd%type )
          return tipo_cod_arq.id%type
@@ -9121,7 +9121,7 @@ end fkg_tipocodarq_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o código do "Tipo de Código de arquivo" por pais
+-- funçõo retorna o cï¿½digo do "Tipo de Cï¿½digo de arquivo" por pais
 
 function fkg_cd_pais_tipo_cod_arq ( en_pais_id        in pais.id%type
                                   , en_tipocodarq_id  in tipo_cod_arq.id%type
@@ -9150,7 +9150,7 @@ end fkg_cd_pais_tipo_cod_arq;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o código do "Tipo de Código de arquivo" por estado
+-- funçõo retorna o cï¿½digo do "Tipo de Cï¿½digo de arquivo" por estado
 
 function fkg_cd_estado_tipo_cod_arq ( en_estado_id in estado.id%type
                                     , en_tipocodarq_id in tipo_cod_arq.id%type
@@ -9179,7 +9179,7 @@ end fkg_cd_estado_tipo_cod_arq;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o código do "Tipo de Código de arquivo" por cidade
+-- funçõo retorna o cï¿½digo do "Tipo de Cï¿½digo de arquivo" por cidade
 
 function fkg_cd_cidade_tipo_cod_arq ( en_cidade_id in cidade.id%type
                                     , en_tipocodarq_id in tipo_cod_arq.id%type
@@ -9208,7 +9208,7 @@ end fkg_cd_cidade_tipo_cod_arq;
 
 -------------------------------------------------------------------------------------------------------
 
- --| Função retorna o sigla_estado que está relacionado ao pessoa_id
+ --| funçõo retorna o sigla_estado que estï¿½ relacionado ao pessoa_id
 
 function fkg_sigla_estado_empresa ( en_empresa_id in empresa.id%type )
          return estado.sigla_estado%type
@@ -9247,7 +9247,7 @@ exception
 end fkg_sigla_estado_empresa;
 --
 -- ==================================================================================================== --
--- Função verifica se cálcula ICMS-Normal para a Nota Fiscal conforme Empresa
+-- funçõo verifica se cï¿½lcula ICMS-Normal para a Nota Fiscal conforme Empresa
 
 function fkg_dm_nf_calc_icms_empresa ( en_empresa_id in empresa.id%type )
          return empresa.dm_nf_calc_icms%type
@@ -9273,7 +9273,7 @@ end fkg_dm_nf_calc_icms_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
---| Procedimento Copia o perfil de acesso de um usuário (papeis e empresas)
+--| Procedimento Copia o perfil de acesso de um usuï¿½rio (papeis e empresas)
 
 procedure pkb_copia_perfil_acesso_usu ( ev_login_origem   in  neo_usuario.login%type
                                       , ev_login_destino  in  neo_usuario.login%type
@@ -9298,7 +9298,7 @@ end pkb_copia_perfil_acesso_usu;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o valor do parâmetro "Ajusta valores dos itens da NF com o Total" conforme empresa
+-- funçõo retorna o valor do parï¿½metro "Ajusta valores dos itens da NF com o Total" conforme empresa
 
 function fkg_ajustvlr_inf_conf_empresa ( en_empresa_id in empresa.id%type )
          return empresa.dm_ajust_vlr_itemnf%type
@@ -9324,7 +9324,7 @@ end fkg_ajustvlr_inf_conf_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o valor do parâmetro "Integra o Item (produto/serviço)" conforme empresa
+-- funçõo retorna o valor do parï¿½metro "Integra o Item (produto/serviï¿½o)" conforme empresa
 
 function fkg_integritem_conf_empresa ( en_empresa_id in empresa.id%type )
          return empresa.dm_integr_item%type
@@ -9350,7 +9350,7 @@ end fkg_integritem_conf_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna parâmetro de validação de CFOP por destinatário - conforme o identificador da empresa.
+-- funçõo retorna parï¿½metro de validaï¿½ï¿½o de CFOP por destinatï¿½rio - conforme o identificador da empresa.
 
 function fkg_dm_valcfoppordest_empresa ( en_empresa_id in empresa.id%type )
          return empresa.dm_valida_cfop_por_dest%type
@@ -9376,7 +9376,7 @@ end fkg_dm_valcfoppordest_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar indicador de operação da nota fiscal - nota_fiscal.dm_ind_oper -> 0-entrada, 1-saída.
+-- funçõo para retornar indicador de operaï¿½ï¿½o da nota fiscal - nota_fiscal.dm_ind_oper -> 0-entrada, 1-saï¿½da.
 
 function fkg_recup_dmindoper_nf_id ( en_notafiscal_id in nota_fiscal.id%type )
          return nota_fiscal.dm_ind_oper%type
@@ -9402,7 +9402,7 @@ end fkg_recup_dmindoper_nf_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Retorna o E-mail do usuário do Sistema conforme multorg_id e ID_ERP
+-- Retorna o E-mail do usuï¿½rio do Sistema conforme multorg_id e ID_ERP
 
 function fkg_usuario_email_conf_erp ( en_multorg_id in mult_org.id%type
                                     , ev_id_erp     in neo_usuario.id_erp%type
@@ -9453,7 +9453,7 @@ end fkg_usuario_email_conf_erp;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o identificador do modelo fiscal da nota fiscal - nota_fiscal.modfiscal_id - através do identificador da nota fiscal.
+-- funçõo para retornar o identificador do modelo fiscal da nota fiscal - nota_fiscal.modfiscal_id - atravï¿½s do identificador da nota fiscal.
 
 function fkg_recup_modfisc_id_nf ( en_notafiscal_id in nota_fiscal.id%type )
          return nota_fiscal.modfiscal_id%type is
@@ -9478,7 +9478,7 @@ end fkg_recup_modfisc_id_nf;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função recupera a Ordem de impressão dos itens na DANFE na empresa
+-- funçõo recupera a Ordem de impressï¿½o dos itens na DANFE na empresa
 
 function fkg_dm_ordimpritemdanfe_empr ( en_empresa_id empresa.id%type )
          return empresa.dm_ord_impr_item_danfe%type
@@ -9504,7 +9504,7 @@ end fkg_dm_ordimpritemdanfe_empr;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar se a empresa permite validação de cfop de crédito de pis/cofins para notas fiscais de pessoa física (0-não, 1-sim).
+-- funçõo para retornar se a empresa permite validaï¿½ï¿½o de cfop de crï¿½dito de pis/cofins para notas fiscais de pessoa fï¿½sica (0-nï¿½o, 1-sim).
 
 function fkg_empr_val_cred_pf_pc ( en_empresa_id in empresa.id%type )
          return empresa.dm_val_gera_cred_pf_pc%type
@@ -9530,7 +9530,7 @@ end fkg_empr_val_cred_pf_pc;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar se a empresa permite Ajustar base de cálculo de imposto
+-- funçõo para retornar se a empresa permite Ajustar base de cï¿½lculo de imposto
 
 function fkg_empr_ajust_base_imp ( en_empresa_id in empresa.id%type )
          return empresa.dm_ajust_base_imp%type
@@ -9556,7 +9556,7 @@ end fkg_empr_ajust_base_imp;
 
 -------------------------------------------------------------------------------------------------------
 
---|Função retorna ibge_estado conforme o empresa_id
+--|funçõo retorna ibge_estado conforme o empresa_id
 
 function fkg_ibge_estado_empresa_id ( ev_empresa_id  in empresa.id%type )
          return estado.ibge_estado%type
@@ -9588,7 +9588,7 @@ end fkg_ibge_estado_empresa_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para verificar campos Flex Field - FF.
+-- funçõo para verificar campos Flex Field - FF.
 
 function fkg_ff_verif_campos( ev_obj_name in obj_util_integr.obj_name%type
                             , ev_atributo in ff_obj_util_integr.atributo%type
@@ -9621,7 +9621,7 @@ begin
          and ff.atributo         = ev_atributo;
    exception
       when no_data_found then
-         vv_mensagem := substr('Tabela/View - '||upper(ev_obj_name)||'. Atributo ('||ev_atributo||') não cadastrado como campo Flex Field.',1,1000);
+         vv_mensagem := substr('Tabela/View - '||upper(ev_obj_name)||'. Atributo ('||ev_atributo||') nï¿½o cadastrado como campo Flex Field.',1,1000);
       when others then
          vv_mensagem := substr('Problemas ao encontrar atributo ('||ev_atributo||') no cadastro. Tabela/View - '||upper(ev_obj_name)||'. Erro = '||sqlerrm,1,1000);
    end;
@@ -9640,11 +9640,11 @@ begin
                               'formato deve ser DD/MM/RRRR. Verifique o valor informado ('||vv_valor||').',1,1000);
          end;
          --
-      elsif vn_dm_tipo_campo = 1 then -- tipo = numérico
+      elsif vn_dm_tipo_campo = 1 then -- tipo = numï¿½rico
             --
             if length(vv_valor) > vn_tamanho then
                --
-               vv_mensagem := substr('Tabela/View - '||upper(ev_obj_name)||'. Atributo ('||ev_atributo||') cadastrado como tipo de campo NUMÉRICO e o '||
+               vv_mensagem := substr('Tabela/View - '||upper(ev_obj_name)||'. Atributo ('||ev_atributo||') cadastrado como tipo de campo NUMï¿½RICO e o '||
                               'tamanho deve ser igual a '||vn_tamanho||'. Verifique o valor informado ('||vv_valor||').',1,1000);
                --
             else
@@ -9652,7 +9652,7 @@ begin
                if vn_decimal = 0 then
                   vn_nro_divide := 1;
                else -- vn_decimal > 0
-                  -- decimal + 1: serve para deixar o valor 1 concatenado com zeros, de acordo com o tamanho que está cadastrado no decimal
+                  -- decimal + 1: serve para deixar o valor 1 concatenado com zeros, de acordo com o tamanho que estï¿½ cadastrado no decimal
                   vn_nro_divide := to_number(rpad('1',(vn_decimal + 1),'0'));
                end if;
                --
@@ -9660,7 +9660,7 @@ begin
                   vn_valor := (to_number(vv_valor) / vn_nro_divide);
                exception
                   when others then
-                     vv_mensagem := substr('Tabela/View - '||upper(ev_obj_name)||'. Atributo ('||ev_atributo||') cadastrado como tipo de campo NUMÉRICO e o '||
+                     vv_mensagem := substr('Tabela/View - '||upper(ev_obj_name)||'. Atributo ('||ev_atributo||') cadastrado como tipo de campo NUMï¿½RICO e o '||
                                     'formato deve ser total = '||vn_tamanho||' e com quantidade de casas decimais = '||vn_decimal||
                                     '. Verifique o valor informado ('||vv_valor||').',1,1000);
                end;
@@ -9689,7 +9689,7 @@ end fkg_ff_verif_campos;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o tipo do campo Flex Field - FF.
+-- funçõo para retornar o tipo do campo Flex Field - FF.
 
 function fkg_ff_retorna_dmtipocampo( ev_obj_name in obj_util_integr.obj_name%type
                                    , ev_atributo in ff_obj_util_integr.atributo%type )
@@ -9722,7 +9722,7 @@ end fkg_ff_retorna_dmtipocampo;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o tamanho do campo Flex Field - FF, através do objeto e do atributo.
+-- funçõo para retornar o tamanho do campo Flex Field - FF, atravï¿½s do objeto e do atributo.
 
 function fkg_ff_retorna_tamanho( ev_obj_name in obj_util_integr.obj_name%type
                                , ev_atributo in ff_obj_util_integr.atributo%type )
@@ -9755,7 +9755,7 @@ end fkg_ff_retorna_tamanho;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar a quantidade em decimal do campo Flex Field - FF, através do objeto e do atributo.
+-- funçõo para retornar a quantidade em decimal do campo Flex Field - FF, atravï¿½s do objeto e do atributo.
 
 function fkg_ff_retorna_decimal( ev_obj_name in obj_util_integr.obj_name%type
                                , ev_atributo in ff_obj_util_integr.atributo%type )
@@ -9788,7 +9788,7 @@ end fkg_ff_retorna_decimal;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o valor dos campos Flex Field - FF - tipo DATA.
+-- funçõo para retornar o valor dos campos Flex Field - FF - tipo DATA.
 
 function fkg_ff_ret_vlr_data( ev_obj_name in obj_util_integr.obj_name%type
                             , ev_atributo in varchar2
@@ -9817,7 +9817,7 @@ end fkg_ff_ret_vlr_data;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o valor dos campos Flex Field - FF - tipo NUMÉRICO.
+-- funçõo para retornar o valor dos campos Flex Field - FF - tipo NUMï¿½RICO.
 
 function fkg_ff_ret_vlr_number( ev_obj_name in obj_util_integr.obj_name%type
                               , ev_atributo in varchar2
@@ -9837,7 +9837,7 @@ begin
    if vn_decimal = 0 then
       vn_nro_divide := 1;
    else -- vn_decimal > 0
-      -- decimal + 1: serve para deixar o valor 1 concatenado com zeros, de acordo com o tamanho que está cadastrado no decimal
+      -- decimal + 1: serve para deixar o valor 1 concatenado com zeros, de acordo com o tamanho que estï¿½ cadastrado no decimal
       vn_nro_divide := to_number(rpad('1',(vn_decimal + 1),'0'));
    end if;
    --
@@ -9847,7 +9847,7 @@ begin
          vn_number := (to_number(replace((replace(ev_valor, ',', '')), '.', '')) / vn_nro_divide);
       exception
          when others then
-            raise_application_error(-20101, substr('Tabela/View - '||upper(ev_obj_name)||'. Atributo ('||ev_atributo||') cadastrado como tipo de campo NUMÉRICO '||
+            raise_application_error(-20101, substr('Tabela/View - '||upper(ev_obj_name)||'. Atributo ('||ev_atributo||') cadastrado como tipo de campo NUMï¿½RICO '||
                                          'com quantidade de casas decimais = '||vn_decimal||'. Valor informado incorretamente ('||ev_valor||').',1,1000));
       end;
       --
@@ -9862,7 +9862,7 @@ end fkg_ff_ret_vlr_number;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o valor dos campos Flex Field - FF - tipo CARACTERE.
+-- funçõo para retornar o valor dos campos Flex Field - FF - tipo CARACTERE.
 
 function fkg_ff_ret_vlr_caracter( ev_obj_name in obj_util_integr.obj_name%type
                                 , ev_atributo in varchar2
@@ -9885,7 +9885,7 @@ end fkg_ff_ret_vlr_caracter;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorno o CPF ou CNPJ com mascara
+-- funçõo retorno o CPF ou CNPJ com mascara
 
 function fkg_masc_cpf_cnpj ( ev_cpf_cnpj in varchar2 )
          return varchar2
@@ -9916,7 +9916,7 @@ end fkg_masc_cpf_cnpj;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID do Tipo de Operacao do CFOP
+-- funçõo retorna o ID do Tipo de Operacao do CFOP
 
 function fkg_tipooperacao_id ( ev_id in tipo_operacao.id%type )
          return tipo_operacao.cd%type
@@ -9942,7 +9942,7 @@ end fkg_tipooperacao_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retornda o CD do Tipo de Operação conforme CD do CFOP
+-- funçõo retornda o CD do Tipo de Operaï¿½ï¿½o conforme CD do CFOP
 function fkg_cd_tipooper_conf_cfop ( ev_cfop_cd in cfop.cd%type )
          return tipo_operacao.cd%type
 is
@@ -9971,7 +9971,7 @@ end fkg_cd_tipooper_conf_cfop;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função verifica o tipo de formato de data do retorno da informação para o ERP
+-- funçõo verifica o tipo de formato de data do retorno da informaï¿½ï¿½o para o ERP
 
 function fkg_empresa_dm_form_dt_erp ( en_empresa_id in Empresa.id%type )
          return empresa.dm_form_dt_erp%type
@@ -9997,7 +9997,7 @@ end fkg_empresa_dm_form_dt_erp;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna código da conta do plano de contas através do ID do Plano de Conta
+-- funçõo retorna cï¿½digo da conta do plano de contas atravï¿½s do ID do Plano de Conta
 
 function fkg_cd_plano_conta ( en_planoconta_id in plano_conta.id%type )
          return plano_conta.cod_cta%type
@@ -10018,7 +10018,7 @@ begin
          when no_data_found then
             vv_cod_cta := null;
          when others then
-            raise_application_error(-20101, 'Problemas ao recuperar código do plano de contas (id='||en_planoconta_id||'). Erro = '||sqlerrm);
+            raise_application_error(-20101, 'Problemas ao recuperar cï¿½digo do plano de contas (id='||en_planoconta_id||'). Erro = '||sqlerrm);
       end;
       --
     end if;
@@ -10034,7 +10034,7 @@ end fkg_cd_plano_conta;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna código do centro de custo através do ID do Centro de Custo
+-- funçõo retorna cï¿½digo do centro de custo atravï¿½s do ID do Centro de Custo
 
 function fkg_cd_centro_custo ( en_centrocusto_id in centro_custo.id%type )
          return centro_custo.cod_ccus%type
@@ -10055,7 +10055,7 @@ begin
          when no_data_found then
             vv_cod_ccus := null;
          when others then
-            raise_application_error(-20101, 'Problemas ao recuperar código do centro de custo (id='||en_centrocusto_id||'). Erro = '||sqlerrm);
+            raise_application_error(-20101, 'Problemas ao recuperar cï¿½digo do centro de custo (id='||en_centrocusto_id||'). Erro = '||sqlerrm);
       end;
       --
     end if;
@@ -10073,7 +10073,7 @@ end fkg_cd_centro_custo;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o identificador do objeto de integração através do código
+-- funçõo retorna o identificador do objeto de integraï¿½ï¿½o atravï¿½s do cï¿½digo
 function fkg_recup_objintegr_id( ev_cd in obj_integr.cd%type )
          return obj_integr.id%type
 is
@@ -10093,7 +10093,7 @@ begin
          when no_data_found then
             vn_objintegr_id := null;
          when others then
-            raise_application_error(-20101, 'Problemas ao recuperar identificador do objeto de integração (cd='||ev_cd||'). Erro = '||sqlerrm);
+            raise_application_error(-20101, 'Problemas ao recuperar identificador do objeto de integraï¿½ï¿½o (cd='||ev_cd||'). Erro = '||sqlerrm);
       end;
       --
     end if;
@@ -10111,7 +10111,7 @@ end fkg_recup_objintegr_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID do tabela TIPO_OBJ_INTEGR, conforme OBJINTEGR_ID e Código
+-- funçõo retorna o ID do tabela TIPO_OBJ_INTEGR, conforme OBJINTEGR_ID e Cï¿½digo
 
 function fkg_tipoobjintegr_id ( en_objintegr_id      in tipo_obj_integr.objintegr_id%type
                               , ev_tipoobjintegr_cd  in tipo_obj_integr.cd%type
@@ -10140,7 +10140,7 @@ end fkg_tipoobjintegr_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o CD do tabela TIPO_OBJ_INTEGR, conforme ID
+-- funçõo retorna o CD do tabela TIPO_OBJ_INTEGR, conforme ID
 
 function fkg_tipoobjintegr_cd ( en_tipoobjintegr_id  in tipo_obj_integr.id%type
                               )
@@ -10167,7 +10167,7 @@ end fkg_tipoobjintegr_cd;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna a última data de fechamento fiscal por empresa
+-- funçõo retorna a ï¿½ltima data de fechamento fiscal por empresa
 
 function fkg_recup_dtult_fecha_empresa( en_empresa_id   in fecha_fiscal_empresa.empresa_id%type
                                       , en_objintegr_id in fecha_fiscal_empresa.objintegr_id%type )
@@ -10191,7 +10191,7 @@ begin
          when no_data_found then
             vd_dt_ult_fecha := null;
          when others then
-            raise_application_error(-20101, 'Problemas ao recuperar data de último fechamento fiscal (empresa_id='||en_empresa_id||
+            raise_application_error(-20101, 'Problemas ao recuperar data de ï¿½ltimo fechamento fiscal (empresa_id='||en_empresa_id||
                                             ' objintegr_id = '||en_objintegr_id||'). Erro = '||sqlerrm);
       end;
       --
@@ -10210,14 +10210,14 @@ end fkg_recup_dtult_fecha_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna se o período informado está fechado - fechamento fiscal por empresa - 0-não ou 1-sim
+-- funçõo retorna se o perï¿½odo informado estï¿½ fechado - fechamento fiscal por empresa - 0-nï¿½o ou 1-sim
 function fkg_periodo_fechado_empresa( en_empresa_id   in fecha_fiscal_empresa.empresa_id%type
                                     , en_objintegr_id in fecha_fiscal_empresa.objintegr_id%type
                                     , ed_dt_ult_fecha in fecha_fiscal_empresa.dt_ult_fecha%type )
          return number
 is
    --
-   vn_per_fechado number := 0; -- 0-não, 1-sim
+   vn_per_fechado number := 0; -- 0-nï¿½o, 1-sim
    --
 begin
    --
@@ -10226,7 +10226,7 @@ begin
       ed_dt_ult_fecha is not null then
       --
       begin
-         select 1 -- 0-não, 1-sim
+         select 1 -- 0-nï¿½o, 1-sim
            into vn_per_fechado
            from fecha_fiscal_empresa ff
           where ff.empresa_id    = en_empresa_id
@@ -10234,9 +10234,9 @@ begin
             and ff.dt_ult_fecha >= ed_dt_ult_fecha;
       exception
          when no_data_found then
-            vn_per_fechado := 0; -- 0-não, 1-sim
+            vn_per_fechado := 0; -- 0-nï¿½o, 1-sim
          when others then
-            raise_application_error(-20101, 'Problemas ao verificar se o período enviado está fechado - fechamento fiscal (empresa_id='||en_empresa_id||
+            raise_application_error(-20101, 'Problemas ao verificar se o perï¿½odo enviado estï¿½ fechado - fechamento fiscal (empresa_id='||en_empresa_id||
                                             ' objintegr_id = '||en_objintegr_id||' data = '||to_char(ed_dt_ult_fecha,'dd/mm/yyyy')||'). Erro = '||sqlerrm);
       end;
       --
@@ -10246,15 +10246,15 @@ begin
    --
 exception
    when no_data_found then
-      return (0); -- 0-não, 1-sim
+      return (0); -- 0-nï¿½o, 1-sim
    when too_many_rows then
-      return (1); -- 0-não, 1-sim
+      return (1); -- 0-nï¿½o, 1-sim
    when others then
       raise_application_error(-20101, 'Erro na fkg_periodo_fechado_empresa:' || sqlerrm);
 end fkg_periodo_fechado_empresa;
 
 -------------------------------------------------------------------------------------------------------
---| Função verifica se existe o ID do Complemento do Item
+--| funçõo verifica se existe o ID do Complemento do Item
 
 function fkg_existe_item_compl ( en_inf_item_compl_id in item_compl.item_id%type )
          return boolean
@@ -10283,7 +10283,7 @@ exception
 end fkg_existe_item_compl;
 --
 -- ========================================================================================================== --
---| Função para recuperar as pessoas de mesmo cpf ou cnpj
+--| funçõo para recuperar as pessoas de mesmo cpf ou cnpj
 --
 function fkg_ret_string_id_pessoa ( en_multorg_id  in mult_org.id%type
                                   , ev_cpf_cnpj    in varchar2
@@ -10309,7 +10309,7 @@ function fkg_ret_string_id_pessoa ( en_multorg_id  in mult_org.id%type
    --
 begin
    --
-   -- NÃO ALTERE A REGRA DESSAS ROTINAS SEM CONVERSAR COM EQUIPE
+   -- Nï¿½O ALTERE A REGRA DESSAS ROTINAS SEM CONVERSAR COM EQUIPE
    --
    for r_reg in c_juridica
    loop
@@ -10347,7 +10347,7 @@ exception
 end fkg_ret_string_id_pessoa;
 --
 -- ========================================================================================================== --
--- Função retorna o ID do Valor do Tipo de Parâmetro
+-- funçõo retorna o ID do Valor do Tipo de Parï¿½metro
 
 function fkg_valor_tipo_param_id ( en_tipoparam_id          in tipo_param.id%type
                                  , ev_valor_tipo_param_cd   in valor_tipo_param.cd%type
@@ -10376,7 +10376,7 @@ end fkg_valor_tipo_param_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID do parâmetro de pessoa
+-- funçõo retorna o ID do parï¿½metro de pessoa
 
 function fkg_pessoa_tipo_param_id ( en_pessoa_id          in pessoa.id%type
                                   , en_tipoparam_id       in tipo_param.id%type
@@ -10407,7 +10407,7 @@ end fkg_pessoa_tipo_param_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o valor do campo DM_TROCA_CFOP_NF por empresa
+-- funçõo retorna o valor do campo DM_TROCA_CFOP_NF por empresa
 
 function fkg_empresa_troca_cfop_nf ( en_empresa_id in empresa.id%type )
          return empresa.dm_troca_cfop_nf%type
@@ -10433,7 +10433,7 @@ end fkg_empresa_troca_cfop_nf;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna "true" se o item_id é válido e "false" se não é
+--| funçõo retorna "true" se o item_id ï¿½ vï¿½lido e "false" se nï¿½o ï¿½
 
 function fkg_item_ncm_valido ( en_item_id  in item.id%type )
          return boolean
@@ -10469,7 +10469,7 @@ end fkg_item_ncm_valido;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o identificador do NCM através do identificador do Item do produto
+--| funçõo retorna o identificador do NCM atravï¿½s do identificador do Item do produto
 
 function fkg_ncm_id_item ( en_item_id  in item.id%type )
          return ncm.id%type
@@ -10506,7 +10506,7 @@ end fkg_ncm_id_item;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela TIPO_RET_IMP
+--| funçõo retorna o ID da tabela TIPO_RET_IMP
 
 function fkg_tipo_ret_imp ( en_multorg_id  in tipo_ret_imp.multorg_id%TYPE
                           , en_cd_ret      in tipo_ret_imp.cd%TYPE
@@ -10536,7 +10536,7 @@ exception
 end fkg_tipo_ret_imp;
 --
 -- =============================================================================================== --
---| Função retorna o ID da tabela TIPO_RET_IMP_RECEITA
+--| funçõo retorna o ID da tabela TIPO_RET_IMP_RECEITA
 
 function fkg_tipo_ret_imp_rec ( en_cod_receita   in tipo_ret_imp_receita.cod_receita%TYPE
                               , en_tiporetimp_id in tipo_ret_imp_receita.tiporetimp_id%TYPE
@@ -10563,7 +10563,7 @@ exception
 end fkg_tipo_ret_imp_rec;
 --
 -- =============================================================================================== --
---| Função retorna o COD_RECEITA da tabela TIPO_RET_IMP_RECEITA
+--| funçõo retorna o COD_RECEITA da tabela TIPO_RET_IMP_RECEITA
 
 function fkg_tipo_ret_imp_rec_cd ( en_tiporetimpreceita_id in tipo_ret_imp_receita.id%TYPE
                                  , en_tiporetimp_id        in tipo_ret_imp_receita.tiporetimp_id%TYPE
@@ -10590,7 +10590,7 @@ exception
 end fkg_tipo_ret_imp_rec_cd;
 --
 -- =============================================================================================== --
---| Função retorna o código do tipo de retenção do imposto através do id
+--| funçõo retorna o cï¿½digo do tipo de retenï¿½ï¿½o do imposto atravï¿½s do id
 
 function fkg_tipo_ret_imp_cd ( en_tiporetimp_id  in tipo_ret_imp.id%TYPE )
          return tipo_ret_imp.cd%TYPE
@@ -10620,7 +10620,7 @@ end fkg_tipo_ret_imp_cd;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna verifica se a empresa Gera tributações de impostos
+--| funçõo retorna verifica se a empresa Gera tributaï¿½ï¿½es de impostos
 function fkg_empresa_gera_tot_trib ( en_empresa_id in empresa.id%type )
          return empresa.dm_gera_tot_trib%type
 is
@@ -10645,7 +10645,7 @@ end fkg_empresa_gera_tot_trib;
 
 ------------------------------------------------------------------------------------------
 
--- Função retorna o ID do Controle de Versão Contábil conforme UK (unique key)
+-- funçõo retorna o ID do Controle de Versï¿½o Contï¿½bil conforme UK (unique key)
 
 function fkg_ctrlversaocontabil_id ( en_empresa_id   in empresa.id%type
                                    , ev_cd           in ctrl_versao_contabil.cd%type
@@ -10676,7 +10676,7 @@ end fkg_ctrlversaocontabil_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função verifica se o valor do ID existe no Controle de Versão Contábil
+-- funçõo verifica se o valor do ID existe no Controle de Versï¿½o Contï¿½bil
 
 function fkg_existe_ctrlversaocontabil ( en_ctrlversaocontabil_id in ctrl_versao_contabil.id%type )
          return boolean
@@ -10709,7 +10709,7 @@ end fkg_existe_ctrlversaocontabil;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar se a empresa permite Ajustar valores de impostos de importação com suframa
+-- funçõo para retornar se a empresa permite Ajustar valores de impostos de importaï¿½ï¿½o com suframa
 
 function fkg_empr_ajust_desc_zfm_item ( en_empresa_id in empresa.id%type )
          return empresa.dm_ajust_desc_zfm_item%type
@@ -10735,7 +10735,7 @@ end fkg_empr_ajust_desc_zfm_item;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o tipo de emitente da nota fiscal - nota_fiscal.dm_ind_emit = 0-emissão própria, 1-terceiros
+-- funçõo para retornar o tipo de emitente da nota fiscal - nota_fiscal.dm_ind_emit = 0-emissï¿½o prï¿½pria, 1-terceiros
 function fkg_dmindemit_notafiscal ( en_notafiscal_id in nota_fiscal.id%type )
          return nota_fiscal.dm_ind_emit%type
 is
@@ -10760,7 +10760,7 @@ end fkg_dmindemit_notafiscal;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar a finalidade da nota fiscal - nota_fiscal.dm_fin_nfe = 1-NF-e normal, 2-NF-e complementar, 3-NF-e de ajuste
+-- funçõo para retornar a finalidade da nota fiscal - nota_fiscal.dm_fin_nfe = 1-NF-e normal, 2-NF-e complementar, 3-NF-e de ajuste
 function fkg_dmfinnfe_notafiscal ( en_notafiscal_id in nota_fiscal.id%type )
          return nota_fiscal.dm_fin_nfe%type
 is
@@ -10785,7 +10785,7 @@ end fkg_dmfinnfe_notafiscal;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar a sigla do estado do emitente da nota fiscal
+-- funçõo para retornar a sigla do estado do emitente da nota fiscal
 function fkg_uf_notafiscalemit ( en_notafiscal_id in nota_fiscal.id%type )
          return nota_fiscal_emit.uf%type
 is
@@ -10812,7 +10812,7 @@ end fkg_uf_notafiscalemit;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o CNPJ do emitente da nota fiscal
+-- funçõo para retornar o CNPJ do emitente da nota fiscal
 function fkg_cnpj_notafiscalemit ( en_notafiscal_id in nota_fiscal.id%type )
          return nota_fiscal_emit.cnpj%type
 is
@@ -10838,7 +10838,7 @@ exception
 end fkg_cnpj_notafiscalemit;
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar a sigla do estado do destinatário da nota fiscal
+-- funçõo para retornar a sigla do estado do destinatï¿½rio da nota fiscal
 function fkg_uf_notafiscaldest ( en_notafiscal_id in nota_fiscal.id%type )
          return nota_fiscal_dest.uf%type
 is
@@ -10865,7 +10865,7 @@ end fkg_uf_notafiscaldest;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o identificador de pessoa da nota fiscal
+-- funçõo para retornar o identificador de pessoa da nota fiscal
 function fkg_pessoa_notafiscal_id ( en_notafiscal_id in nota_fiscal.id%type )
          return nota_fiscal.pessoa_id%type
 is
@@ -10890,7 +10890,7 @@ end fkg_pessoa_notafiscal_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento verifica se a empresa valida o imposto ICMS - Parâmetro para Notas Fiscais com Emissão Própria
+-- Procedimento verifica se a empresa valida o imposto ICMS - Parï¿½metro para Notas Fiscais com Emissï¿½o Prï¿½pria
 
 function fkg_empresa_dmvalimp_emis ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valid_imp%type is
@@ -10915,7 +10915,7 @@ end fkg_empresa_dmvalimp_emis;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento verifica se a empresa valida o imposto ICMS60 - Parâmetro para Notas Fiscais com Emissão Própria
+-- Procedimento verifica se a empresa valida o imposto ICMS60 - Parï¿½metro para Notas Fiscais com Emissï¿½o Prï¿½pria
 
 function fkg_empresa_dmvalicms60_emis ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valid_icms60%type is
@@ -10941,7 +10941,7 @@ end fkg_empresa_dmvalicms60_emis;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento verifica se a empresa valida Bases de ICMS - Parâmetro para Notas Fiscais com Emissão Própria
+-- Procedimento verifica se a empresa valida Bases de ICMS - Parï¿½metro para Notas Fiscais com Emissï¿½o Prï¿½pria
 
 function fkg_empresa_dmvalbaseicms_emis ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valid_base_icms%type is
@@ -10966,7 +10966,7 @@ end fkg_empresa_dmvalbaseicms_emis;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento verifica se a empresa valida o imposto IPI - Parâmetro para Notas Fiscais com Emissão Própria
+-- Procedimento verifica se a empresa valida o imposto IPI - Parï¿½metro para Notas Fiscais com Emissï¿½o Prï¿½pria
 
 function fkg_empresa_dmvalipi_emis ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valida_ipi%type is
@@ -10991,7 +10991,7 @@ end fkg_empresa_dmvalipi_emis;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento verifica se a empresa valida o imposto PIS - Parâmetro para Notas Fiscais com Emissão Própria
+-- Procedimento verifica se a empresa valida o imposto PIS - Parï¿½metro para Notas Fiscais com Emissï¿½o Prï¿½pria
 
 function fkg_empresa_dmvalpis_emis ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valida_pis%type is
@@ -11016,7 +11016,7 @@ end fkg_empresa_dmvalpis_emis;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento verifica se a empresa valida o imposto Cofins - Parâmetro para Notas Fiscais com Emissão Própria
+-- Procedimento verifica se a empresa valida o imposto Cofins - Parï¿½metro para Notas Fiscais com Emissï¿½o Prï¿½pria
 
 function fkg_empresa_dmvalcofins_emis ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valida_cofins%type is
@@ -11041,7 +11041,7 @@ end fkg_empresa_dmvalcofins_emis;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento verifica se a empresa valida o imposto ICMS - Parâmetro para Notas Fiscais com Emissão de Terceiros
+-- Procedimento verifica se a empresa valida o imposto ICMS - Parï¿½metro para Notas Fiscais com Emissï¿½o de Terceiros
 
 function fkg_empresa_dmvalimp_terc ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valid_imp_terc%type is
@@ -11066,7 +11066,7 @@ end fkg_empresa_dmvalimp_terc;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento verifica se a empresa valida o imposto ICMS60 - Parâmetro para Notas Fiscais com Emissão de Terceiros
+-- Procedimento verifica se a empresa valida o imposto ICMS60 - Parï¿½metro para Notas Fiscais com Emissï¿½o de Terceiros
 
 function fkg_empresa_dmvalicms60_terc ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valid_icms60_terc%type is
@@ -11091,7 +11091,7 @@ end fkg_empresa_dmvalicms60_terc;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento verifica se a empresa valida Bases de ICMS - Parâmetro para Notas Fiscais com Emissão de Terceiros
+-- Procedimento verifica se a empresa valida Bases de ICMS - Parï¿½metro para Notas Fiscais com Emissï¿½o de Terceiros
 
 function fkg_empresa_dmvalbaseicms_terc ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valid_base_icms_terc%type is
@@ -11116,7 +11116,7 @@ end fkg_empresa_dmvalbaseicms_terc;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento verifica se a empresa valida Bases de ICMS - Parâmetro para Forma de demonstração das bases de ICMS
+-- Procedimento verifica se a empresa valida Bases de ICMS - Parï¿½metro para Forma de demonstraï¿½ï¿½o das bases de ICMS
 function fkg_empresa_dmformademb_icms ( en_empresa_id in Empresa.id%type )
          return empresa.dm_forma_dem_base_icms%type is
    --
@@ -11140,7 +11140,7 @@ end fkg_empresa_dmformademb_icms;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento verifica se a empresa valida o imposto IPI - Parâmetro para Notas Fiscais com Emissão de Terceiros
+-- Procedimento verifica se a empresa valida o imposto IPI - Parï¿½metro para Notas Fiscais com Emissï¿½o de Terceiros
 
 function fkg_empresa_dmvalipi_terc ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valida_ipi_terc%type is
@@ -11165,7 +11165,7 @@ end fkg_empresa_dmvalipi_terc;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento verifica se a empresa valida o imposto PIS - Parâmetro para Notas Fiscais com Emissão de Terceiros
+-- Procedimento verifica se a empresa valida o imposto PIS - Parï¿½metro para Notas Fiscais com Emissï¿½o de Terceiros
 
 function fkg_empresa_dmvalpis_terc ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valida_pis_terc%type is
@@ -11190,7 +11190,7 @@ end fkg_empresa_dmvalpis_terc;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento verifica se a empresa valida o imposto Cofins - Parâmetro para Notas Fiscais com Emissão de Terceiros
+-- Procedimento verifica se a empresa valida o imposto Cofins - Parï¿½metro para Notas Fiscais com Emissï¿½o de Terceiros
 
 function fkg_empresa_dmvalcofins_terc ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valida_cofins_terc%type is
@@ -11215,7 +11215,7 @@ end fkg_empresa_dmvalcofins_terc;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela GRUPO_PAT
+--| funçõo retorna o ID da tabela GRUPO_PAT
 
 function fkg_grupopat_id ( en_multorg_id    in  mult_org.id%type
                          , ev_cod_grupopat  in  grupo_pat.cd%type )
@@ -11241,7 +11241,7 @@ end fkg_grupopat_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela SUBGRUPO_PAT
+--| funçõo retorna o ID da tabela SUBGRUPO_PAT
 
 function fkg_subgrupopat_id ( ev_cod_subgrupopat  in subgrupo_pat.cd%type
                             , en_grupopat_id      in grupo_pat.id%type )
@@ -11269,7 +11269,7 @@ end fkg_subgrupopat_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna TRUE se existe o grupo ou FALSE caso contrário
+-- funçõo retorna TRUE se existe o grupo ou FALSE caso contrï¿½rio
 
 function fkg_existe_grupo_pat ( en_grupopat_id in grupo_pat.id%type )
          return boolean
@@ -11295,7 +11295,7 @@ end fkg_existe_grupo_pat;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna TRUE se existe o subgrupo ou FALSE caso contrário
+-- funçõo retorna TRUE se existe o subgrupo ou FALSE caso contrï¿½rio
 
 function fkg_existe_subgrupo_pat ( en_subgrupopat_id in subgrupo_pat.id%type )
          return boolean
@@ -11321,7 +11321,7 @@ end fkg_existe_subgrupo_pat;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela REC_IMP_SUBGRUPO_PAT
+--| funçõo retorna o ID da tabela REC_IMP_SUBGRUPO_PAT
 
 function fkg_recimpsubgrupopat_id ( en_subgrupopat_id  in subgrupo_pat.id%type
                                   , en_tipoimp_id      in tipo_imposto.id%type )
@@ -11349,7 +11349,7 @@ end fkg_recimpsubgrupopat_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna TRUE se existe o imposto do subgrupo ou FALSE caso contrário
+-- funçõo retorna TRUE se existe o imposto do subgrupo ou FALSE caso contrï¿½rio
 
 function fkg_existe_imp_subgrupo_pat ( en_recimpsubgrupo_id in rec_imp_subgrupo_pat.id%type )
          return boolean
@@ -11375,7 +11375,7 @@ end fkg_existe_imp_subgrupo_pat;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela NF_BEM_ATIVO_IMOB
+--| funçõo retorna o ID da tabela NF_BEM_ATIVO_IMOB
 
 function fkg_nfbemativoimob_id ( en_bemativoimob_id  in   bem_ativo_imob.id%type
                                , en_dm_ind_emit      in   nf_bem_ativo_imob.dm_ind_emit%type
@@ -11427,7 +11427,7 @@ end fkg_nfbemativoimob_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna TRUE se existe o documento fiscal do bem ou FALSE caso contrário
+-- funçõo retorna TRUE se existe o documento fiscal do bem ou FALSE caso contrï¿½rio
 
 function fkg_existe_nf_bem_ativo_imob ( en_nfbemativoimob_id in nf_bem_ativo_imob.id%type )
          return boolean
@@ -11453,7 +11453,7 @@ end fkg_existe_nf_bem_ativo_imob;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela ITNF_BEM_ATIVO_IMOB
+--| funçõo retorna o ID da tabela ITNF_BEM_ATIVO_IMOB
 
 function fkg_itnfbemativoimob_id ( en_nfbemativoimob_id in nf_bem_ativo_imob.id%type
                                  , en_num_item          in itnf_bem_ativo_imob.num_item%type )
@@ -11481,7 +11481,7 @@ end fkg_itnfbemativoimob_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna TRUE se existe o item do documento fiscal do bem ou FALSE caso contrário
+-- funçõo retorna TRUE se existe o item do documento fiscal do bem ou FALSE caso contrï¿½rio
 
 function fkg_existe_itnf_bem_ativo_imob ( en_itnfbemativoimob_id in itnf_bem_ativo_imob.id%type )
          return boolean
@@ -11507,7 +11507,7 @@ end fkg_existe_itnf_bem_ativo_imob;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela REC_IMP_BEM_ATIVO_IMOB
+--| funçõo retorna o ID da tabela REC_IMP_BEM_ATIVO_IMOB
 
 function fkg_recimpbemativoimob_id ( en_bemativoimob_id in bem_ativo_imob.id%type
                                    , en_tipoimp_id      in tipo_imposto.id%type )
@@ -11535,7 +11535,7 @@ end fkg_recimpbemativoimob_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna TRUE se existe o imposto do bem ou FALSE caso contrário
+-- funçõo retorna TRUE se existe o imposto do bem ou FALSE caso contrï¿½rio
 
 function fkg_existe_rec_imp_bem_ativo ( en_recimpbemativoimob_id in rec_imp_bem_ativo_imob.id%type )
          return boolean
@@ -11561,7 +11561,7 @@ end fkg_existe_rec_imp_bem_ativo;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retorno o "Cálculo do Imposto do Patrimônio" da Empresa
+-- funçõo para retorno o "Cï¿½lculo do Imposto do Patrimï¿½nio" da Empresa
 
 function fkg_empresa_calc_imp_patr ( en_empresa_id in empresa.id%type )
          return empresa.dm_calc_imp_patr%type
@@ -11587,7 +11587,7 @@ end fkg_empresa_calc_imp_patr;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela Pessoa através do CNPJ ou CPF e da Sigla do Estado - UF
+--| funçõo retorna o ID da tabela Pessoa atravï¿½s do CNPJ ou CPF e da Sigla do Estado - UF
 
 function fkg_pessoa_id_cpf_cnpj_uf ( en_multorg_id  in mult_org.id%type
                                    , en_cpf_cnpj    in varchar2
@@ -11600,7 +11600,7 @@ is
    --
 begin
    --
-   -- NÃO ALTERE A REGRA DESSAS ROTINAS SEM CONVERSAR COM EQUIPE
+   -- Nï¿½O ALTERE A REGRA DESSAS ROTINAS SEM CONVERSAR COM EQUIPE
    --
    if rtrim(ltrim(en_cpf_cnpj)) is not null then
       --
@@ -11658,7 +11658,7 @@ end fkg_pessoa_id_cpf_cnpj_uf;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para recuperar parãmetro que indica se a empresa compõe o tipo de código de crédito através do tipo de embalagem.
+-- funçõo para recuperar parï¿½metro que indica se a empresa compï¿½e o tipo de cï¿½digo de crï¿½dito atravï¿½s do tipo de embalagem.
 function fkg_dmutilprocemb_tpcred_empr( en_empresa_id in empresa.id%type )
          return empresa.dm_util_proc_emb_tipocred%type
 is
@@ -11683,7 +11683,7 @@ end fkg_dmutilprocemb_tpcred_empr;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna cod_class da tabela class_cons_item_cont conforme o id
+--| funçõo retorna cod_class da tabela class_cons_item_cont conforme o id
 
 function fkg_cod_class ( ev_classconsitemcont_id in class_cons_item_cont.id%type )
          return class_cons_item_cont.cod_class%type
@@ -11709,7 +11709,7 @@ end fkg_cod_class;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o cod_cons da tabela cod_cons_item_cont
+--| funçõo retorna o cod_cons da tabela cod_cons_item_cont
 
 function fkg_codconsitemcont_cod( en_codconsitemcont_id  in cod_cons_item_cont.id%TYPE )
          return cod_cons_item_cont.cod_cons%type
@@ -11735,9 +11735,9 @@ end fkg_codconsitemcont_cod;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função que verifica se o Número de controle da FCI do Item é válido.
--- É válido o número da FCI que é de tamanho 36, contém apenas caracteres de "A" a "F", algarismos
--- e o caractere de hífen "-" nas posições 9, 14, 19 e 24.
+--| funçõo que verifica se o Nï¿½mero de controle da FCI do Item ï¿½ vï¿½lido.
+-- ï¿½ vï¿½lido o nï¿½mero da FCI que ï¿½ de tamanho 36, contï¿½m apenas caracteres de "A" a "F", algarismos
+-- e o caractere de hï¿½fen "-" nas posiï¿½ï¿½es 9, 14, 19 e 24.
 
 function fkg_nro_fci_valido ( ev_nro_fci in item_nota_fiscal.nro_fci%type )
          return boolean
@@ -11748,12 +11748,12 @@ is
    --
 begin
    --
-   -- Verifica se o tamanho do número da FCI é igual a 36.
+   -- Verifica se o tamanho do nï¿½mero da FCI ï¿½ igual a 36.
    if length(trim(ev_nro_fci)) = 36 then
       --
       for i in 1..4 loop
          --
-         -- Verifica se nas posições 9, 14, 19 e 24 contém o hífen.
+         -- Verifica se nas posiï¿½ï¿½es 9, 14, 19 e 24 contï¿½m o hï¿½fen.
          if substr(ev_nro_fci,vn_posicao_hifen,1) <> '-' then
             --
             vb_valido := false;
@@ -11769,7 +11769,7 @@ begin
          --
          for i in 1..36 loop
             --
-            -- Verifica se contém apenas caracteres de "A" a "F" e algarismos, com exceção do hífen.
+            -- Verifica se contï¿½m apenas caracteres de "A" a "F" e algarismos, com exceï¿½ï¿½o do hï¿½fen.
             if (substr(ev_nro_fci,i,1) not in ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'))
                and i not in (9,14,19,24) then
                --
@@ -11799,7 +11799,7 @@ end fkg_nro_fci_valido;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o cd da tabela tipo_evento_sefaz conforme o ID
+--| funçõo retorna o cd da tabela tipo_evento_sefaz conforme o ID
 
 function fkg_tipoeventosefaz_cd( en_tipoeventosefaz_id  in tipo_evento_sefaz.id%TYPE )
          return tipo_evento_sefaz.cd%type
@@ -11825,7 +11825,7 @@ end fkg_tipoeventosefaz_cd;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da tabela tipo_evento_sefaz conforme o CD
+--| funçõo retorna o ID da tabela tipo_evento_sefaz conforme o CD
 
 function fkg_tipoeventosefaz_id( ev_cd  in tipo_evento_sefaz.cd%TYPE )
          return tipo_evento_sefaz.id%type
@@ -11851,7 +11851,7 @@ end fkg_tipoeventosefaz_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o parâmatro da Empresa de "Retorna Consulta de CTe sem XML de Terceiro"
+--| funçõo retorna o parï¿½matro da Empresa de "Retorna Consulta de CTe sem XML de Terceiro"
 
 function fkg_ret_cons_cte_sem_xml ( en_empresa_id in Empresa.id%type )
          return empresa.dm_ret_cons_cte_sem_xml%type
@@ -11875,7 +11875,7 @@ end fkg_ret_cons_cte_sem_xml;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o CNPJ da tabela pais_cnpj conforme o id do PAIS e da CIDADE
+--| funçõo retorna o CNPJ da tabela pais_cnpj conforme o id do PAIS e da CIDADE
 
 function fkg_paiscnpj_cnpj ( en_pais_id    in pais.id%TYPE
                            , en_cidade_id  in cidade.id%TYPE )
@@ -11903,7 +11903,7 @@ end fkg_paiscnpj_cnpj;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna a inscrição municipal da empresa
+-- funçõo retorna a inscriï¿½ï¿½o municipal da empresa
 
 function fkg_inscr_mun_empresa ( en_empresa_id  in Empresa.id%TYPE )
          return Juridica.im%TYPE
@@ -11935,7 +11935,7 @@ end fkg_inscr_mun_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o código do IBGE da cidade da empresa conforme o ID da empresa
+-- funçõo retorna o cï¿½digo do IBGE da cidade da empresa conforme o ID da empresa
 
 function fkg_ibge_cidade_empresa ( en_empresa_id  in Empresa.id%TYPE )
          return cidade.ibge_cidade%TYPE
@@ -11969,7 +11969,7 @@ end fkg_ibge_cidade_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o valor de tolerância para os valores de documentos fiscais (nf, cf, ct) e caso não exista manter 0.03
+-- funçõo retorna o valor de tolerï¿½ncia para os valores de documentos fiscais (nf, cf, ct) e caso nï¿½o exista manter 0.03
 
 function fkg_vlr_toler_empresa ( en_empresa_id in empresa.id%type
                                , ev_opcao      in varchar2 )
@@ -11998,7 +11998,7 @@ begin
          vn_vl_toler_nf  := 0.03; -- valor default
          vn_vl_toler_ct  := 0.03; -- valor default
       when others then
-         raise_application_error(-20101, 'Problemas ao recuperar valores de tolerência (empresa_id = '||en_empresa_id||' - fkg_vlr_toler_empresa. Erro = '||sqlerrm);
+         raise_application_error(-20101, 'Problemas ao recuperar valores de tolerï¿½ncia (empresa_id = '||en_empresa_id||' - fkg_vlr_toler_empresa. Erro = '||sqlerrm);
    end;
    --
    if ev_opcao = 'NF' then
@@ -12020,7 +12020,7 @@ end fkg_vlr_toler_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento retorna os parâmetros de Difirencial de Alíquota para a EFD ICMS/IPI
+-- Procedimento retorna os parï¿½metros de Difirencial de Alï¿½quota para a EFD ICMS/IPI
 procedure pkb_param_difal_efd_icms_ipi ( en_empresa_id                   in empresa.id%type
                                        , sn_dm_lcto_difal               out param_efd_icms_ipi.dm_lcto_difal%type
                                        , sn_codajsaldoapuricms_id_difal out param_efd_icms_ipi.codajsaldoapuricms_id_difal%type
@@ -12053,7 +12053,7 @@ end pkb_param_difal_efd_icms_ipi;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento retorna os parâmetros de Difirencial de Alíquota para a EFD ICMS/IPI
+-- Procedimento retorna os parï¿½metros de Difirencial de Alï¿½quota para a EFD ICMS/IPI
 function fkg_param_ciap_efd_icms_ipi ( en_empresa_id                   in empresa.id%type
                                      )
          return param_efd_icms_ipi.codajsaldoapuricms_id_ciap%type
@@ -12077,7 +12077,7 @@ end fkg_param_ciap_efd_icms_ipi;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento retorna os parâmetros Código de Ajuste de IPI Não destacado para a EFD ICMS/IPI
+-- Procedimento retorna os parï¿½metros Cï¿½digo de Ajuste de IPI Nï¿½o destacado para a EFD ICMS/IPI
 function fkg_par_ipi_naodest_efdicmsipi ( en_empresa_id                   in empresa.id%type
                                         )
          return param_efd_icms_ipi.codajapuripi_id_ipi_nao_dest%type
@@ -12100,7 +12100,7 @@ exception
 end fkg_par_ipi_naodest_efdicmsipi;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna o Parâmetro de Indicador de Tributação do Totalizador Parcial de ECF da empresa
+-- funçõo retorna o Parï¿½metro de Indicador de Tributaï¿½ï¿½o do Totalizador Parcial de ECF da empresa
 
 function fkg_indtribtotparcredz_empresa ( en_empresa_id                   in empresa.id%type
                                         )
@@ -12125,7 +12125,7 @@ end fkg_indtribtotparcredz_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o identificador do relacionamento de item/componente e insumo
+-- funçõo para retornar o identificador do relacionamento de item/componente e insumo
 function fkg_item_insumo_id( en_item_id     in item.id%type
                            , en_item_id_ins in item.id%type
                            )
@@ -12158,7 +12158,7 @@ end fkg_item_insumo_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar se o relacionamento de item/componente e insumo já existe
+-- funçõo para retornar se o relacionamento de item/componente e insumo jï¿½ existe
 function fkg_existe_iteminsumo( en_iteminsumo_id in item_insumo.id%type
                               )
          return boolean
@@ -12192,7 +12192,7 @@ exception
 end fkg_existe_iteminsumo;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna o ID da tabela NFINFOR_FISCAL conforme o NOTAFISCAL_ID e OBSLANCTOFISCAL_ID
+-- funçõo retorna o ID da tabela NFINFOR_FISCAL conforme o NOTAFISCAL_ID e OBSLANCTOFISCAL_ID
 
 function fkg_nfinfor_fiscal_id ( en_notafiscal_id      in nota_fiscal.id%type
                                , en_obslanctofiscal_id in obs_lancto_fiscal.id%type )
@@ -12217,7 +12217,7 @@ exception
 end fkg_nfinfor_fiscal_id;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna o COD_OBS da tabela OBS_LANCTO_FISCAL conforme o NFINFORFISCAL_ID
+-- funçõo retorna o COD_OBS da tabela OBS_LANCTO_FISCAL conforme o NFINFORFISCAL_ID
 
 function fkg_cod_obs_nfinfor_fiscal ( en_nfinforfiscal_id in nfinfor_fiscal.id%type )
          return obs_lancto_fiscal.cod_obs%type
@@ -12242,7 +12242,7 @@ exception
 end fkg_cod_obs_nfinfor_fiscal;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna o NRO_ITEM da tabela ITEM conforme o ITEMNOTAFISCAL_ID
+-- funçõo retorna o NRO_ITEM da tabela ITEM conforme o ITEMNOTAFISCAL_ID
 
 function fkg_nro_item ( en_itemnotafiscal_id  in item_nota_fiscal.id%type )
          return item_nota_fiscal.nro_item%type
@@ -12265,7 +12265,7 @@ exception
 end fkg_nro_item;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna o código de ajuste das obrigações a recolher através do identificador
+-- funçõo retorna o cï¿½digo de ajuste das obrigaï¿½ï¿½es a recolher atravï¿½s do identificador
 
 function fkg_cd_ajobrigrec ( en_ajobrigrec_id in aj_obrig_rec.id%type )
          return aj_obrig_rec.cd%type
@@ -12291,7 +12291,7 @@ end fkg_cd_ajobrigrec;
 
 -------------------------------------------------------------------------------------------------------
 
---| Retorna o parâmetro de empresa EMPR_PARAM_CONS_MDE.DM_REG_CO_MDE_AUT
+--| Retorna o parï¿½metro de empresa EMPR_PARAM_CONS_MDE.DM_REG_CO_MDE_AUT
 
 function fkg_empresa_reg_co_mde_aut ( en_empresa_id                   in empresa.id%type
                                     )
@@ -12316,7 +12316,7 @@ end fkg_empresa_reg_co_mde_aut;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o IBGE_CIDADE conforme Estado e Descrição da Cidade
+-- funçõo retorna o IBGE_CIDADE conforme Estado e Descriï¿½ï¿½o da Cidade
 
 function fkg_ibge_cidade_dados ( ev_sigla_estado in estado.sigla_estado%type
                                , ev_descr_cidade in cidade.descr%type
@@ -12345,7 +12345,7 @@ end fkg_ibge_cidade_dados;
 
 -------------------------------------------------------------------------------------------------------
 
---| Retorna o parâmetro de empresa EMPR_PARAM_CONS_MDE.DM_REG_MDE_AUT
+--| Retorna o parï¿½metro de empresa EMPR_PARAM_CONS_MDE.DM_REG_MDE_AUT
 
 function fkg_empresa_reg_mde_aut ( en_empresa_id in empresa.id%type )
          return empr_param_cons_mde.dm_reg_mde_aut%type
@@ -12369,7 +12369,7 @@ end fkg_empresa_reg_mde_aut;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o código do bem do ativo imobilizado conforme o id
+-- funçõo retorna o cï¿½digo do bem do ativo imobilizado conforme o id
 
 function fkg_cod_ind_bem_id ( en_bemativoimob_id in bem_ativo_imob.id%type )
          return bem_ativo_imob.cod_ind_bem%type
@@ -12394,7 +12394,7 @@ end fkg_cod_ind_bem_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o Código da tabela SUBGRUPO_PAT
+-- funçõo retorna o Cï¿½digo da tabela SUBGRUPO_PAT
 
 function fkg_subgrupopat_cd ( en_subgrupopat_id  in subgrupo_pat.id%type )
          return subgrupo_pat.cd%type
@@ -12420,7 +12420,7 @@ end fkg_subgrupopat_cd;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o CD da tabela GRUPO_PAT conforme o ID da tabela SUBGRUPO_PAT
+-- funçõo retorna o CD da tabela GRUPO_PAT conforme o ID da tabela SUBGRUPO_PAT
 
 function fkg_grupopat_cd_subgrupo_id ( en_subgrupopat_id  in subgrupo_pat.id%type )
          return grupo_pat.cd%type
@@ -12447,7 +12447,7 @@ exception
 end fkg_grupopat_cd_subgrupo_id;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna TRUE se existe o Plano de Contas ou FALSE caso não exista
+-- funçõo retorna TRUE se existe o Plano de Contas ou FALSE caso nï¿½o exista
 
 function fkg_existe_plano_conta ( en_planoconta_id in plano_conta.id%type )
          return boolean
@@ -12472,7 +12472,7 @@ exception
 end fkg_existe_plano_conta;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna TRUE se existe o Plano de Contas Referencial ou FALSE caso não exista
+-- funçõo retorna TRUE se existe o Plano de Contas Referencial ou FALSE caso nï¿½o exista
 
 function fkg_existe_pc_referen ( en_pcreferen_id in pc_referen.id%type )
          return boolean
@@ -12497,7 +12497,7 @@ exception
 end fkg_existe_pc_referen;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna TRUE se existe o Centro de Custo ou FALSE caso não exista
+-- funçõo retorna TRUE se existe o Centro de Custo ou FALSE caso nï¿½o exista
 
 function fkg_existe_centro_custo ( en_centrocusto_id in centro_custo.id%type )
          return boolean
@@ -12522,7 +12522,7 @@ exception
 end fkg_existe_centro_custo;
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna TRUE se existe o Histórico Padrão ou FALSE caso não exista
+-- funçõo retorna TRUE se existe o Histï¿½rico Padrï¿½o ou FALSE caso nï¿½o exista
 
 function fkg_existe_hist_padrao ( en_histpadrao_id in hist_padrao.id%type )
          return boolean
@@ -12548,7 +12548,7 @@ end fkg_existe_hist_padrao;
 
 -------------------------------------------------------------------------------------------------------
 
---| Retorna a quantidade de registros da tabela enviada no parâmetro
+--| Retorna a quantidade de registros da tabela enviada no parï¿½metro
 
 function fkg_quantidade ( ev_obj    varchar2 )
          return number
@@ -12606,7 +12606,7 @@ end fkg_monta_obj;
 
 -------------------------------------------------------------------------------------------------------
 
---| Retorna a descrição (nome) da cidade conforme o ID
+--| Retorna a descriï¿½ï¿½o (nome) da cidade conforme o ID
 
 function fkg_cidade_descr ( en_cidade_id   in cidade.id%type )
          return cidade.descr%type
@@ -12630,7 +12630,7 @@ end fkg_cidade_descr;
 
 -------------------------------------------------------------------------------------------------------
 
--- Retorna o ID do mult_org vinculado ao usuário
+-- Retorna o ID do mult_org vinculado ao usuï¿½rio
 
 function fkg_multorg_id_usuario ( en_usuario_id in neo_usuario.id%type )
          return mult_org.id%type
@@ -12682,7 +12682,7 @@ end fkg_dm_tp_amb_nf;
 
 -------------------------------------------------------------------------------------------------------
 
--- Retorna o valor do Parâmetro Gerar XML WS Sinal Suframa
+-- Retorna o valor do Parï¿½metro Gerar XML WS Sinal Suframa
 
 function fkg_cfop_gerar_sinal_suframa ( en_empresa_id in empresa.id%type
                                       , en_cfop_id    in cfop.id%type
@@ -12712,7 +12712,7 @@ end fkg_cfop_gerar_sinal_suframa;
 -------------------------------------------------------------------------------------------------------
 --
 -- Recebe como entrada um texto(ev_texto) separado por algum simbolo(ev_separador)
--- e devolve um array onde cada posição do array é uma palavra que estava entre o separador.
+-- e devolve um array onde cada posiï¿½ï¿½o do array ï¿½ uma palavra que estava entre o separador.
 --
 
 procedure pkb_dividir ( ev_texto       in     varchar2
@@ -12725,12 +12725,12 @@ is
    --
 begin
    --
-   -- Remove o separador do começo do texto, caso tenha.
+   -- Remove o separador do comeï¿½o do texto, caso tenha.
    if substr(vv_texto,1,1) = ev_separador then
       vv_texto := substr(vv_texto,2,length(vv_texto)-1);
    end if;
    --
-   -- Adiciona o separador no final do texto, caso não tenha.
+   -- Adiciona o separador no final do texto, caso nï¿½o tenha.
    if substr(vv_texto,length(vv_texto),1) <> ev_separador then
       vv_texto := vv_texto || ev_separador;
    end if;
@@ -12752,7 +12752,7 @@ end pkb_dividir;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna código da conta + descrição do plano de contas através do ID do Plano de Conta
+-- funçõo retorna cï¿½digo da conta + descriï¿½ï¿½o do plano de contas atravï¿½s do ID do Plano de Conta
 
 function fkg_texto_plano_conta_id ( en_planoconta_id in plano_conta.id%type )
          return varchar2
@@ -12773,7 +12773,7 @@ begin
          when no_data_found then
             vv_texto := null;
          when others then
-            raise_application_error(-20101, 'Problemas ao recuperar código do plano de contas (id='||en_planoconta_id||'). Erro = '||sqlerrm);
+            raise_application_error(-20101, 'Problemas ao recuperar cï¿½digo do plano de contas (id='||en_planoconta_id||'). Erro = '||sqlerrm);
       end;
       --
     end if;
@@ -12789,7 +12789,7 @@ end fkg_texto_plano_conta_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna código do centro de custo + descrição através do ID do Centro de Custo
+-- funçõo retorna cï¿½digo do centro de custo + descriï¿½ï¿½o atravï¿½s do ID do Centro de Custo
 
 function fkg_texto_centro_custo_id ( en_centrocusto_id in centro_custo.id%type )
          return varchar2
@@ -12810,7 +12810,7 @@ begin
          when no_data_found then
             vv_texto := null;
          when others then
-            raise_application_error(-20101, 'Problemas ao recuperar código do centro de custo (id='||en_centrocusto_id||'). Erro = '||sqlerrm);
+            raise_application_error(-20101, 'Problemas ao recuperar cï¿½digo do centro de custo (id='||en_centrocusto_id||'). Erro = '||sqlerrm);
       end;
       --
     end if;
@@ -12828,14 +12828,14 @@ end fkg_texto_centro_custo_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID "CNAE" conforme o Código
+-- funçõo retorna o ID "CNAE" conforme o Cï¿½digo
 
 function fkg_id_cnae_cd ( en_cnae_cd in cnae.cd%TYPE )
          return cnae.id%TYPE
 is
 
    vn_cnae_id         cnae.id%TYPE;
-   vv_cd_cnae_semptb  cnae.cd%TYPE;  -- cd do cnae sem ponto, traço e barra  
+   vv_cd_cnae_semptb  cnae.cd%TYPE;  -- cd do cnae sem ponto, traï¿½o e barra  
 
 begin
    --
@@ -12857,7 +12857,7 @@ end fkg_id_cnae_cd;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o Código do "CNAE" conforme ID
+-- funçõo retorna o Cï¿½digo do "CNAE" conforme ID
 
 function fkg_cd_cnae_id ( en_cnae_id in cnae.id%TYPE )
          return cnae.cd%TYPE
@@ -12883,7 +12883,7 @@ end fkg_cd_cnae_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o NOME da tabela NEO_PAPEL conforme ID
+--| funçõo retorna o NOME da tabela NEO_PAPEL conforme ID
 
 function fkg_papel_nome_conf_id ( en_papel_id in neo_papel.id%type )
          return neo_papel.nome%type
@@ -12908,9 +12908,9 @@ exception
 end fkg_papel_nome_conf_id;
 --
 -- ============================================================================================ --
--- Função retorna o campo EMPRESA_ID conforme o multorg_id e (CPF ou CNPJ)
--- Esta função é uma cópia da fkg_empresa_id_pelo_cpf_cnpj, porém essa nova não considera
--- se a empresa está ativa ou não.
+-- funçõo retorna o campo EMPRESA_ID conforme o multorg_id e (CPF ou CNPJ)
+-- Esta funçõo ï¿½ uma cï¿½pia da fkg_empresa_id_pelo_cpf_cnpj, porï¿½m essa nova nï¿½o considera
+-- se a empresa estï¿½ ativa ou nï¿½o.
 --
 function fkg_empresa_id_cpf_cnpj ( en_multorg_id  in mult_org.id%type
                                  , ev_cpf_cnpj    in varchar2
@@ -12920,7 +12920,7 @@ function fkg_empresa_id_cpf_cnpj ( en_multorg_id  in mult_org.id%type
    --
 begin
    --
-   -- NÃO ALTERE A REGRA DESSAS ROTINAS SEM CONVERSAR COM EQUIPE
+   -- Nï¿½O ALTERE A REGRA DESSAS ROTINAS SEM CONVERSAR COM EQUIPE
    --
    if rtrim(ltrim(ev_cpf_cnpj)) is not null then
       --
@@ -13045,7 +13045,7 @@ exception
 end fkg_empresa_id_cpf_cnpj;
 --
 -- ============================================================================================ --
---| Função retorna o NRO_PROC da tabela RET_EVENTO_EPEC conforme ID da nota
+--| funçõo retorna o NRO_PROC da tabela RET_EVENTO_EPEC conforme ID da nota
 
 function fkg_ret_evento_epec_proc_id ( en_notafiscal_id in nota_fiscal.id%type )
          return ret_evento_epec.nro_proc%type
@@ -13072,7 +13072,7 @@ end fkg_ret_evento_epec_proc_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna o COD_STAT da tabela RET_EVENTO_EPEC conforme ID da nota
+--| funçõo retorna o COD_STAT da tabela RET_EVENTO_EPEC conforme ID da nota
 
 function fkg_ret_evento_epec_stat_id ( en_notafiscal_id in nota_fiscal.id%type )
          return ret_evento_epec.cod_stat%type
@@ -13099,7 +13099,7 @@ end fkg_ret_evento_epec_stat_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Retorna o limite de quantade de dias para emissão da NFe conforme a empresa
+--| Retorna o limite de quantade de dias para emissï¿½o da NFe conforme a empresa
 
 function fkg_estado_lim_emiss_nfe ( en_empresa_id in empresa.id%type )
          return estado.lim_emiss_nfe%type
@@ -13131,7 +13131,7 @@ end fkg_estado_lim_emiss_nfe;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o ID da nota Fiscal a partir do número da chave de acesso e empresa_id
+-- funçõo retorna o ID da nota Fiscal a partir do nï¿½mero da chave de acesso e empresa_id
 
 function fkg_notafiscal_id_chave_empr ( en_nro_chave_nfe  in Nota_Fiscal.nro_chave_nfe%TYPE
                                       , en_empresa_id     in empresa.id%type
@@ -13164,7 +13164,7 @@ end fkg_notafiscal_id_chave_empr;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna situação do documento da Nota Fiscal através do identificador da nota fiscal
+-- funçõo retorna situaï¿½ï¿½o do documento da Nota Fiscal atravï¿½s do identificador da nota fiscal
 function fkg_sitdoc_id_nf ( en_notafiscal_id in nota_fiscal.id%type )
          return sit_docto.id%type
 is
@@ -13196,7 +13196,7 @@ end fkg_sitdoc_id_nf;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna a data de contingência da Nota Fiscal através do identificador
+-- funçõo retorna a data de contingï¿½ncia da Nota Fiscal atravï¿½s do identificador
 function fkg_dt_cont_nf ( en_notafiscal_id in nota_fiscal.id%type )
          return nota_fiscal.dt_cont%type
 is
@@ -13221,7 +13221,7 @@ end fkg_dt_cont_nf;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna DM_VAL_NCM_ITEM através do ID da empresa.
+-- funçõo retorna DM_VAL_NCM_ITEM atravï¿½s do ID da empresa.
 function fkg_dmvalncm_empid(en_empresa_id in empresa.id%type)
          return empresa.dm_val_ncm_item%type
 is
@@ -13246,7 +13246,7 @@ end fkg_dmvalncm_empid;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função que retorna DM_DT_ESCR_DFEPOE através do ID da empresa.
+-- funçõo que retorna DM_DT_ESCR_DFEPOE atravï¿½s do ID da empresa.
 function fkg_dmdtescrdfepoe_empresa(en_empresa_id in empresa.id%type)
          return empresa.dm_dt_escr_dfepoe%type
 is
@@ -13271,7 +13271,7 @@ end fkg_dmdtescrdfepoe_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função que retorna cidade_id da empresa da nota informada.
+-- funçõo que retorna cidade_id da empresa da nota informada.
 
 function fkg_cidade_id_nf_id ( en_notafiscal_id in nota_fiscal.id%type)
          return cidade.id%type
@@ -13301,7 +13301,7 @@ end fkg_cidade_id_nf_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o id do país conforme o "Pais do tipo do código de arquivo" e "Tipo de Código de arquivo"
+-- funçõo retorna o id do paï¿½s conforme o "Pais do tipo do cï¿½digo de arquivo" e "Tipo de Cï¿½digo de arquivo"
 
 function fkg_pais_id_tipo_cod_arq ( ev_paistipocodarq_cd in pais_tipo_cod_arq.cd%type
                                   , ev_tipocodarq_cd     in tipo_cod_arq.cd%type
@@ -13334,7 +13334,7 @@ end fkg_pais_id_tipo_cod_arq;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o id do país conforme o codigo do "Pais do tipo do código de arquivo" e do "Tipo de Código de arquivo"
+-- funçõo retorna o id do paï¿½s conforme o codigo do "Pais do tipo do cï¿½digo de arquivo" e do "Tipo de Cï¿½digo de arquivo"
 
 function fkg_pais_id_tipo_arq_cd ( ev_paistipocodarq_cd in pais_tipo_cod_arq.cd%type
                                  , ev_tipocodarq_cd     in tipo_cod_arq.cd%type
@@ -13365,7 +13365,7 @@ end fkg_pais_id_tipo_arq_cd;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna a inscrição municipal da pessoa
+-- funçõo retorna a inscriï¿½ï¿½o municipal da pessoa
 
 function fkg_inscr_mun_pessoa ( en_pessoa_id  in pessoa.id%TYPE )
          return juridica.im%TYPE
@@ -13394,7 +13394,7 @@ exception
 end fkg_inscr_mun_pessoa;
 
 -------------------------------------------------------------------------------------------------------
--- Função para descrever valores por extenso
+-- funçõo para descrever valores por extenso
 function fkg_descValor_extenso(valor number)
 /*redmine : 10808 -- fabricio jacob -- 31/08/2015*/
   return varchar2 is
@@ -13505,9 +13505,9 @@ begin
     if b1 != 0 or b2 != 0 or b3 != 0 then
       if (b1 = 0 and b2 = 0) and b3 = 1 then
         l5 := 'Hum';
-        l6 := ' Bilhão';
+        l6 := ' Bilhï¿½o';
       else
-        l6 := ' Bilhões';
+        l6 := ' Bilhï¿½es';
       end if;
       if valor > 999999999 then
         virgula_bi := ' e ';
@@ -13555,9 +13555,9 @@ begin
     if b4 != 0 or b5 != 0 or b6 != 0 then
       if (b4 = 0 and b5 = 0) and b6 = 1 then
         l11 := ' Hum';
-        l12 := ' Milhão';
+        l12 := ' Milhï¿½o';
       else
-        l12 := ' Milhões';
+        l12 := ' Milhï¿½es';
       end if;
       if valor > 999999 then
         virgula_mi := ' e ';
@@ -13736,7 +13736,7 @@ end fkg_descValor_extenso;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna TRUE se existe grupo de tributação do imposto ICMS ou FALSE caso não exista
+-- funçõo retorna TRUE se existe grupo de tributaï¿½ï¿½o do imposto ICMS ou FALSE caso nï¿½o exista
 
 function fkg_existe_imp_itemnficmsdest ( en_impitemnf_id in imp_itemnf_icms_dest.id%type )
          return boolean
@@ -13760,7 +13760,7 @@ end fkg_existe_imp_itemnficmsdest;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função recupera o "Código" do Enquadramento Legal do IPI conforme ID
+-- funçõo recupera o "Cï¿½digo" do Enquadramento Legal do IPI conforme ID
 function fkg_cd_enq_legal_ipi ( en_enqlegalipi_id in enq_legal_ipi.id%type )
          return enq_legal_ipi.cd%type
 is
@@ -13783,7 +13783,7 @@ end fkg_cd_enq_legal_ipi;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função recupera o "ID" do Enquadramento Legal do IPI conforme Código
+-- funçõo recupera o "ID" do Enquadramento Legal do IPI conforme Cï¿½digo
 function fkg_id_enq_legal_ipi ( ev_enqlegalipi_cd in enq_legal_ipi.cd%type )
          return enq_legal_ipi.id%type
 is
@@ -13863,7 +13863,7 @@ exception
 end;
 
 -----------------------------------------------------------------------------------------------------
---Retorna o DM_OBRIG_INTEGR do mult org informado. 1 - obrigatorio, 0 - não obrigatorio;
+--Retorna o DM_OBRIG_INTEGR do mult org informado. 1 - obrigatorio, 0 - nï¿½o obrigatorio;
 
 function fkg_multorg_obrig_integr (en_multorg_id    mult_org.id%type)
          return mult_org.DM_OBRIG_INTEGR%type
@@ -13929,13 +13929,13 @@ is
 end fkg_info_adicionais;
 
 -------------------------------------------------------------------------------------------------------
---| Função identifica se a data de vencimento do certificado está OK
+--| funçõo identifica se a data de vencimento do certificado estï¿½ OK
 
 function fkg_empr_dt_venc_cert_ok ( en_empresa_id in empresa.id%type )
          return boolean
 is
    --
-   vn_dummy            number := 0; -- 0-não ok, 1-sim ok
+   vn_dummy            number := 0; -- 0-nï¿½o ok, 1-sim ok
    vn_dm_tp_cert       empresa.dm_tp_cert%type;
    vd_dt_venc_cert     empresa.dt_venc_cert%type;
    vd_dt_venc_cert_hsm empresa.dt_venc_cert_hsm%type;
@@ -13993,7 +13993,7 @@ exception
 end fkg_empr_dt_venc_cert_ok;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna a data de vencimento do certificado
+--| funçõo retorna a data de vencimento do certificado
 
 function fkg_empr_dt_venc_cert ( en_empresa_id in empresa.id%type )
          return date
@@ -14023,7 +14023,7 @@ end fkg_empr_dt_venc_cert;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorno do "código do Cest" conforme ID
+--| funçõo retorno do "cï¿½digo do Cest" conforme ID
 function fkg_cd_cest_id ( en_cest_id in cest.id%type )
          return cest.cd%type
 is
@@ -14048,7 +14048,7 @@ end fkg_cd_cest_id;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorno do "ID do Cest" conforme CD
+--| funçõo retorno do "ID do Cest" conforme CD
 function fkg_id_cest_cd ( ev_cest_cd in cest.cd%type )
          return cest.id%type
 is
@@ -14072,7 +14072,7 @@ exception
 end fkg_id_cest_cd;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna do Valor do Parâmetro de Aguardar Liberação da NFe na Empresa
+--| funçõo retorna do Valor do Parï¿½metro de Aguardar Liberaï¿½ï¿½o da NFe na Empresa
 
 function fkg_empr_aguard_liber_nfe ( en_empresa_id in empresa.id%type )
          return empresa.dm_aguard_liber_nfe%type
@@ -14102,7 +14102,7 @@ end fkg_empr_aguard_liber_nfe;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna a Descrição do Pais conforme Siscomex
+--| funçõo retorna a Descriï¿½ï¿½o do Pais conforme Siscomex
 
 function fkg_Descr_Pais_siscomex ( ev_cod_siscomex  in Pais.cod_siscomex%TYPE )
          return Pais.descr%TYPE
@@ -14127,7 +14127,7 @@ exception
 end fkg_Descr_Pais_siscomex;
 
 -------------------------------------------------------------------------------------------------------
---| Função que pega o valor da sequence
+--| funçõo que pega o valor da sequence
 function fkg_vlr_sequence ( ev_sequence_name in seq_tab.sequence_name%type )
          return number
 is
@@ -14152,7 +14152,7 @@ exception
 end fkg_vlr_sequence;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna o primeiro furo ID nos registros da tabela
+--| funçõo retorna o primeiro furo ID nos registros da tabela
 function fkg_primeiro_furo_id ( ev_tabela    in varchar2
                               , ev_campo_id  in varchar2
                               )
@@ -14188,7 +14188,7 @@ exception
 end fkg_primeiro_furo_id;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna o proximo valor livre (Furo do ID) ou o valor da sequence
+--| funçõo retorna o proximo valor livre (Furo do ID) ou o valor da sequence
 function fkg_vlr_livre_sequence ( ev_tabela         in varchar2
                                 , ev_campo_id       in varchar2
                                 , ev_sequence_name  in seq_tab.sequence_name%type
@@ -14225,7 +14225,7 @@ exception
 end fkg_vlr_livre_sequence;
 
 -------------------------------------------------------------------------------------------------------
---| Função retorna o código identificador da tabela ABERTURA_FCI
+--| funçõo retorna o cï¿½digo identificador da tabela ABERTURA_FCI
 function fkg_aberturafci_id ( en_empresa_id in empresa.id%type
                             , ed_dt_ini in abertura_fci.dt_ini%type
                             ) return number
@@ -14256,7 +14256,7 @@ exception
 end fkg_aberturafci_id;
 
 -------------------------------------------------------------------------------------------------------
---| Função que retorna o código identificador da tabela ABERTURA_FCI_ARQ
+--| funçõo que retorna o cï¿½digo identificador da tabela ABERTURA_FCI_ARQ
 function pk_aberturafciarq_id ( en_aberturafci_id in abertura_fci_arq.aberturafci_id%type
                               , en_nro_sequencia  in abertura_fci_arq.nro_sequencia%type
                               ) return abertura_fci_arq.id%type
@@ -14287,7 +14287,7 @@ exception
 end pk_aberturafciarq_id;
 
 ----------------------------------------------------------------------------------------------------
---| Função que retorna o código identificador da tabela de Retorno_Fci
+--| funçõo que retorna o cï¿½digo identificador da tabela de Retorno_Fci
 function fkg_infitemfci_id ( en_aberturafciarq_id in abertura_fci_arq.id%type
                            , en_item_id           in item.id%type
                            ) return inf_item_fci.id%type
@@ -14317,7 +14317,7 @@ exception
 end fkg_infitemfci_id;
 
 ----------------------------------------------------------------------------------------------------
---| Função que retorna o código identificador da tabela de Retorno_Fci
+--| funçõo que retorna o cï¿½digo identificador da tabela de Retorno_Fci
 function fkg_retornofci_id ( en_item_id       in item.id%type
                            , en_infitemfci_id in inf_item_fci.id%type
                            ) return retorno_fci.id%type
@@ -14349,7 +14349,7 @@ end fkg_retornofci_id;
 
 ----------------------------------------------------------------------------------------------------
 
---| Função de Retornar o ID do Regime Tributário
+--| funçõo de Retornar o ID do Regime Tributï¿½rio
 function fkg_id_reg_trib_cd ( ev_regtrib_cd in reg_trib.cd%type )
          return reg_trib.id%type
 is
@@ -14372,7 +14372,7 @@ end fkg_id_reg_trib_cd;
 
 ----------------------------------------------------------------------------------------------------
 
---| Função de Retornar o CD do Regime Tributário
+--| funçõo de Retornar o CD do Regime Tributï¿½rio
 function fkg_cd_reg_trib_id ( en_regtrib_id in reg_trib.id%type )
          return reg_trib.cd%type
 is
@@ -14395,7 +14395,7 @@ end fkg_cd_reg_trib_id;
 
 ----------------------------------------------------------------------------------------------------
 
---| Função retorna o CD da Forma de Tributação
+--| funçõo retorna o CD da Forma de Tributaï¿½ï¿½o
 function fkg_cd_forma_trib_id ( en_formatrib_id  in forma_trib.id%type )
          return forma_trib.cd%type
 is
@@ -14418,7 +14418,7 @@ end fkg_cd_forma_trib_id;
 
 ----------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da Forma de Tributação
+--| funçõo retorna o ID da Forma de Tributaï¿½ï¿½o
 function fkg_forma_trib_cd ( en_regtrib_id    in reg_trib.id%type
                            , ev_formatrib_cd  in forma_trib.cd%type
                            )
@@ -14444,7 +14444,7 @@ end fkg_forma_trib_cd;
 
 ----------------------------------------------------------------------------------------------------
 
---| Função retorna o ID da Incidencia Tributaria
+--| funçõo retorna o ID da Incidencia Tributaria
 function fkg_id_inc_trib_cd ( ev_inctrib_cd in inc_trib.cd%type )
          return inc_trib.id%type
 is
@@ -14467,7 +14467,7 @@ end fkg_id_inc_trib_cd;
 
 ----------------------------------------------------------------------------------------------------
 
---| Função retorna o CD da Incidencia Tributaria
+--| funçõo retorna o CD da Incidencia Tributaria
 function fkg_cd_inc_trib_id ( en_inctrib_id in inc_trib.id%type )
          return inc_trib.cd%type
 is
@@ -14490,7 +14490,7 @@ end fkg_cd_inc_trib_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retor do ID da Mult-Organização conforme código e hash
+-- funçõo retor do ID da Mult-Organizaï¿½ï¿½o conforme cï¿½digo e hash
 
 function fkg_multorg_id ( ev_multorg_cd    in  mult_org.cd%type
                         , ev_multorg_hash  in  mult_org.hash%type
@@ -14519,7 +14519,7 @@ end fkg_multorg_id;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o CD da Mult-Organização conforme ID
+-- funçõo retorna o CD da Mult-Organizaï¿½ï¿½o conforme ID
 
 function fkg_multorg_cd ( en_multorg_id in mult_org.id%type
                         )
@@ -14543,7 +14543,7 @@ exception
 end fkg_multorg_cd;
 
 ----------------------------------------------------------------------------------------------------
---| Função que retorna o código identificador da tabela de COD_NAT_PC
+--| funçõo que retorna o cï¿½digo identificador da tabela de COD_NAT_PC
 function fkg_codnatpc_id ( ev_cod_nat in cod_nat_pc.cod_nat%type
                          ) return cod_nat_pc.id%type
 is
@@ -14571,7 +14571,7 @@ exception
 end fkg_codnatpc_id;
 
 ----------------------------------------------------------------------------------------------------
---| Função que retorna o código da tabela de Cod_Nat_Pc
+--| funçõo que retorna o cï¿½digo da tabela de Cod_Nat_Pc
 function fkg_codnatpcid_cod_nat ( en_codnatpc_id in cod_nat_pc.id%type
                                 ) return cod_nat_pc.id%type
 is
@@ -14598,7 +14598,7 @@ exception
      return -1;
 end fkg_codnatpcid_cod_nat;
 ----------------------------------------------------------------------------------------------------
---| Função que retorna o código identificador da tabela de AGLUT_CONTABIL
+--| funçõo que retorna o cï¿½digo identificador da tabela de AGLUT_CONTABIL
 function fkg_aglutcontabil_id ( en_empresa_id  in empresa.id%type
                               , ev_cod_agl     in aglut_contabil.cod_agl%type
                               ) return aglut_contabil.id%type
@@ -14629,7 +14629,7 @@ exception
 end fkg_aglutcontabil_id;
 
 ----------------------------------------------------------------------------------------------------
---| Função que retorna o código da tabela de AGLUT_CONTABIL
+--| funçõo que retorna o cï¿½digo da tabela de AGLUT_CONTABIL
 function fkg_cd_aglutcontabil ( en_aglutcontabil_id  in aglut_contabil.id%type
                               ) return aglut_contabil.cod_agl%type
 is
@@ -14657,7 +14657,7 @@ exception
 end fkg_cd_aglutcontabil;
 
 ----------------------------------------------------------------------------------------------------
---| Função que retorna o código identificador da tabela de PC_AGLUT_CONTABIL
+--| funçõo que retorna o cï¿½digo identificador da tabela de PC_AGLUT_CONTABIL
 function fkg_pcaglutcontabil_id ( en_planoconta_id    in plano_conta.id%type
                                 , en_aglutcontabil_id in aglut_contabil.id%type
                                 , en_centrocusto_id   in centro_custo.id%type
@@ -14691,7 +14691,7 @@ end fkg_pcaglutcontabil_id;
 
 ----------------------------------------------------------------------------------------------------
 
--- Procedimento para retornar o Regime Tributário da Empresa e Forma de Tributação
+-- Procedimento para retornar o Regime Tributï¿½rio da Empresa e Forma de Tributaï¿½ï¿½o
 procedure pkb_empresa_forma_trib ( en_empresa_id     in empresa.id%type
                                  , ed_dt_ref         in date
                                  , sn_regtrib_id     out reg_trib.id%type
@@ -14803,7 +14803,7 @@ end fkg_empresa_cnae_primario;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o Id de Auto-Relacionamento do "CNAE" conforme ID
+-- funçõo retorna o Id de Auto-Relacionamento do "CNAE" conforme ID
 
 function fkg_ar_cnae_id ( en_cnae_id in cnae.id%TYPE )
          return cnae.ar_cnae_id%type
@@ -14829,7 +14829,7 @@ end fkg_ar_cnae_id;
 
 ----------------------------------------------------------------------------------------------------
 
--- Função para retornar o Incidencia Tributária da Empresa
+-- funçõo para retornar o Incidencia Tributï¿½ria da Empresa
 function fkg_empresa_inc_trib ( en_empresa_id     in empresa.id%type
                               , ed_dt_ref         in date
                               )
@@ -14884,7 +14884,7 @@ end fkg_empresa_inc_trib;
 --
 ----------------------------------------------------------------------------------------------------
 --
--- Função para retornar o ID da informação sobre exportação com base na chave
+-- funçõo para retornar o ID da informaï¿½ï¿½o sobre exportaï¿½ï¿½o com base na chave
 function fkg_busca_infoexp_id ( ev_cpf_cnpj_emit   in   pessoa.cod_part%type
                               , en_dm_ind_doc      in   infor_exportacao.dm_ind_doc%type
                               , en_nro_de          in   infor_exportacao.nro_de%type
@@ -14931,7 +14931,7 @@ end fkg_busca_infoexp_id;
 
 ----------------------------------------------------------------------------------------------------
 
--- Função para retornar o ID do documento da informação sobre exportação com base no item e na nota do documento
+-- funçõo para retornar o ID do documento da informaï¿½ï¿½o sobre exportaï¿½ï¿½o com base no item e na nota do documento
 function fkg_busca_docinfoexp_id ( en_item_id              in   item.id%type
                                  , en_notafiscal_id        in   nota_fiscal.id%type
                                  , en_inforexportacao_id   in   infor_exportacao.id%type )
@@ -14967,7 +14967,7 @@ end fkg_busca_docinfoexp_id;
 
 ----------------------------------------------------------------------------------------------------
 
---| Função retorno o valor do Parâmetro Global
+--| funçõo retorno o valor do Parï¿½metro Global
 function fkg_vlr_param_global_csf ( ev_paramglobalcsf_cd in param_global_csf.cd%type )
          return param_global_csf.valor%type
 is
@@ -14990,7 +14990,7 @@ end fkg_vlr_param_global_csf;
 
 ----------------------------------------------------------------------------------------------------
 
--- Função retorna se a Empresa Utiliza Unidade de Medida da Sefaz por NCM
+-- funçõo retorna se a Empresa Utiliza Unidade de Medida da Sefaz por NCM
 function fkg_util_unidsefaz_conf_ncm ( en_empresa_id in empresa.id%type )
          return empresa.dm_util_unidsefaz_conf_ncm%type
 is
@@ -15013,7 +15013,7 @@ end fkg_util_unidsefaz_conf_ncm;
 
 ----------------------------------------------------------------------------------------------------
 
--- Função para retornar a Sigla da Unidade de Medida do Sefaz Conforme NCM e Período
+-- funçõo para retornar a Sigla da Unidade de Medida do Sefaz Conforme NCM e Perï¿½odo
 function fkg_unidsefaz_conf_ncm ( en_ncm_id     in ncm.id%type
                                 , ed_dt_ref     in date
                                 )
@@ -15049,7 +15049,7 @@ end fkg_unidsefaz_conf_ncm;
 
 ----------------------------------------------------------------------------------------------------
 
--- Função retorna o ID do NCM Supostamente Seperior
+-- funçõo retorna o ID do NCM Supostamente Seperior
 
 function fkg_ncm_id_superior ( ev_cod_ncm  in ncm.cod_ncm%type )
          return ncm.id%type
@@ -15090,7 +15090,7 @@ end fkg_ncm_id_superior;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento verifica se a empresa valida o imposto ISS - Parâmetro para Notas Fiscais com Emissão Propria
+-- Procedimento verifica se a empresa valida o imposto ISS - Parï¿½metro para Notas Fiscais com Emissï¿½o Propria
 
 function fkg_empresa_vld_iss_epropria ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valida_iss_epropria%type
@@ -15116,7 +15116,7 @@ end fkg_empresa_vld_iss_epropria;
 
 -------------------------------------------------------------------------------------------------------
 
--- Procedimento verifica se a empresa valida o imposto ISS - Parâmetro para Notas Fiscais com Emissão de Terceiros
+-- Procedimento verifica se a empresa valida o imposto ISS - Parï¿½metro para Notas Fiscais com Emissï¿½o de Terceiros
 
 function fkg_empresa_vld_iss_terc ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valida_iss_terc%type
@@ -15142,7 +15142,7 @@ end fkg_empresa_vld_iss_terc;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o ibge da cidade do emitente da nota fiscal
+-- funçõo para retornar o ibge da cidade do emitente da nota fiscal
 function fkg_cidadeibge_notafiscalemit ( en_notafiscal_id in nota_fiscal.id%type )
          return nota_fiscal_emit.cidade_ibge%type
 is
@@ -15169,7 +15169,7 @@ end fkg_cidadeibge_notafiscalemit;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o ibge da cidade do destinatário da nota fiscal
+-- funçõo para retornar o ibge da cidade do destinatï¿½rio da nota fiscal
 function fkg_cidadeibge_notafiscaldest ( en_notafiscal_id in nota_fiscal.id%type )
          return nota_fiscal_dest.cidade_ibge%type
 is
@@ -15196,7 +15196,7 @@ end fkg_cidadeibge_notafiscaldest;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o ibge da cidade da pessoa do conhecimento de transporte
+-- funçõo para retornar o ibge da cidade da pessoa do conhecimento de transporte
 function fkg_cidadeibge_conhectransp ( en_conhectransp_id in conhec_transp.id%type )
          return cidade.ibge_cidade%type
 is
@@ -15227,7 +15227,7 @@ end fkg_cidadeibge_conhectransp;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o ibge da cidade do destinatário do conhecimento de transporte
+-- funçõo para retornar o ibge da cidade do destinatï¿½rio do conhecimento de transporte
 function fkg_cidadeibge_ct_dest ( en_conhectransp_id in conhec_transp.id%type )
          return conhec_transp_dest.ibge_cidade%type
 is
@@ -15254,7 +15254,7 @@ end fkg_cidadeibge_ct_dest;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o ibge da cidade da pessoa da nota fiscal
+-- funçõo para retornar o ibge da cidade da pessoa da nota fiscal
 function fkg_cidadeibge_notafiscalid ( en_notafiscal_id in nota_fiscal.id%type )
          return cidade.ibge_cidade%type
 is
@@ -15285,7 +15285,7 @@ end fkg_cidadeibge_notafiscalid;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o ibge do estado da pessoa da nota fiscal
+-- funçõo para retornar o ibge do estado da pessoa da nota fiscal
 function fkg_estadoibge_notafiscalid ( en_notafiscal_id in nota_fiscal.id%type )
          return estado.ibge_estado%type
 is
@@ -15318,7 +15318,7 @@ end fkg_estadoibge_notafiscalid;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o ibge do estado do destinatário do conhecimento de transporte
+-- funçõo para retornar o ibge do estado do destinatï¿½rio do conhecimento de transporte
 function fkg_estadoibge_ct_dest ( en_conhectransp_id in conhec_transp.id%type )
          return estado.ibge_estado%type
 is
@@ -15347,7 +15347,7 @@ end fkg_estadoibge_ct_dest;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função para retornar o ibge do estado da pessoa do conhecimento de transporte
+-- funçõo para retornar o ibge do estado da pessoa do conhecimento de transporte
 function fkg_estadoibge_conhectransp ( en_conhectransp_id in conhec_transp.id%type )
          return estado.ibge_estado%type
 is
@@ -15380,7 +15380,7 @@ end fkg_estadoibge_conhectransp;
 
 -------------------------------------------------------------------------------------------------------
 
---| Função retorna verifica se a empresa Gera Informações de Tributações apenas para Venda
+--| funçõo retorna verifica se a empresa Gera Informaï¿½ï¿½es de Tributaï¿½ï¿½es apenas para Venda
 function fkg_empresa_inf_trib_op_venda ( en_empresa_id in empresa.id%type )
          return empresa.dm_inf_trib_oper_venda%type
 is
@@ -15415,7 +15415,7 @@ BEGIN
    --
    vi := 0;
    -- Remove os caracteres especiais - o percentual vai permanecer (%).
-   vv_valor2 := nvl(ltrim(rtrim(translate(ev_string, 'ÇçåÅâÂãÃáÁàÀäÄêÊéÉèÈëËîÎíÍìÌïÏôÔÕõóÓòÒöÖûÛúÚùÙüÜÿŸýÝñÑÐ\ˆ“¤¶¦æÆø×ƒ¿®±¾½¼«»ðßþÞ¯÷œ¸·¨*?ª§¹²³™š£¢¬´`~^¿¢€¥‰†‡„‹›¦ ¡•§·…–—''’'
+   vv_valor2 := nvl(ltrim(rtrim(translate(ev_string, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ƒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¯ï¿½ï¿½ï¿½ï¿½ï¿½*?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`~^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½''ï¿½'
                                                    , 'CcaAaAaAaAaAaAeEeEeEeEiIiIiIiIoOOooOoOoOuUuUuUuUyYyYnND'))), ' ');
    --
    vv_valor2 := REPLACE( vv_valor2, chr(9), '');  -- HT-Horizontal Tab
@@ -15431,7 +15431,7 @@ BEGIN
     vv_valor2 := REPLACE( vv_valor2, '\00BF', '');
     vv_valor2 := REPLACE( vv_valor2, '\00A9', '');
    --
-   -- retira o CHR(10)/Enter/LF-Line Feed, do início do texto
+   -- retira o CHR(10)/Enter/LF-Line Feed, do inï¿½cio do texto
    while ascii(substr(vv_valor2,1,1)) = 10
    loop
       --
@@ -15447,7 +15447,7 @@ BEGIN
       --
    end loop;
    --
-   RETURN trim(vv_valor2); -- limpa os espaços do início e do fim da string
+   RETURN trim(vv_valor2); -- limpa os espaï¿½os do inï¿½cio e do fim da string
    --
 EXCEPTION
    WHEN OTHERS THEN
@@ -15459,7 +15459,7 @@ END fkg_limpa_acento2;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o valor do campo Tipo da impressão dos Totais da Tributação
+-- funçõo retorna o valor do campo Tipo da impressï¿½o dos Totais da Tributaï¿½ï¿½o
 
 function fkg_tp_impr_tot_trib_empresa ( en_empresa_id in empresa.id%type )
          return empresa.dm_tp_impr_tot_trib%type
@@ -15484,7 +15484,7 @@ exception
 end fkg_tp_impr_tot_trib_empresa;
 
 -------------------------------------------------------------------------------------------------------
--- Função para Recuperar o Código do DIPAM-GIA
+-- funçõo para Recuperar o Cï¿½digo do DIPAM-GIA
 function fkg_dipamgia_id ( en_estado_id   in estado.id%type
                          , ev_cd_dipamgia in dipam_gia.cd%type
                          ) return dipam_gia.id%type
@@ -15512,7 +15512,7 @@ exception
 end fkg_dipamgia_id;
 
 -------------------------------------------------------------------------------------------------------
--- Função para Recuperar o Código da Tabela de Parametros do DIPAM-GIA
+-- funçõo para Recuperar o Cï¿½digo da Tabela de Parametros do DIPAM-GIA
 function fkg_paramdipamgia_id ( en_empresa_id  in empresa.id%type
                               , en_dipamgia_id in dipam_gia.id%type
                               , en_cfop_id     in cfop.id%type
@@ -15579,7 +15579,7 @@ end fkg_retorna_csftipolog_id;
 --
 
 --------------------------------------------------------------------------------------------------------
---| FUNÇÃO QUE RECUPERA TODOS OS CÓDIGOS CFOP DE ITEM, PERTENCENTES A UMA NOTA FISCAL
+--| funçõO QUE RECUPERA TODOS OS Cï¿½DIGOS CFOP DE ITEM, PERTENCENTES A UMA NOTA FISCAL
 --------------------------------------------------------------------------------------------------------
 function fkg_recupera_cfop (en_notafiscal_id in number)
 return varchar2 is
@@ -15631,13 +15631,13 @@ begin
 exception
    when others then
       --
-      raise_application_error(-20001, 'Erro pk_csf.fkg_recupera_cfop. fase: ('||vn_fase||'), erro ao recuperar os códigos CFOP referente a nota.');
+      raise_application_error(-20001, 'Erro pk_csf.fkg_recupera_cfop. fase: ('||vn_fase||'), erro ao recuperar os cï¿½digos CFOP referente a nota.');
       --
 end fkg_recupera_cfop;
 --
 
 --------------------------------------------------------------------------------------------------------
---| FUNÇÃO QUE RECUPERA CÓDIGO IDENTIFICADOR DO PROCESSO ADMINISTRATIVO - REINF
+--| funçõO QUE RECUPERA Cï¿½DIGO IDENTIFICADOR DO PROCESSO ADMINISTRATIVO - REINF
 --------------------------------------------------------------------------------------------------------
 function fkg_procadmefdreinf_id ( en_empresa_id in empresa.id%type
                                 , ed_dt_ini     in date
@@ -15686,7 +15686,7 @@ exception
 end fkg_procadmefdreinf_id;
 
 --------------------------------------------------------------------------------------------------------
---| Função que verifica se o código identificador ja existe na tabela
+--| funçõo que verifica se o cï¿½digo identificador ja existe na tabela
 function fkg_verif_procadmefdreinf ( en_procadmefdreinf_id in proc_adm_efd_reinf.id%type
                                    ) return boolean
 is
@@ -15719,7 +15719,7 @@ exception
 end fkg_verif_procadmefdreinf;
 
 --------------------------------------------------------------------------------------------------------
---| Recupera código identificador de Indicativo de Suspensão da Exigibilidade
+--| Recupera cï¿½digo identificador de Indicativo de Suspensï¿½o da Exigibilidade
 function fkg_indsuspexig_id ( ev_ind_susp_exig in ind_susp_exig.cd%type
                             ) return ind_susp_exig.id%type
 is
@@ -15745,7 +15745,7 @@ exception
 end fkg_indsuspexig_id;
 
 ----------------------------------------------------------------------------------------------------
---| Função valida se o participante está cadastrado como empresa
+--| funçõo valida se o participante estï¿½ cadastrado como empresa
 
 function fkg_valida_part_empresa ( en_multorg_id  in mult_org.id%type
                                  , ev_cod_part    in pessoa.cod_part%TYPE
@@ -15793,7 +15793,7 @@ end fkg_valida_part_empresa;
 
 -------------------------------------------------------------------------------------------------------
 
--- Função retorna o indicador de atualização de dependências do Item na Integração de Cadastros Gerais - Item
+-- funçõo retorna o indicador de atualizaï¿½ï¿½o de dependï¿½ncias do Item na Integraï¿½ï¿½o de Cadastros Gerais - Item
 function fkg_empr_dm_atual_dep_item ( en_empresa_id  in empresa.id%type )
          return empresa.dm_atual_dep_item%type
 is
@@ -15841,7 +15841,7 @@ exception
 end fkg_recup_fonte_pagad_reinf_id;
 
 -------------------------------------------------------------------------------------------------------
--- Recupera o código da fonte pagadora do REINF
+-- Recupera o cï¿½digo da fonte pagadora do REINF
 function fkg_recup_fonte_pagad_reinf ( en_relfontepagadreinf_id  in rel_fonte_pagad_reinf.id%type )
          return rel_fonte_pagad_reinf.cod%type
 is
@@ -15865,7 +15865,7 @@ exception
 end fkg_recup_fonte_pagad_reinf;
 
 -------------------------------------------------------------------------------------------------------
--- Procedimento retorna o parâmetro que Permite a quebra da Informação Adicional no arquivo Sped Fiscal
+-- Procedimento retorna o parï¿½metro que Permite a quebra da Informaï¿½ï¿½o Adicional no arquivo Sped Fiscal
 function fkg_parefdicmsipi_dmqueinfadi ( en_empresa_id in empresa.id%type )
          return param_efd_icms_ipi.dm_quebra_infadic_spedf%type
 is
@@ -15887,7 +15887,7 @@ exception
 end fkg_parefdicmsipi_dmqueinfadi;
 --
 -- ============================================================================================================= --
--- Procedimento retorna o código NIF da pessoa
+-- Procedimento retorna o cï¿½digo NIF da pessoa
 function fkg_cod_nif_pessoa ( en_pessoa_id in pessoa.id%type ) return pessoa.cod_nif%type is
    --
    vv_cod_nif pessoa.cod_nif%type;
@@ -15907,10 +15907,10 @@ exception
 end fkg_cod_nif_pessoa;
 --
 -- ============================================================================================================= --
--- Procedimento retorna o se o país obriga o cod_nif p a pessoa_id
+-- Procedimento retorna o se o paï¿½s obriga o cod_nif p a pessoa_id
 function fkg_pais_obrig_nif ( en_pais_id in pais.id%type ) return pais.dm_obrig_nif%type is
    --
-   -- Indicador da obrigatoriedade do código NIF para o residente no país: 0-Não / 1-Sim
+   -- Indicador da obrigatoriedade do cï¿½digo NIF para o residente no paï¿½s: 0-Nï¿½o / 1-Sim
    vn_dm_obrig_nif pais.dm_obrig_nif%type;
    --
 begin
@@ -15950,7 +15950,7 @@ exception
 end fkg_sigla_pais;
 --
 -- ============================================================================================================= --
--- Função retorna o valor do parametro dm_guarda_imp_orig
+-- funçõo retorna o valor do parametro dm_guarda_imp_orig
 --
 function fkg_empresa_guarda_imporig ( en_empresa_id in empresa.id%type ) return empresa.dm_guarda_imp_orig%type is
    --
@@ -15973,7 +15973,7 @@ exception
 end fkg_empresa_guarda_imporig;
 --
 -- ============================================================================================================= --
--- Função verifica se a nota fiscal já possui os impostos originais salvos na tabela imp_itemnf_orig
+-- funçõo verifica se a nota fiscal jï¿½ possui os impostos originais salvos na tabela imp_itemnf_orig
 --
 function fkg_existe_nf_imp ( en_notafiscal_id in nota_fiscal.id%type ) return number is
    --
@@ -15996,7 +15996,7 @@ exception
 end fkg_existe_nf_imp;
 --
 -- ============================================================================================================= --
--- Função verifica se o imposto já foi inserido na tabela imp_itemnf
+-- funçõo verifica se o imposto jï¿½ foi inserido na tabela imp_itemnf
 --
 function fkg_existe_imp_itemnf ( en_itemnf_id  in imp_itemnf.itemnf_id%type
                                , en_tipoimp_id in imp_itemnf.tipoimp_id%type
@@ -16023,51 +16023,51 @@ exception
 end fkg_existe_imp_itemnf;
 --
 -- ============================================================================================================= --
--- Função buscar parâmetro do sistema (PARAM_GERAL_SISTEMA)
-function fkg_ret_vl_param_geral_sistema ( en_multorg_id      in mult_org.id%type                        -- MultiOrganização - Obrigatório
+-- funçõo buscar parï¿½metro do sistema (PARAM_GERAL_SISTEMA)
+function fkg_ret_vl_param_geral_sistema ( en_multorg_id      in mult_org.id%type                        -- MultiOrganizaï¿½ï¿½o - Obrigatï¿½rio
                                         , en_empresa_id      in empresa.id%type                         -- Empresa - Opcional
-                                        , en_modulo_id       in modulo_sistema.id%type                  -- Modulos do Sistema - Obrigatório
-                                        , en_grupo_id        in grupo_sistema.id%type                   -- Grupo de Parâmetros por Modulo - Obrigatório
-                                        , ev_param_name      in param_geral_sistema.param_name%type     -- Nome do Parâmetro - Obrigatório
-                                        , sv_vlr_param      out param_geral_sistema.vlr_param%type      -- Valor do Parâmetro (saída)
+                                        , en_modulo_id       in modulo_sistema.id%type                  -- Modulos do Sistema - Obrigatï¿½rio
+                                        , en_grupo_id        in grupo_sistema.id%type                   -- Grupo de Parï¿½metros por Modulo - Obrigatï¿½rio
+                                        , ev_param_name      in param_geral_sistema.param_name%type     -- Nome do Parï¿½metro - Obrigatï¿½rio
+                                        , sv_vlr_param      out param_geral_sistema.vlr_param%type      -- Valor do Parï¿½metro (saï¿½da)
                                         , sv_erro           out varchar2                                -- Mensagem de erro (return false)
                                          ) return boolean is
 begin
-   -- Checar parâmetros obrigatórios --
+   -- Checar parï¿½metros obrigatï¿½rios --
    if en_multorg_id is null then
       --
-      sv_erro := 'Erro na função pk_csf.fkg_ret_vl_param_geral_sistema'||chr(13)||
-                 'O Parâmetro "en_multorg_id" é obrigatório e não foi informado';
+      sv_erro := 'Erro na funçõo pk_csf.fkg_ret_vl_param_geral_sistema'||chr(13)||
+                 'O Parï¿½metro "en_multorg_id" ï¿½ obrigatï¿½rio e nï¿½o foi informado';
       return false;
       --            
    end if;
    --
    if en_modulo_id is null then
       --
-      sv_erro := 'Erro na função pk_csf.fkg_ret_vl_param_geral_sistema'||chr(13)||
-                 'O Parâmetro "en_modulo_id" é obrigatório e não foi informado';
+      sv_erro := 'Erro na funçõo pk_csf.fkg_ret_vl_param_geral_sistema'||chr(13)||
+                 'O Parï¿½metro "en_modulo_id" ï¿½ obrigatï¿½rio e nï¿½o foi informado';
       return false;
       --            
    end if;
    --
    if en_grupo_id is null then
       --
-      sv_erro := 'Erro na função pk_csf.fkg_ret_vl_param_geral_sistema'||chr(13)||
-                 'O Parâmetro "en_grupo_id" é obrigatório e não foi informado';
+      sv_erro := 'Erro na funçõo pk_csf.fkg_ret_vl_param_geral_sistema'||chr(13)||
+                 'O Parï¿½metro "en_grupo_id" ï¿½ obrigatï¿½rio e nï¿½o foi informado';
       return false;
       --            
    end if;   
    --
    if ev_param_name is null then
       --
-      sv_erro := 'Erro na função pk_csf.fkg_ret_vl_param_geral_sistema'||chr(13)||
-                 'O Parâmetro "ev_param_name" é obrigatório e não foi informado';
+      sv_erro := 'Erro na funçõo pk_csf.fkg_ret_vl_param_geral_sistema'||chr(13)||
+                 'O Parï¿½metro "ev_param_name" ï¿½ obrigatï¿½rio e nï¿½o foi informado';
       return false;
       --            
    end if;     
    --
    --
-   -- Passo 1: Busca o parâmetro pela Empresa --
+   -- Passo 1: Busca o parï¿½metro pela Empresa --
    begin
       select pgs.vlr_param
          into sv_vlr_param
@@ -16079,7 +16079,7 @@ begin
         and pgs.param_name         = ev_param_name;
    exception
       when no_data_found then
-         -- Passo 2: Caso não encontrou pela empresa Busca o parâmetro pelo Mult_org --
+         -- Passo 2: Caso nï¿½o encontrou pela empresa Busca o parï¿½metro pelo Mult_org --
          begin
             --
             select pgs.vlr_param
@@ -16094,12 +16094,12 @@ begin
          exception
             when no_data_found then
                --
-               sv_erro := 'O Parâmetro de Sistema "'||ev_param_name||'" não está cadastrado para os dados abaixo:' ||chr(13)||
-                          'Mult-Organização: '||en_multorg_id                                                    ||chr(13)||
+               sv_erro := 'O Parï¿½metro de Sistema "'||ev_param_name||'" nï¿½o estï¿½ cadastrado para os dados abaixo:' ||chr(13)||
+                          'Mult-Organizaï¿½ï¿½o: '||en_multorg_id                                                    ||chr(13)||
                           'Empresa: '         ||en_empresa_id                                                    ||chr(13)||
                           'Modulo: '          ||en_modulo_id                                                     ||chr(13)||
                           'Grupo: '           ||en_grupo_id                                                      ||chr(13)||
-                          'Verifique o cadastro de Parâmetros do Sistema';
+                          'Verifique o cadastro de Parï¿½metros do Sistema';
                return false;
                --            
          end;
@@ -16115,7 +16115,7 @@ exception
 end fkg_ret_vl_param_geral_sistema;  
 --
 -- ============================================================================================================= --
--- Função para retornar o id do modulo do sistema
+-- funçõo para retornar o id do modulo do sistema
 function fkg_ret_id_modulo_sistema ( ev_cod_modulo  in modulo_sistema.cod_modulo%type
                                    ) return number is
    --
@@ -16138,7 +16138,7 @@ exception
 end fkg_ret_id_modulo_sistema;                                   
 --
 -- ============================================================================================================= --
--- Função para retornar o id do grupo do sistema
+-- funçõo para retornar o id do grupo do sistema
 function fkg_ret_id_grupo_sistema ( en_modulo_id  in modulo_sistema.id%type
                                   , ev_cod_grupo  in grupo_sistema.cod_grupo%type
                                    ) return number is
@@ -16164,7 +16164,7 @@ end fkg_ret_id_grupo_sistema;
 --                                    
 -- ============================================================================================================= --
 --
--- Função para retornar o valor do parâmetro do sistema, utilizando os parâmetros nome do módulo, nome do grupo e nome do parametro
+-- funçõo para retornar o valor do parï¿½metro do sistema, utilizando os parï¿½metros nome do mï¿½dulo, nome do grupo e nome do parametro
 function fkg_parametro_geral_sistema ( en_multorg_id   mult_org.id%type,
                                        en_empresa_id   empresa.id%type,  
                                        ev_cod_modulo   modulo_sistema.cod_modulo%type,
@@ -16219,7 +16219,7 @@ end fkg_parametro_geral_sistema;
 --
 -- ============================================================================================================= --
 --
--- Procedimento verifica se a empresa valida o imposto PIS - Parâmetro para Notas Fiscais Servicos com Emissão Própria
+-- Procedimento verifica se a empresa valida o imposto PIS - Parï¿½metro para Notas Fiscais Servicos com Emissï¿½o Prï¿½pria
 
 function fkg_empresa_dmvalpis_emis_nfs ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valida_pis_emiss_nfs%type is
@@ -16242,7 +16242,7 @@ exception
       raise_application_error(-20101, 'Erro na fkg_empresa_dmvalpis_emis_nfs:' || sqlerrm);
 end fkg_empresa_dmvalpis_emis_nfs;
 
--- Procedimento verifica se a empresa valida o imposto PIS - Parâmetro para Notas Fiscais Serviços com Emissão de Terceiros
+-- Procedimento verifica se a empresa valida o imposto PIS - Parï¿½metro para Notas Fiscais Serviï¿½os com Emissï¿½o de Terceiros
 
 function fkg_empresa_dmvalpis_terc_nfs ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valida_pis_terc_nfs%type is
@@ -16265,7 +16265,7 @@ exception
       raise_application_error(-20101, 'Erro na fkg_empresa_dmvalpis_terc_nfs:' || sqlerrm);
 end fkg_empresa_dmvalpis_terc_nfs;
 
--- Procedimento verifica se a empresa valida o imposto Cofins - Parâmetro para Notas Fiscais Serviços com Emissão Própria
+-- Procedimento verifica se a empresa valida o imposto Cofins - Parï¿½metro para Notas Fiscais Serviï¿½os com Emissï¿½o Prï¿½pria
 
 function fkg_empr_dmvalcofins_emis_nfs ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valida_cofins_emiss_nfs%type is
@@ -16288,7 +16288,7 @@ exception
       raise_application_error(-20101, 'Erro na fkg_empr_dmvalcofins_emis_nfs:' || sqlerrm);
 end fkg_empr_dmvalcofins_emis_nfs;
 
--- Procedimento verifica se a empresa valida o imposto Cofins - Parâmetro para Notas Fiscais Serviços com Emissão de Terceiros
+-- Procedimento verifica se a empresa valida o imposto Cofins - Parï¿½metro para Notas Fiscais Serviï¿½os com Emissï¿½o de Terceiros
 
 function fkg_empr_dmvalcofins_terc_nfs ( en_empresa_id in Empresa.id%type )
          return empresa.dm_valida_cofins_terc_nfs%type is
@@ -16312,8 +16312,8 @@ exception
 end fkg_empr_dmvalcofins_terc_nfs;
 --
 -----------------------------------------------------------------------------------------------------
---Função retorna se Nota Fiscal foi submetido ao evento R-2010 do REINF ou não. 
---E se a Nota Fiscal está no dm_st_proc igual à 7 (Exclusão) do evento R-2010 do Reinf.
+--funçõo retorna se Nota Fiscal foi submetido ao evento R-2010 do REINF ou nï¿½o. 
+--E se a Nota Fiscal estï¿½ no dm_st_proc igual ï¿½ 7 (Exclusï¿½o) do evento R-2010 do Reinf.
 -----------------------------------------------------------------------------------------------------
 function fkg_existe_reinf_r2010_nf (en_notafiscal_id Nota_Fiscal.id%type) return boolean
 is
@@ -16372,8 +16372,8 @@ exception
 end;
 --
 -----------------------------------------------------------------------------------------------------
---Função retorna se Nota Fiscal foi submetido ao evento R-2020 do REINF ou não. 
---E se a Nota Fiscal está no dm_st_proc igual à 7 (Exclusão) do evento R-2020 do Reinf.
+--funçõo retorna se Nota Fiscal foi submetido ao evento R-2020 do REINF ou nï¿½o. 
+--E se a Nota Fiscal estï¿½ no dm_st_proc igual ï¿½ 7 (Exclusï¿½o) do evento R-2020 do Reinf.
 -----------------------------------------------------------------------------------------------------
 function fkg_existe_reinf_r2020_nf (en_notafiscal_id Nota_Fiscal.id%type) return boolean
 is
@@ -16450,21 +16450,21 @@ procedure pkb_ret_dados_empresa ( en_empresa_id         in empresa.id%type
                                 , sv_ibge_cidade       out cidade.ibge_cidade%type
                                 , sv_ibge_estado       out estado.ibge_estado%type ) is
 --
--- Os dados das funções abaixo foram inseridas nessa única função.
--- As funções não foram excluídas apenas criada um só para retornar os mesmos dados de uma só vez
----- pk_csf.fkg_nome_empresa                    -- sv_nome        - tabela empresa e pessoa  - Função retorna o nome da empresa
----- pk_csf.fkg_empresa_id_situacao             -- sn_dm_situacao - tabela empresa           - Função retorna a sitação da empresa: 0-Inativa ou 1-Ativa
----- pk_csf.fkg_cod_nome_empresa_id             -- sv_dados       - tabela empresa e pessoa  - Função retorno o código de nome da empresa conforme seu ID
----- pk_csf.fkg_empresa_id_certificado_ok       -- sn_sit_empresa - tabela empresa           - Função retorna a sitação da empresa: 0-Inativa ou 1-Ativa
----- pk_csf_nfs.fkg_empresa_cidade_nfse_habil   -- sn_dm_habil    - empresa, pessoa, cidade, cidade_nfse - Função para retornar se a cidade da empresa esta habilitada para emissão de NFSe
----- pk_csf.fkg_empresa_id_valido               -- sn_existe_id   - tabela empresa           - Função retorna "true" se o ID da empresa for válido e "false" se não for
----- pk_csf.fkg_tp_impr_empresa                 -- sn_dm_tp_impr  - tabela empresa           - Função retorna o Tipo de impressão (Retrato/Paisagem) parametrizado na empresa
----- pk_csf.fkg_tp_amb_empresa                  -- sn_dm_tp_amb   - tabela empresa           - Função retorna o tipo de ambiente (Produção/Homologação) parametrizado para a empresa
----- pk_csf.fkg_cnpj_ou_cpf_empresa             -- sv_cnpj_cpf    - tabela empresa, fisica e juridica -  Função retorna o CNPJ ou CPF conforme a empresa
----- pk_csf.fkg_codpart_empresaid               -- sv_cod_part    - tabela empresa e pessoa  - Função retorna o cod_participante pelo id_empresa
-                                                                                            -- Função retorna o código da empresa através do id empresa em que está relacionado.
----- pk_csf.fkg_inscr_mun_empresa               -- sv_im          - tabela empresa e fisica  - Função retorna a inscrição municipal da empresa
----- pk_csf.fkg_Pessoa_id_valido                -- sn_pessoa_id   - tabela pessoa            - Função retorna o ID da tabela Pessoa
+-- Os dados das funções abaixo foram inseridas nessa ï¿½nica funçõo.
+-- As funções nï¿½o foram excluï¿½das apenas criada um sï¿½ para retornar os mesmos dados de uma sï¿½ vez
+---- pk_csf.fkg_nome_empresa                    -- sv_nome        - tabela empresa e pessoa  - funçõo retorna o nome da empresa
+---- pk_csf.fkg_empresa_id_situacao             -- sn_dm_situacao - tabela empresa           - funçõo retorna a sitaï¿½ï¿½o da empresa: 0-Inativa ou 1-Ativa
+---- pk_csf.fkg_cod_nome_empresa_id             -- sv_dados       - tabela empresa e pessoa  - funçõo retorno o cï¿½digo de nome da empresa conforme seu ID
+---- pk_csf.fkg_empresa_id_certificado_ok       -- sn_sit_empresa - tabela empresa           - funçõo retorna a sitaï¿½ï¿½o da empresa: 0-Inativa ou 1-Ativa
+---- pk_csf_nfs.fkg_empresa_cidade_nfse_habil   -- sn_dm_habil    - empresa, pessoa, cidade, cidade_nfse - funçõo para retornar se a cidade da empresa esta habilitada para emissï¿½o de NFSe
+---- pk_csf.fkg_empresa_id_valido               -- sn_existe_id   - tabela empresa           - funçõo retorna "true" se o ID da empresa for vï¿½lido e "false" se nï¿½o for
+---- pk_csf.fkg_tp_impr_empresa                 -- sn_dm_tp_impr  - tabela empresa           - funçõo retorna o Tipo de impressï¿½o (Retrato/Paisagem) parametrizado na empresa
+---- pk_csf.fkg_tp_amb_empresa                  -- sn_dm_tp_amb   - tabela empresa           - funçõo retorna o tipo de ambiente (Produï¿½ï¿½o/Homologaï¿½ï¿½o) parametrizado para a empresa
+---- pk_csf.fkg_cnpj_ou_cpf_empresa             -- sv_cnpj_cpf    - tabela empresa, fisica e juridica -  funçõo retorna o CNPJ ou CPF conforme a empresa
+---- pk_csf.fkg_codpart_empresaid               -- sv_cod_part    - tabela empresa e pessoa  - funçõo retorna o cod_participante pelo id_empresa
+                                                                                            -- funçõo retorna o cï¿½digo da empresa atravï¿½s do id empresa em que estï¿½ relacionado.
+---- pk_csf.fkg_inscr_mun_empresa               -- sv_im          - tabela empresa e fisica  - funçõo retorna a inscriï¿½ï¿½o municipal da empresa
+---- pk_csf.fkg_Pessoa_id_valido                -- sn_pessoa_id   - tabela pessoa            - funçõo retorna o ID da tabela Pessoa
    --
    vn_fase               number;
    vv_cnpj               varchar2(14)             := null;    
@@ -16595,7 +16595,7 @@ end pkb_ret_dados_empresa;
 -- ============================================================================================================================== --
 --
 -------------------------------------------------------------------------------------------------------
---| Função retorna o ID do Plano de Conta a partir da tab NAT_REC_PC
+--| funçõo retorna o ID do Plano de Conta a partir da tab NAT_REC_PC
 -----------------------------------------------------------------------------------------------------
 --
 function fkg_natrecpc_plc_id ( en_natrecpc_id  in nat_rec_pc.id%TYPE )
@@ -16621,7 +16621,7 @@ exception
 end fkg_natrecpc_plc_id;
 --
 -------------------------------------------------------------------------------------------------------
---| Função retorna o ID do Plano de Conta a partir da tab NCM_NAT_REC_PC
+--| funçõo retorna o ID do Plano de Conta a partir da tab NCM_NAT_REC_PC
 -----------------------------------------------------------------------------------------------------
 --
 function fkg_ncmnatrecpc_plc_id ( en_natrecpc_id  in nat_rec_pc.id%TYPE,
@@ -16650,7 +16650,7 @@ exception
 end fkg_ncmnatrecpc_plc_id;
 --
 -------------------------------------------------------------------------------------------------------
---| Função retorna o ID do Tabela NAT_PEC_PC a partir da tab NCM_NAT_REC_PC
+--| funçõo retorna o ID do Tabela NAT_PEC_PC a partir da tab NCM_NAT_REC_PC
 -----------------------------------------------------------------------------------------------------
 --
 function fkg_ncmnatrecpc_npp_id (en_planoconta_id in nat_rec_pc.planoconta_id%TYPE)
@@ -16676,7 +16676,7 @@ exception
 end fkg_ncmnatrecpc_npp_id;
 --
 -------------------------------------------------------------------------------------------------------
---| Função retorna o ID do Tabela NAT_PEC_PC a partir dos parametros planoconta_id e codst_id 
+--| funçõo retorna o ID do Tabela NAT_PEC_PC a partir dos parametros planoconta_id e codst_id 
 -----------------------------------------------------------------------------------------------------
 --
 function fkg_natrecpc_id (en_planoconta_id in nat_rec_pc.planoconta_id%TYPE,
@@ -16704,7 +16704,7 @@ exception
 end fkg_natrecpc_id;
 --
 -------------------------------------------------------------------------------------------------------
---| Função retorna o primeiro ID do plano de conta do Tabela plano_conta_nat_rec_pc 
+--| funçõo retorna o primeiro ID do plano de conta do Tabela plano_conta_nat_rec_pc 
 -----------------------------------------------------------------------------------------------------
 --
 function fkg_plcnatpecpc_plc_id ( en_natrecpc_id  in nat_rec_pc.id%TYPE)
@@ -16731,7 +16731,7 @@ exception
 end fkg_plcnatpecpc_plc_id;
 --
 -------------------------------------------------------------------------------------------------------
---| Função que retorna o ID da Tabela COD_ST_CIDADE
+--| funçõo que retorna o ID da Tabela COD_ST_CIDADE
 -----------------------------------------------------------------------------------------------------
 --
 function fkg_codstcidade_Id (ev_cod_st    in  cod_st_cidade.cod_st%TYPE,
@@ -16759,7 +16759,7 @@ exception
 end fkg_codstcidade_Id;
 --
 -------------------------------------------------------------------------------------------------------
---| Procedure para criação de sequence e inclusão na seq_tab
+--| Procedure para criaï¿½ï¿½o de sequence e inclusï¿½o na seq_tab
 -------------------------------------------------------------------------------------------------------
 procedure pkb_cria_sequence (ev_sequence_name varchar2,
                              ev_table_name    varchar2)
@@ -16808,7 +16808,7 @@ exception
 end pkb_cria_sequence;
 --
 -------------------------------------------------------------------------------------------------------
---| Procedure para criação de domínio
+--| Procedure para criaï¿½ï¿½o de domï¿½nio
 -------------------------------------------------------------------------------------------------------
 procedure pkb_cria_dominio (ev_dominio    varchar2,
                             ev_valor      varchar2,
