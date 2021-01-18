@@ -5,7 +5,7 @@ create or replace package body csf_own.pk_csf_efd_pc is
 -------------------------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------------------
--- Função retorna o ID do Registro do Bloco da EFD Pis/Cofins conforme código do bloco -- armando teste branch
+-- Função retorna o ID do Registro do Bloco da EFD Pis/Cofins conforme código do bloco -- armando teste branch -- teste azoni
 function fkg_registr_efd_pc_id ( ev_cd  in  registr_efd_pc.cd%type )
          return registr_efd_pc.id%type
 is
